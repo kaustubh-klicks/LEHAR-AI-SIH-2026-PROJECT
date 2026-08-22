@@ -12,10 +12,10 @@ router = APIRouter(prefix="/api", tags=["pfz"])
 
 @router.get("/pfz", response_model=PFZResponse)
 async def pfz_advisories(
-    region: str = Query("arabian_sea", description="Region: arabian_sea, bay_of_bengal, mumbai, kochi, chennai, vizag, all"),
-    limit: int = Query(30, ge=1, le=100),
+    region: str = Query("all", description="Region: arabian_sea, bay_of_bengal, mumbai, kochi, chennai, vizag, all"),
+    limit: int = Query(60, ge=1, le=100),
 ):
-    """Get multi-sensor fused PFZ fishing advisories for a region."""
+    """Get multi-sensor fused PFZ fishing advisories across active floats in the Indian Ocean."""
     advisories = get_pfz_advisories(region=region, limit=limit)
     return {
         "region": region,

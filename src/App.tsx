@@ -38,34 +38,28 @@ import type {
   MapMarker,
 } from './types';
 
-export default function App() {
+export function App() {
   const [currentMode, setCurrentMode] = useState<AppMode>('chat');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en-IN');
   const [backendOnline, setBackendOnline] = useState<boolean>(true);
 
-  // Core Application Data State
   const [floats, setFloats] = useState<FloatSummary[]>([]);
   const [anomalies, setAnomalies] = useState<AnomalyAlert[]>([]);
   const [isScanningAnomalies, setIsScanningAnomalies] = useState<boolean>(false);
 
-  // Chat Conversation State
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isChatLoading, setIsChatLoading] = useState<boolean>(false);
 
-  // Smart Stage Visualization State (Chat View)
   const [stageView, setStageView] = useState<'map' | 'chart' | '3d'>('map');
   const [hasEverQueried, setHasEverQueried] = useState<boolean>(false);
 
-  // Ocean Explorer View Toggle State (Map View)
   const [explorerView, setExplorerView] = useState<'map' | '3d'>('map');
 
-  // Visualization Selection State
   const [activeChart, setActiveChart] = useState<ChartData | null>(null);
   const [highlightMarkers, setHighlightMarkers] = useState<MapMarker[] | null>(null);
   const [selectedFloatId, setSelectedFloatId] = useState<string | null>(null);
   const [floatTrajectory, setFloatTrajectory] = useState<FloatSummary[] | null>(null);
 
-  // Initialize data on mount
   useEffect(() => {
     async function initData() {
       try {
@@ -81,29 +75,28 @@ export default function App() {
           setBackendOnline(false);
         }
 
-        if (floatsData.floats.length > 0) {
+        if (floatsData && floatsData.floats && floatsData.floats.length > 0) {
           setFloats(floatsData.floats);
           setSelectedFloatId(floatsData.floats[0].float_id);
         }
 
-        if (anomaliesData.anomalies.length > 0) {
+        if (anomaliesData && anomaliesData.anomalies && anomaliesData.anomalies.length > 0) {
           setAnomalies(anomaliesData.anomalies);
         }
 
-        // Pre-fetch initial sample depth profile for when charts are opened
         try {
           const depthRes = await getDepthProfile(1);
-          if (depthRes && depthRes.measurements.length > 0) {
+          if (depthRes && depthRes.measurements && depthRes.measurements.length > 0) {
             setActiveChart({
               chart_type: 'depth_profile',
               data: depthRes.measurements,
               x_key: 'depth',
               y_keys: ['temperature', 'salinity'],
-              title: `Argo Profile #1 (Float #${floatsData.floats[0]?.float_id || '2902150'}) Depth Curve`,
+              title: `Argo Profile #1 Depth Curve (50 Levels)`,
             });
           }
         } catch {
-          // ignore
+          // ignore fallback
         }
       } catch (err) {
         console.warn('Backend connection warning:', err);
@@ -116,7 +109,6 @@ export default function App() {
 
   const [sessionId] = useState<string>(() => 'sess-' + Math.random().toString(36).substring(2, 9) + '-' + Date.now());
 
-  // Handle user chat submission with context-aware auto-switching
   const handleSendMessage = async (queryText: string, mode: 'text' | 'voice' = 'text') => {
     setHasEverQueried(true);
 
@@ -167,13 +159,15 @@ export default function App() {
 
       setMessages((prev) => prev.map((m) => (m.id === botMsgId ? finalBotMessage : m)));
 
-      // Context-aware Smart Stage Auto-Switching:
       if (response.chart && response.chart.data && response.chart.data.length > 0) {
         setActiveChart(response.chart);
-        setStageView('chart'); // Auto-switch to CTD chart for depth/profile queries
+        setStageView('chart');
       } else if (response.map_markers && response.map_markers.length > 0) {
         setHighlightMarkers(response.map_markers);
-        setStageView('map'); // Auto-switch to Map for location/harbour queries
+        if (response.map_markers[0].float_id) {
+          setSelectedFloatId(response.map_markers[0].float_id);
+        }
+        setStageView('map');
       }
     } catch (err: any) {
       console.error('Chat error:', err);
@@ -192,29 +186,17 @@ export default function App() {
     }
   };
 
-  // Handle float selection on map or classroom
   const handleSelectFloat = async (floatId: string) => {
     setSelectedFloatId(floatId);
+
     try {
-      const trajectoryData = await getFloatTrajectory(floatId);
-      if (trajectoryData && trajectoryData.trajectory.length > 0) {
+      const trajectoryData = await getFloatTrajectory(floatId).catch(() => null);
+      if (trajectoryData && trajectoryData.trajectory && trajectoryData.trajectory.length > 0) {
         setFloatTrajectory(trajectoryData.trajectory);
       }
 
-      const matchingFloat = floats.find((f) => f.float_id === floatId);
+      const matchingFloat = floats.find((f) => String(f.float_id) === String(floatId));
       if (matchingFloat) {
-        if (matchingFloat.profile_id) {
-          const depthRes = await getDepthProfile(matchingFloat.profile_id);
-          if (depthRes.measurements.length > 0) {
-            setActiveChart({
-              chart_type: 'depth_profile',
-              data: depthRes.measurements,
-              x_key: 'depth',
-              y_keys: ['temperature', 'salinity'],
-              title: `Argo Float #${floatId} (Profile #${matchingFloat.profile_id})`,
-            });
-          }
-        }
         setHighlightMarkers([
           {
             lat: matchingFloat.latitude,
@@ -229,7 +211,46 @@ export default function App() {
     }
   };
 
-  // Handle anomaly selection and sync-highlight
+  const handleInspectFloat = async (floatId: string) => {
+    setSelectedFloatId(floatId);
+    setHasEverQueried(true);
+
+    const matchingFloat = floats.find((f) => String(f.float_id) === String(floatId));
+    let profileLookupId = 1;
+    if (matchingFloat && (matchingFloat as any).id) {
+      profileLookupId = Number((matchingFloat as any).id);
+    } else if (matchingFloat?.profile_id) {
+      profileLookupId = Number(matchingFloat.profile_id);
+    } else {
+      const parsed = parseInt(String(floatId).replace(/\D/g, ''), 10);
+      profileLookupId = isNaN(parsed) ? 1 : parsed;
+    }
+
+    try {
+      let depthRes = await getDepthProfile(profileLookupId).catch(() => null);
+      if (!depthRes || !depthRes.measurements || depthRes.measurements.length === 0) {
+        depthRes = await getDepthProfile(1).catch(() => null);
+      }
+
+      if (depthRes && depthRes.measurements && depthRes.measurements.length > 0) {
+        setActiveChart({
+          chart_type: 'depth_profile',
+          data: depthRes.measurements,
+          x_key: 'depth',
+          y_keys: ['temperature', 'salinity'],
+          title: `Argo Float #${floatId} (In-Situ Cast)`,
+        });
+      }
+    } catch (e) {
+      console.warn('Could not fetch depth profile:', e);
+    }
+
+    if (currentMode !== 'chat') {
+      setCurrentMode('chat');
+    }
+    setStageView('chart');
+  };
+
   const handleSelectAnomaly = (anomaly: AnomalyAlert) => {
     setHighlightMarkers([
       {
@@ -242,13 +263,14 @@ export default function App() {
     ]);
   };
 
-  // Trigger manual anomaly scan
   const handleTriggerAnomalyScan = async () => {
     setIsScanningAnomalies(true);
     try {
       await triggerAnomalyScan();
       const fresh = await getAnomalies();
-      setAnomalies(fresh.anomalies);
+      if (fresh && fresh.anomalies) {
+        setAnomalies(fresh.anomalies);
+      }
     } catch (err) {
       console.warn('Scan trigger error:', err);
     } finally {
@@ -259,12 +281,8 @@ export default function App() {
   const isStageActive = hasEverQueried || messages.length > 0;
 
   return (
-    <div className="min-h-screen relative text-slate-100 flex flex-col font-sans selection:bg-ocean-cyan selection:text-abyssal-950">
-      
-      {/* Ambient Ocean Atmospheric Layer (Caustics & Bioluminescent Drift) */}
+    <div className="h-screen max-h-screen overflow-hidden relative text-slate-100 flex flex-col font-sans selection:bg-ocean-cyan selection:text-abyssal-950">
       <OceanAtmosphere />
-
-      {/* Top Main Navigation */}
       <Navbar
         currentMode={currentMode}
         onSelectMode={(mode) => {
@@ -278,19 +296,19 @@ export default function App() {
         backendOnline={backendOnline}
       />
 
-      {/* Main Interactive Workspace */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-3 md:p-5 flex flex-col">
-        
-        {/* VIEW 1: AI CONSOLE + SMART STAGE (DEFAULT CHAT) */}
+      <main className="flex-1 w-full mx-auto p-3 md:p-4 flex flex-col min-h-0 overflow-hidden">
         {currentMode === 'chat' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 min-h-[580px] h-[calc(100vh-80px)]">
-            
-            {/* Left Console: Chat Panel (5 Cols) */}
-            <div className="lg:col-span-5 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 min-h-0 h-full overflow-hidden">
+            <div className="lg:col-span-5 h-full min-h-0 flex flex-col overflow-hidden">
               <ChatPanel
                 messages={messages}
                 isLoading={isChatLoading}
                 onSendMessage={handleSendMessage}
+                activeView={stageView === 'chart' ? 'ctd' : stageView}
+                onViewChange={(view) => {
+                  setHasEverQueried(true);
+                  setStageView(view === 'ctd' ? 'chart' : view);
+                }}
                 onFocusMap={(markers) => {
                   setHasEverQueried(true);
                   setHighlightMarkers(markers);
@@ -305,11 +323,9 @@ export default function App() {
               />
             </div>
 
-            {/* Right Smart Stage: Single Context-Aware Panel (7 Cols) */}
-            <div className="lg:col-span-7 flex flex-col h-full bg-abyssal-950/90 border border-abyssal-800/90 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-2xl relative glow-organism-cyan">
+            <div className="lg:col-span-7 flex flex-col h-full min-h-0 bg-abyssal-950/90 border border-abyssal-800/90 rounded-2xl overflow-hidden shadow-2xl backdrop-blur-2xl relative glow-organism-cyan">
               <HudCornerBrackets />
               
-              {/* Stage Top Dedicated Header Bar (Zero-Collision Layout) */}
               {isStageActive && (
                 <div className="flex items-center justify-between px-4 py-2 bg-abyssal-900/95 border-b border-abyssal-800/90 shrink-0 z-20">
                   <div className="flex items-center gap-2 min-w-0">
@@ -330,7 +346,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Segmented Switcher (Docked in Header Bar) */}
                   <div className="flex items-center gap-1 bg-abyssal-950 p-1 rounded-xl border border-abyssal-800 shrink-0 shadow-inner">
                     <button
                       type="button"
@@ -374,12 +389,8 @@ export default function App() {
                 </div>
               )}
 
-              {/* Stage Content: Ambient Idle Placeholder vs Active Visual Stage */}
               {!isStageActive ? (
-                /* AMBIENT IDLE STATE (Before First Query) */
                 <div className="flex-1 flex flex-col items-center justify-center p-6 md:p-8 text-center space-y-6 bg-gradient-to-b from-abyssal-950 via-abyssal-900/70 to-abyssal-950">
-                  
-                  {/* Subtle Branded Pulse Emblem */}
                   <div className="relative ocean-breathing">
                     <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-ocean-cyan/20 via-teal-500/10 to-abyssal-900 border border-ocean-cyan/30 flex items-center justify-center text-ocean-cyan shadow-glow-cyan">
                       <Waves className="w-10 h-10 animate-pulse" />
@@ -390,7 +401,6 @@ export default function App() {
                     </span>
                   </div>
 
-                  {/* Heading & Subtitle */}
                   <div className="space-y-1.5 max-w-md">
                     <h3 className="text-lg sm:text-xl font-black text-white tracking-tight font-heading">
                       Interactive Ocean Discovery Stage
@@ -400,7 +410,6 @@ export default function App() {
                     </p>
                   </div>
 
-                  {/* 3 Capabilities Preview Cards */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-lg text-left">
                     <div className="p-3.5 rounded-xl bg-abyssal-900/80 border border-abyssal-800 space-y-1 hover:border-ocean-cyan/40 hover:shadow-glow-cyan-sm transition-all duration-200">
                       <div className="p-1.5 rounded-lg bg-ocean-cyan/10 text-ocean-cyan w-fit">
@@ -418,7 +427,7 @@ export default function App() {
                       <p className="text-[10px] text-slate-400 leading-tight">Temperature & salinity down to 2,000m depth</p>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-abyssal-900/80 border border-abyssal-800 space-y-1 hover:border-cyan-400/40 hover:shadow-glow-cyan-sm transition-all duration-200">
+                    <div className="p-3.5 rounded-xl bg-abyssal-900/80 border border-cyan-400/40 hover:shadow-glow-cyan-sm transition-all duration-200">
                       <div className="p-1.5 rounded-lg bg-cyan-400/10 text-cyan-300 w-fit">
                         <Box className="w-3.5 h-3.5" />
                       </div>
@@ -427,7 +436,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Direct Browse Action */}
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
                       type="button"
@@ -442,24 +450,27 @@ export default function App() {
                       <ArrowRight className="w-4 h-4 ml-0.5 text-abyssal-950" />
                     </button>
                   </div>
-
                 </div>
               ) : (
-                /* ACTIVE STAGE VIEW (After First Query) */
-                <div className="flex-1 w-full h-full relative overflow-hidden">
+                <div className="flex-1 w-full h-full relative min-h-0 overflow-hidden">
                   {stageView === 'map' && (
                     <OceanMap
                       floats={floats}
                       highlightMarkers={highlightMarkers}
                       onSelectFloat={handleSelectFloat}
+                      onInspectFloat={handleInspectFloat}
                       selectedFloatId={selectedFloatId}
                       trajectory={floatTrajectory}
                     />
                   )}
 
                   {stageView === 'chart' && (
-                    <div className="w-full h-full p-3">
-                      <DepthChart chart={activeChart} />
+                    <div className="w-full h-full p-3 min-h-0 overflow-hidden">
+                      <DepthChart 
+                        chart={activeChart} 
+                        title={activeChart?.title}
+                        selectedFloatId={selectedFloatId} 
+                      />
                     </div>
                   )}
 
@@ -471,18 +482,13 @@ export default function App() {
                   )}
                 </div>
               )}
-
             </div>
-
           </div>
         )}
 
-        {/* VIEW 2: OCEAN EXPLORER (MERGED MAP & 3D WITH INTERNAL TOGGLE) */}
         {(currentMode === 'map' || currentMode === '3d') && (
-          <div className="flex-1 min-h-[580px] h-[calc(100vh-80px)] flex flex-col relative rounded-2xl overflow-hidden shadow-2xl border border-cyan-500/20 glow-organism-cyan bg-abyssal-950">
+          <div className="flex-1 min-h-0 h-full flex flex-col relative rounded-2xl overflow-hidden shadow-2xl border border-cyan-500/20 glow-organism-cyan bg-abyssal-950">
             <HudCornerBrackets />
-            
-            {/* Dedicated Top Explorer Header Bar (Zero-Collision Dock) */}
             <div className="flex items-center justify-between px-4 py-2 bg-abyssal-900/95 border-b border-abyssal-800/90 shrink-0 z-30">
               <div className="flex items-center gap-2.5 min-w-0">
                 <div className="p-1.5 rounded-lg bg-ocean-cyan/15 text-ocean-cyan shrink-0">
@@ -497,43 +503,15 @@ export default function App() {
                   </p>
                 </div>
               </div>
-
-              {/* Segmented Switcher */}
-              <div className="flex items-center gap-1 bg-abyssal-950 p-1 rounded-xl border border-abyssal-800 shrink-0 shadow-inner">
-                <button
-                  type="button"
-                  onClick={() => setExplorerView('map')}
-                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer active:scale-95 ${
-                    explorerView === 'map'
-                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Compass className="w-3.5 h-3.5" />
-                  <span>2D Fleet Map</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setExplorerView('3d')}
-                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer active:scale-95 ${
-                    explorerView === '3d'
-                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  <Box className="w-3.5 h-3.5" />
-                  <span>3D OceanLens WebGL</span>
-                </button>
-              </div>
             </div>
 
-            <div className="flex-1 w-full h-full relative overflow-hidden">
+            <div className="flex-1 w-full h-full relative min-h-0 overflow-hidden">
               {explorerView === 'map' ? (
                 <OceanMap
                   floats={floats}
                   highlightMarkers={highlightMarkers}
                   onSelectFloat={handleSelectFloat}
+                  onInspectFloat={handleInspectFloat}
                   selectedFloatId={selectedFloatId}
                   trajectory={floatTrajectory}
                 />
@@ -547,10 +525,9 @@ export default function App() {
           </div>
         )}
 
-        {/* VIEW 3: PROACTIVE ANOMALY RADAR WATCHDOG */}
         {currentMode === 'anomaly' && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 min-h-[580px] h-[calc(100vh-80px)]">
-            <div className="lg:col-span-6 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1 min-h-0 h-full overflow-hidden">
+            <div className="lg:col-span-6 h-full min-h-0 flex flex-col overflow-hidden">
               <AnomalyRadar
                 anomalies={anomalies}
                 onSelectAnomaly={handleSelectAnomaly}
@@ -571,7 +548,7 @@ export default function App() {
                 isScanning={isScanningAnomalies}
               />
             </div>
-            <div className="lg:col-span-6 h-full rounded-2xl overflow-hidden shadow-2xl">
+            <div className="lg:col-span-6 h-full min-h-0 rounded-2xl overflow-hidden shadow-2xl">
               <OceanMap
                 floats={floats}
                 highlightMarkers={
@@ -586,47 +563,42 @@ export default function App() {
                       }))
                 }
                 onSelectFloat={handleSelectFloat}
+                onInspectFloat={handleInspectFloat}
                 selectedFloatId={selectedFloatId}
               />
             </div>
           </div>
         )}
 
-        {/* VIEW 4: WHATSAPP COASTAL BOT SIMULATOR */}
         {currentMode === 'whatsapp' && (
-          <div className="flex-1 min-h-[580px] h-[calc(100vh-80px)] flex flex-col">
+          <div className="flex-1 min-h-0 h-full flex flex-col overflow-hidden">
             <WhatsAppSimulator selectedLanguage={selectedLanguage} />
           </div>
         )}
 
-        {/* VIEW 5: CLASSROOM / ADOPT A FLOAT */}
         {currentMode === 'classroom' && (
-          <div className="flex-1 min-h-[580px] h-[calc(100vh-80px)] flex flex-col">
+          <div className="flex-1 min-h-0 h-full flex flex-col overflow-hidden">
             <AdoptFloat
               floats={floats}
               onSelectFloatForMap={(fId) => {
-                handleSelectFloat(fId);
-                setCurrentMode('map');
-                setExplorerView('map');
+                handleInspectFloat(fId);
               }}
             />
           </div>
         )}
 
-        {/* VIEW 6: SYSTEM ARCHITECTURE PIPELINE */}
         {currentMode === 'pipeline' && (
-          <div className="flex-1 min-h-[580px] h-[calc(100vh-80px)] flex flex-col">
+          <div className="flex-1 min-h-0 h-full flex flex-col overflow-hidden">
             <ArchitecturePipeline />
           </div>
         )}
-
       </main>
 
-      {/* Clean Footer Bar */}
-      <footer className="border-t border-abyssal-900 bg-abyssal-950/90 px-4 py-2 text-center text-[10px] text-slate-500">
+      <footer className="border-t border-abyssal-900 bg-abyssal-950/90 px-4 py-1.5 text-center text-[10px] text-slate-500 shrink-0">
         <p>Lehar AI 1.0 • Know the Sea. Know the Way. • Developed for INCOIS & Ministry of Earth Sciences (SIH26040)</p>
       </footer>
-
     </div>
   );
 }
+
+export default App;

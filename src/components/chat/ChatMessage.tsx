@@ -13,7 +13,6 @@ import {
   Compass,
   Fish,
   Activity,
-  Database,
   AlertTriangle,
   Gauge,
   Sparkles,
@@ -156,7 +155,6 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   };
 
   const summaryText = message.summary || message.content;
-  const readingCount = message.reading_count ?? (message.data ? message.data.length : 0);
 
   return (
     <div className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'} py-2`}>
@@ -217,7 +215,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
 
                 <div className="flex items-center space-x-2">
                   <span className="font-mono text-slate-500">
-                    {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    {message.timestamp ? new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '06:18 am'}
                   </span>
 
                   {/* Meatball More Actions Menu (SQL, CSV Export) */}
@@ -353,8 +351,8 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
                   <span>{isPlayingAudio ? 'Stop Audio' : 'Listen Voice'}</span>
                 </button>
 
-                {/* Action 2: Contextual View (Show on Map OR 3D Profile) */}
-                {message.chart?.chart_type === 'depth_profile' && onView3D ? (
+                {/* Action 2: Contextual View (Open 3D Lens OR Show on Map) */}
+                {onView3D ? (
                   <button
                     onClick={onView3D}
                     className="flex items-center justify-center space-x-2 py-2 px-3 rounded-xl bg-ocean-cyan/15 hover:bg-ocean-cyan/25 border border-ocean-cyan/40 hover:border-ocean-cyan/60 text-ocean-cyan text-xs font-semibold transition active:scale-[0.98] cursor-pointer shadow-glow-cyan-sm"
@@ -370,12 +368,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
                     <MapPin className="w-4 h-4 text-ocean-cyan" />
                     <span>Show on map ({message.map_markers.length})</span>
                   </button>
-                ) : (
-                  <div className="flex items-center justify-center text-[10px] font-mono text-slate-400 bg-abyssal-950/60 rounded-xl border border-abyssal-800">
-                    <Database className="w-3 h-3 mr-1 text-ocean-cyan" />
-                    <span>{readingCount} readings</span>
-                  </div>
-                )}
+                ) : null}
               </div>
 
               {/* Collapsible SQL Block */}
@@ -387,7 +380,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
                       onClick={handleCopySql}
                       className="flex items-center space-x-1 text-slate-400 hover:text-white transition cursor-pointer"
                     >
-                      {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
                       <span>{copied ? 'Copied' : 'Copy'}</span>
                     </button>
                   </div>

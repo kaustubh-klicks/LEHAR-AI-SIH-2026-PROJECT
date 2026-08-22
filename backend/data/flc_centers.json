@@ -1,0 +1,4690 @@
+[
+  {
+    "id": "FLC_0001",
+    "name": "Jakhau Port",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.23,
+    "lon": 68.61
+  },
+  {
+    "id": "FLC_0002",
+    "name": "Lakhpat Bunder",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.83,
+    "lon": 68.78
+  },
+  {
+    "id": "FLC_0003",
+    "name": "Koteshwar Jetty",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.69,
+    "lon": 68.53
+  },
+  {
+    "id": "FLC_0004",
+    "name": "Mandvi Old Port",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.825,
+    "lon": 69.355
+  },
+  {
+    "id": "FLC_0005",
+    "name": "Mundra Bunder",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.81,
+    "lon": 69.72
+  },
+  {
+    "id": "FLC_0006",
+    "name": "Kandla Creek Wharf",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.002,
+    "lon": 70.218
+  },
+  {
+    "id": "FLC_0007",
+    "name": "Okha Harbour",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.47,
+    "lon": 69.07
+  },
+  {
+    "id": "FLC_0008",
+    "name": "Bet Dwarka Landing",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.45,
+    "lon": 69.11
+  },
+  {
+    "id": "FLC_0009",
+    "name": "Dwarka Gomti Ghat",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.238,
+    "lon": 68.968
+  },
+  {
+    "id": "FLC_0010",
+    "name": "Rupen Harbour",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.25,
+    "lon": 68.97
+  },
+  {
+    "id": "FLC_0011",
+    "name": "Miyani Landing",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.84,
+    "lon": 69.38
+  },
+  {
+    "id": "FLC_0012",
+    "name": "Porbandar Subhash Nagar",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.642,
+    "lon": 69.609
+  },
+  {
+    "id": "FLC_0013",
+    "name": "Navibandar Landing",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.452,
+    "lon": 69.789
+  },
+  {
+    "id": "FLC_0014",
+    "name": "Mangrol Fishing Harbour",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 21.12,
+    "lon": 70.11
+  },
+  {
+    "id": "FLC_0015",
+    "name": "Chorwad Beach",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 20.998,
+    "lon": 70.245
+  },
+  {
+    "id": "FLC_0016",
+    "name": "Veraval Fishing Harbour",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.901,
+    "lon": 70.368
+  },
+  {
+    "id": "FLC_0017",
+    "name": "Hirakot Bunder",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.89,
+    "lon": 70.435
+  },
+  {
+    "id": "FLC_0018",
+    "name": "Sutrapada Bunder",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.842,
+    "lon": 70.485
+  },
+  {
+    "id": "FLC_0019",
+    "name": "Dhamlej Harbour",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.785,
+    "lon": 70.605
+  },
+  {
+    "id": "FLC_0020",
+    "name": "Kodinar (Muldwarka)",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.755,
+    "lon": 70.665
+  },
+  {
+    "id": "FLC_0021",
+    "name": "Madhwad Bunder",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.718,
+    "lon": 70.785
+  },
+  {
+    "id": "FLC_0022",
+    "name": "Navabandar Fishing Port",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.742,
+    "lon": 70.915
+  },
+  {
+    "id": "FLC_0023",
+    "name": "Rajpara Harbour",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.73,
+    "lon": 71.01
+  },
+  {
+    "id": "FLC_0024",
+    "name": "Jafrabad Fishing Harbour",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 20.87,
+    "lon": 71.36
+  },
+  {
+    "id": "FLC_0025",
+    "name": "Shialbet Island Landing",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 20.905,
+    "lon": 71.512
+  },
+  {
+    "id": "FLC_0026",
+    "name": "Mahuwa Bunder",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.085,
+    "lon": 71.775
+  },
+  {
+    "id": "FLC_0027",
+    "name": "Sultanpur Landing",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.17,
+    "lon": 72.03
+  },
+  {
+    "id": "FLC_0028",
+    "name": "Ghogha Jetty",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.68,
+    "lon": 72.28
+  },
+  {
+    "id": "FLC_0029",
+    "name": "Dahej Wharf",
+    "state": "Gujarat",
+    "district": "Bharuch",
+    "lat": 21.7,
+    "lon": 72.58
+  },
+  {
+    "id": "FLC_0030",
+    "name": "Hazira Light House Landing",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 21.11,
+    "lon": 72.64
+  },
+  {
+    "id": "FLC_0031",
+    "name": "Dumas Beach Landing",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 21.08,
+    "lon": 72.71
+  },
+  {
+    "id": "FLC_0032",
+    "name": "Dandi Beach",
+    "state": "Gujarat",
+    "district": "Navsari",
+    "lat": 20.88,
+    "lon": 72.8
+  },
+  {
+    "id": "FLC_0033",
+    "name": "Valsad (Kosamba Landing)",
+    "state": "Gujarat",
+    "district": "Valsad",
+    "lat": 20.61,
+    "lon": 72.91
+  },
+  {
+    "id": "FLC_0034",
+    "name": "Umbergaon Bunder",
+    "state": "Gujarat",
+    "district": "Valsad",
+    "lat": 20.2,
+    "lon": 72.75
+  },
+  {
+    "id": "FLC_0035",
+    "name": "Zai Port",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.102,
+    "lon": 72.751
+  },
+  {
+    "id": "FLC_0036",
+    "name": "Bordi Beach",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.08,
+    "lon": 72.74
+  },
+  {
+    "id": "FLC_0037",
+    "name": "Gholvad Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.04,
+    "lon": 72.735
+  },
+  {
+    "id": "FLC_0038",
+    "name": "Dahanu Bunder",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.97,
+    "lon": 72.73
+  },
+  {
+    "id": "FLC_0039",
+    "name": "Pokhran Beach",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.89,
+    "lon": 72.715
+  },
+  {
+    "id": "FLC_0040",
+    "name": "Varor Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.82,
+    "lon": 72.705
+  },
+  {
+    "id": "FLC_0041",
+    "name": "Satpati Harbour",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.73,
+    "lon": 72.7
+  },
+  {
+    "id": "FLC_0042",
+    "name": "Shirgaon Bunder",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.69,
+    "lon": 72.695
+  },
+  {
+    "id": "FLC_0043",
+    "name": "Mahim (Palghar) Koliwada",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.64,
+    "lon": 72.71
+  },
+  {
+    "id": "FLC_0044",
+    "name": "Kelwa Beach Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.61,
+    "lon": 72.72
+  },
+  {
+    "id": "FLC_0045",
+    "name": "Edwan Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.54,
+    "lon": 72.74
+  },
+  {
+    "id": "FLC_0046",
+    "name": "Kore Beach",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.5,
+    "lon": 72.745
+  },
+  {
+    "id": "FLC_0047",
+    "name": "Arnala Fort Bunder",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.452,
+    "lon": 72.748
+  },
+  {
+    "id": "FLC_0048",
+    "name": "Vasai Killa Bunder",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.332,
+    "lon": 72.802
+  },
+  {
+    "id": "FLC_0049",
+    "name": "Naigaon Creek Jetty",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.35,
+    "lon": 72.835
+  },
+  {
+    "id": "FLC_0050",
+    "name": "Uttan Virgin Beach Landing",
+    "state": "Maharashtra",
+    "district": "Thane",
+    "lat": 19.282,
+    "lon": 72.771
+  },
+  {
+    "id": "FLC_0051",
+    "name": "Gorai Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.241,
+    "lon": 72.778
+  },
+  {
+    "id": "FLC_0052",
+    "name": "Manori Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.208,
+    "lon": 72.784
+  },
+  {
+    "id": "FLC_0053",
+    "name": "Marve Beach Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.195,
+    "lon": 72.798
+  },
+  {
+    "id": "FLC_0054",
+    "name": "Madh Island Jetty",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.178,
+    "lon": 72.795
+  },
+  {
+    "id": "FLC_0055",
+    "name": "Versova Fishing Harbour",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.135,
+    "lon": 72.812
+  },
+  {
+    "id": "FLC_0056",
+    "name": "Juhu Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.098,
+    "lon": 72.826
+  },
+  {
+    "id": "FLC_0057",
+    "name": "Khar Danda",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.073,
+    "lon": 72.827
+  },
+  {
+    "id": "FLC_0058",
+    "name": "Bandra Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.049,
+    "lon": 72.821
+  },
+  {
+    "id": "FLC_0059",
+    "name": "Mahim Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.041,
+    "lon": 72.839
+  },
+  {
+    "id": "FLC_0060",
+    "name": "Worli Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0235,
+    "lon": 72.813
+  },
+  {
+    "id": "FLC_0061",
+    "name": "Cuffe Parade Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.915,
+    "lon": 72.818
+  },
+  {
+    "id": "FLC_0062",
+    "name": "Sassoon Dock",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9142,
+    "lon": 72.8256
+  },
+  {
+    "id": "FLC_0063",
+    "name": "Bhaucha Dhakka (Ferry Wharf)",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.954,
+    "lon": 72.849
+  },
+  {
+    "id": "FLC_0064",
+    "name": "Sewri Koliwada",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.995,
+    "lon": 72.86
+  },
+  {
+    "id": "FLC_0065",
+    "name": "Mahul Jetty",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.01,
+    "lon": 72.89
+  },
+  {
+    "id": "FLC_0066",
+    "name": "Trombay Jetty",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.005,
+    "lon": 72.935
+  },
+  {
+    "id": "FLC_0067",
+    "name": "Mora Jetty (Uran)",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.91,
+    "lon": 72.935
+  },
+  {
+    "id": "FLC_0068",
+    "name": "Karanja Jetty",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.86,
+    "lon": 72.919
+  },
+  {
+    "id": "FLC_0069",
+    "name": "Rewas Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.789,
+    "lon": 72.89
+  },
+  {
+    "id": "FLC_0070",
+    "name": "Mandwa Jetty",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.752,
+    "lon": 72.871
+  },
+  {
+    "id": "FLC_0071",
+    "name": "Awas Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.71,
+    "lon": 72.865
+  },
+  {
+    "id": "FLC_0072",
+    "name": "Varsoli Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.665,
+    "lon": 72.868
+  },
+  {
+    "id": "FLC_0073",
+    "name": "Alibaug Koliwada",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6414,
+    "lon": 72.871
+  },
+  {
+    "id": "FLC_0074",
+    "name": "Akshi Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.61,
+    "lon": 72.885
+  },
+  {
+    "id": "FLC_0075",
+    "name": "Nagaon Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.59,
+    "lon": 72.89
+  },
+  {
+    "id": "FLC_0076",
+    "name": "Chauda Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.56,
+    "lon": 72.905
+  },
+  {
+    "id": "FLC_0077",
+    "name": "Revadanda Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.552,
+    "lon": 72.923
+  },
+  {
+    "id": "FLC_0078",
+    "name": "Korlai Fort Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.534,
+    "lon": 72.91
+  },
+  {
+    "id": "FLC_0079",
+    "name": "Kashid Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.441,
+    "lon": 72.905
+  },
+  {
+    "id": "FLC_0080",
+    "name": "Nandgaon Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.38,
+    "lon": 72.92
+  },
+  {
+    "id": "FLC_0081",
+    "name": "Murud Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.327,
+    "lon": 72.956
+  },
+  {
+    "id": "FLC_0082",
+    "name": "Ekdara Jetty",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.31,
+    "lon": 72.965
+  },
+  {
+    "id": "FLC_0083",
+    "name": "Rajapuri Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.288,
+    "lon": 72.969
+  },
+  {
+    "id": "FLC_0084",
+    "name": "Dighi Port Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.28,
+    "lon": 72.99
+  },
+  {
+    "id": "FLC_0085",
+    "name": "Diveagar Beach Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.17,
+    "lon": 72.99
+  },
+  {
+    "id": "FLC_0086",
+    "name": "Bharadkhol Bunder",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.1,
+    "lon": 72.995
+  },
+  {
+    "id": "FLC_0087",
+    "name": "Shrivardhan Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.045,
+    "lon": 73.01
+  },
+  {
+    "id": "FLC_0088",
+    "name": "Harihareshwar Jetty",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 17.994,
+    "lon": 73.023
+  },
+  {
+    "id": "FLC_0089",
+    "name": "Bankot Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.978,
+    "lon": 73.051
+  },
+  {
+    "id": "FLC_0090",
+    "name": "Kelshi Bunder",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.923,
+    "lon": 73.059
+  },
+  {
+    "id": "FLC_0091",
+    "name": "Anjarle Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.855,
+    "lon": 73.08
+  },
+  {
+    "id": "FLC_0092",
+    "name": "Harnai Harbour",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.808,
+    "lon": 73.091
+  },
+  {
+    "id": "FLC_0093",
+    "name": "Pajpandhari",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.772,
+    "lon": 73.118
+  },
+  {
+    "id": "FLC_0094",
+    "name": "Dabhol Jetty",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.585,
+    "lon": 73.17
+  },
+  {
+    "id": "FLC_0095",
+    "name": "Guhagar Beach Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.485,
+    "lon": 73.189
+  },
+  {
+    "id": "FLC_0096",
+    "name": "Jaigad Fishing Harbour",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.301,
+    "lon": 73.218
+  },
+  {
+    "id": "FLC_0097",
+    "name": "Ganpatipule Beach",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.145,
+    "lon": 73.265
+  },
+  {
+    "id": "FLC_0098",
+    "name": "Mirkarwada Harbour (Ratnagiri)",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.989,
+    "lon": 73.284
+  },
+  {
+    "id": "FLC_0099",
+    "name": "Bhatye Koliwada",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.968,
+    "lon": 73.295
+  },
+  {
+    "id": "FLC_0100",
+    "name": "Purnagad Bunder",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.808,
+    "lon": 73.31
+  },
+  {
+    "id": "FLC_0101",
+    "name": "Jaitapur Creek Jetty",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.602,
+    "lon": 73.352
+  },
+  {
+    "id": "FLC_0102",
+    "name": "Vijaydurga Harbour",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.558,
+    "lon": 73.339
+  },
+  {
+    "id": "FLC_0103",
+    "name": "Devgad Harbour",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.381,
+    "lon": 73.375
+  },
+  {
+    "id": "FLC_0104",
+    "name": "Achara Bunder",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.208,
+    "lon": 73.439
+  },
+  {
+    "id": "FLC_0105",
+    "name": "Malvan Jetty (Dandi Beach)",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.056,
+    "lon": 73.466
+  },
+  {
+    "id": "FLC_0106",
+    "name": "Tarkarli Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.025,
+    "lon": 73.49
+  },
+  {
+    "id": "FLC_0107",
+    "name": "Nivati Bunder",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.932,
+    "lon": 73.53
+  },
+  {
+    "id": "FLC_0108",
+    "name": "Vengurla Port",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.86,
+    "lon": 73.63
+  },
+  {
+    "id": "FLC_0109",
+    "name": "Shiroda Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.78,
+    "lon": 73.68
+  },
+  {
+    "id": "FLC_0110",
+    "name": "Redi Port Bunder",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.752,
+    "lon": 73.665
+  },
+  {
+    "id": "FLC_0111",
+    "name": "Querim Beach Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.718,
+    "lon": 73.69
+  },
+  {
+    "id": "FLC_0112",
+    "name": "Arambol Beach Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.685,
+    "lon": 73.702
+  },
+  {
+    "id": "FLC_0113",
+    "name": "Morjim Jetty",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.62,
+    "lon": 73.73
+  },
+  {
+    "id": "FLC_0114",
+    "name": "Chapora Jetty",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.605,
+    "lon": 73.738
+  },
+  {
+    "id": "FLC_0115",
+    "name": "Calangute Beach Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.54,
+    "lon": 73.755
+  },
+  {
+    "id": "FLC_0116",
+    "name": "Sinquerim Beach",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.495,
+    "lon": 73.77
+  },
+  {
+    "id": "FLC_0117",
+    "name": "Malim Jetty (Panaji)",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.503,
+    "lon": 73.834
+  },
+  {
+    "id": "FLC_0118",
+    "name": "Vasco (Mormugao Harbour)",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.412,
+    "lon": 73.805
+  },
+  {
+    "id": "FLC_0119",
+    "name": "Bogmalo Beach Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.37,
+    "lon": 73.83
+  },
+  {
+    "id": "FLC_0120",
+    "name": "Cansaulim Beach",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.33,
+    "lon": 73.88
+  },
+  {
+    "id": "FLC_0121",
+    "name": "Benaulim Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.26,
+    "lon": 73.915
+  },
+  {
+    "id": "FLC_0122",
+    "name": "Cutbona Fishing Harbour",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.158,
+    "lon": 73.952
+  },
+  {
+    "id": "FLC_0123",
+    "name": "Betul Harbour",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.148,
+    "lon": 73.96
+  },
+  {
+    "id": "FLC_0124",
+    "name": "Agonda Beach Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.045,
+    "lon": 73.985
+  },
+  {
+    "id": "FLC_0125",
+    "name": "Palolem Beach",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.01,
+    "lon": 74.02
+  },
+  {
+    "id": "FLC_0126",
+    "name": "Talpona Jetty",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 14.985,
+    "lon": 74.045
+  },
+  {
+    "id": "FLC_0127",
+    "name": "Poleg Bunder",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 14.91,
+    "lon": 74.08
+  },
+  {
+    "id": "FLC_0128",
+    "name": "Majali Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.9,
+    "lon": 74.095
+  },
+  {
+    "id": "FLC_0129",
+    "name": "Karwar (Baithkol Harbour)",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.805,
+    "lon": 74.12
+  },
+  {
+    "id": "FLC_0130",
+    "name": "Binaga Beach",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.78,
+    "lon": 74.15
+  },
+  {
+    "id": "FLC_0131",
+    "name": "Amadalli Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.745,
+    "lon": 74.18
+  },
+  {
+    "id": "FLC_0132",
+    "name": "Ankola (Belekeri Port)",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.705,
+    "lon": 74.265
+  },
+  {
+    "id": "FLC_0133",
+    "name": "Gokarna Beach Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.545,
+    "lon": 74.315
+  },
+  {
+    "id": "FLC_0134",
+    "name": "Kumta (Tadadi Port)",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.525,
+    "lon": 74.365
+  },
+  {
+    "id": "FLC_0135",
+    "name": "Honnavar (Kasarkod Harbour)",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.28,
+    "lon": 74.44
+  },
+  {
+    "id": "FLC_0136",
+    "name": "Manki Beach",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.19,
+    "lon": 74.48
+  },
+  {
+    "id": "FLC_0137",
+    "name": "Murudeshwar Jetty",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.095,
+    "lon": 74.485
+  },
+  {
+    "id": "FLC_0138",
+    "name": "Bhatkal (Tengingundi Harbour)",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 13.978,
+    "lon": 74.545
+  },
+  {
+    "id": "FLC_0139",
+    "name": "Shiroor Landing",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.92,
+    "lon": 74.58
+  },
+  {
+    "id": "FLC_0140",
+    "name": "Byndoor Beach",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.86,
+    "lon": 74.62
+  },
+  {
+    "id": "FLC_0141",
+    "name": "Maravanthe Beach Landing",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.71,
+    "lon": 74.655
+  },
+  {
+    "id": "FLC_0142",
+    "name": "Kundapura (Gangolli Port)",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.642,
+    "lon": 74.695
+  },
+  {
+    "id": "FLC_0143",
+    "name": "Hangarkatta Jetty",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.435,
+    "lon": 74.708
+  },
+  {
+    "id": "FLC_0144",
+    "name": "Malpe Fishing Harbour",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.352,
+    "lon": 74.701
+  },
+  {
+    "id": "FLC_0145",
+    "name": "Kaup Light House Beach",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.225,
+    "lon": 74.742
+  },
+  {
+    "id": "FLC_0146",
+    "name": "Hejamadi Jetty",
+    "state": "Karnataka",
+    "district": "Udupi",
+    "lat": 13.125,
+    "lon": 74.778
+  },
+  {
+    "id": "FLC_0147",
+    "name": "Sasihithlu Beach",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "lat": 13.045,
+    "lon": 74.795
+  },
+  {
+    "id": "FLC_0148",
+    "name": "Panambur Wharf",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "lat": 12.945,
+    "lon": 74.81
+  },
+  {
+    "id": "FLC_0149",
+    "name": "Mangalore (Old Port Bunder)",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "lat": 12.868,
+    "lon": 74.838
+  },
+  {
+    "id": "FLC_0150",
+    "name": "Kotepura (Ullal)",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "lat": 12.805,
+    "lon": 74.855
+  },
+  {
+    "id": "FLC_0151",
+    "name": "Someshwara Beach Landing",
+    "state": "Karnataka",
+    "district": "Dakshina Kannada",
+    "lat": 12.77,
+    "lon": 74.865
+  },
+  {
+    "id": "FLC_0152",
+    "name": "Manjeshwar Landing",
+    "state": "Kerala",
+    "district": "Kasaragod",
+    "lat": 12.715,
+    "lon": 74.885
+  },
+  {
+    "id": "FLC_0153",
+    "name": "Kasargod (Kasaragod Harbour)",
+    "state": "Kerala",
+    "district": "Kasaragod",
+    "lat": 12.505,
+    "lon": 74.985
+  },
+  {
+    "id": "FLC_0154",
+    "name": "Bekal Beach",
+    "state": "Kerala",
+    "district": "Kasaragod",
+    "lat": 12.395,
+    "lon": 75.03
+  },
+  {
+    "id": "FLC_0155",
+    "name": "Kanhangad Landing",
+    "state": "Kerala",
+    "district": "Kasaragod",
+    "lat": 12.315,
+    "lon": 75.075
+  },
+  {
+    "id": "FLC_0156",
+    "name": "Nileshwaram Jetty",
+    "state": "Kerala",
+    "district": "Kasaragod",
+    "lat": 12.245,
+    "lon": 75.12
+  },
+  {
+    "id": "FLC_0157",
+    "name": "Payyanur (Ezhimala Landing)",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 12.015,
+    "lon": 75.21
+  },
+  {
+    "id": "FLC_0158",
+    "name": "Azhikkal Fishing Harbour",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 11.935,
+    "lon": 75.305
+  },
+  {
+    "id": "FLC_0159",
+    "name": "Kannur (Ayikkara Harbour)",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 11.855,
+    "lon": 75.375
+  },
+  {
+    "id": "FLC_0160",
+    "name": "Dharmadam Island Beach",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 11.77,
+    "lon": 75.45
+  },
+  {
+    "id": "FLC_0161",
+    "name": "Thalassery Wharf",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 11.745,
+    "lon": 75.485
+  },
+  {
+    "id": "FLC_0162",
+    "name": "New Mahe Beach Landing",
+    "state": "Kerala",
+    "district": "Kannur",
+    "lat": 11.7,
+    "lon": 75.52
+  },
+  {
+    "id": "FLC_0163",
+    "name": "Chombala Fishing Harbour",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.665,
+    "lon": 75.545
+  },
+  {
+    "id": "FLC_0164",
+    "name": "Vadakara Beach",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.59,
+    "lon": 75.58
+  },
+  {
+    "id": "FLC_0165",
+    "name": "Koyilandy Fishing Harbour",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.435,
+    "lon": 75.695
+  },
+  {
+    "id": "FLC_0166",
+    "name": "Kappad Beach Landing",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.38,
+    "lon": 75.715
+  },
+  {
+    "id": "FLC_0167",
+    "name": "Puthiyappa Fishing Harbour",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.315,
+    "lon": 75.755
+  },
+  {
+    "id": "FLC_0168",
+    "name": "Kozhikode South Beach",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.24,
+    "lon": 75.77
+  },
+  {
+    "id": "FLC_0169",
+    "name": "Beypore Harbour",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.16,
+    "lon": 75.8
+  },
+  {
+    "id": "FLC_0170",
+    "name": "Chaliyam Jetty",
+    "state": "Kerala",
+    "district": "Kozhikode",
+    "lat": 11.14,
+    "lon": 75.815
+  },
+  {
+    "id": "FLC_0171",
+    "name": "Kadalundi Estuary",
+    "state": "Kerala",
+    "district": "Malappuram",
+    "lat": 11.12,
+    "lon": 75.83
+  },
+  {
+    "id": "FLC_0172",
+    "name": "Parappanangadi Landing",
+    "state": "Kerala",
+    "district": "Malappuram",
+    "lat": 11.045,
+    "lon": 75.855
+  },
+  {
+    "id": "FLC_0173",
+    "name": "Tanur Beach Landing",
+    "state": "Kerala",
+    "district": "Malappuram",
+    "lat": 10.975,
+    "lon": 75.865
+  },
+  {
+    "id": "FLC_0174",
+    "name": "Kootayi Mouth",
+    "state": "Kerala",
+    "district": "Malappuram",
+    "lat": 10.87,
+    "lon": 75.89
+  },
+  {
+    "id": "FLC_0175",
+    "name": "Ponnani Fishing Harbour",
+    "state": "Kerala",
+    "district": "Malappuram",
+    "lat": 10.785,
+    "lon": 75.915
+  },
+  {
+    "id": "FLC_0176",
+    "name": "Andathode Beach",
+    "state": "Kerala",
+    "district": "Thrissur",
+    "lat": 10.68,
+    "lon": 75.97
+  },
+  {
+    "id": "FLC_0177",
+    "name": "Chavakkad Beach Landing",
+    "state": "Kerala",
+    "district": "Thrissur",
+    "lat": 10.605,
+    "lon": 76.01
+  },
+  {
+    "id": "FLC_0178",
+    "name": "Chettuva Harbour",
+    "state": "Kerala",
+    "district": "Thrissur",
+    "lat": 10.535,
+    "lon": 76.045
+  },
+  {
+    "id": "FLC_0179",
+    "name": "Nattika Beach",
+    "state": "Kerala",
+    "district": "Thrissur",
+    "lat": 10.42,
+    "lon": 76.09
+  },
+  {
+    "id": "FLC_0180",
+    "name": "Munambam Fishing Harbour",
+    "state": "Kerala",
+    "district": "Ernakulam",
+    "lat": 10.18,
+    "lon": 76.16
+  },
+  {
+    "id": "FLC_0181",
+    "name": "Cherai Beach Landing",
+    "state": "Kerala",
+    "district": "Ernakulam",
+    "lat": 10.14,
+    "lon": 76.175
+  },
+  {
+    "id": "FLC_0182",
+    "name": "Vypeen Jetty",
+    "state": "Kerala",
+    "district": "Ernakulam",
+    "lat": 9.99,
+    "lon": 76.24
+  },
+  {
+    "id": "FLC_0183",
+    "name": "Kochi (Thoppumpady Harbour)",
+    "state": "Kerala",
+    "district": "Ernakulam",
+    "lat": 9.94,
+    "lon": 76.26
+  },
+  {
+    "id": "FLC_0184",
+    "name": "Chellanam Harbour",
+    "state": "Kerala",
+    "district": "Ernakulam",
+    "lat": 9.785,
+    "lon": 76.275
+  },
+  {
+    "id": "FLC_0185",
+    "name": "Andhakaranazhi Landing",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.74,
+    "lon": 76.285
+  },
+  {
+    "id": "FLC_0186",
+    "name": "Arthunkal Landing",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.685,
+    "lon": 76.295
+  },
+  {
+    "id": "FLC_0187",
+    "name": "Mararikulam Beach",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.59,
+    "lon": 76.31
+  },
+  {
+    "id": "FLC_0188",
+    "name": "Alappuzha Beach Wharf",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.495,
+    "lon": 76.325
+  },
+  {
+    "id": "FLC_0189",
+    "name": "Purakkad Landing",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.365,
+    "lon": 76.36
+  },
+  {
+    "id": "FLC_0190",
+    "name": "Thottappally Harbour",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.315,
+    "lon": 76.385
+  },
+  {
+    "id": "FLC_0191",
+    "name": "Kayamkulam (Azheekal Harbour)",
+    "state": "Kerala",
+    "district": "Alappuzha",
+    "lat": 9.135,
+    "lon": 76.475
+  },
+  {
+    "id": "FLC_0192",
+    "name": "Neendakara Fishing Harbour",
+    "state": "Kerala",
+    "district": "Kollam",
+    "lat": 8.94,
+    "lon": 76.53
+  },
+  {
+    "id": "FLC_0193",
+    "name": "Thangassery Port",
+    "state": "Kerala",
+    "district": "Kollam",
+    "lat": 8.882,
+    "lon": 76.565
+  },
+  {
+    "id": "FLC_0194",
+    "name": "Paravur Beach",
+    "state": "Kerala",
+    "district": "Kollam",
+    "lat": 8.805,
+    "lon": 76.66
+  },
+  {
+    "id": "FLC_0195",
+    "name": "Varkala Landing",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.735,
+    "lon": 76.71
+  },
+  {
+    "id": "FLC_0196",
+    "name": "Anchuthengu (Anjengo)",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.685,
+    "lon": 76.775
+  },
+  {
+    "id": "FLC_0197",
+    "name": "Muthalapozhi Harbour",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.635,
+    "lon": 76.815
+  },
+  {
+    "id": "FLC_0198",
+    "name": "Perumathura Landing",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.61,
+    "lon": 76.83
+  },
+  {
+    "id": "FLC_0199",
+    "name": "Shanghumukham Beach",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.48,
+    "lon": 76.91
+  },
+  {
+    "id": "FLC_0200",
+    "name": "Vizhinjam Fishing Harbour",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.375,
+    "lon": 76.989
+  },
+  {
+    "id": "FLC_0201",
+    "name": "Chowara Beach Landing",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.35,
+    "lon": 77.02
+  },
+  {
+    "id": "FLC_0202",
+    "name": "Poovar Beach Landing",
+    "state": "Kerala",
+    "district": "Thiruvananthapuram",
+    "lat": 8.315,
+    "lon": 77.065
+  },
+  {
+    "id": "FLC_0203",
+    "name": "Neodi Landing",
+    "state": "Tamil Nadu",
+    "district": "Kanyakumari",
+    "lat": 8.28,
+    "lon": 77.105
+  },
+  {
+    "id": "FLC_0204",
+    "name": "Colachel Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Kanyakumari",
+    "lat": 8.175,
+    "lon": 77.255
+  },
+  {
+    "id": "FLC_0205",
+    "name": "Muttom Harbour",
+    "state": "Tamil Nadu",
+    "district": "Kanyakumari",
+    "lat": 8.125,
+    "lon": 77.315
+  },
+  {
+    "id": "FLC_0206",
+    "name": "Manakudy Landing",
+    "state": "Tamil Nadu",
+    "district": "Kanyakumari",
+    "lat": 8.09,
+    "lon": 77.48
+  },
+  {
+    "id": "FLC_0207",
+    "name": "Chinnamuttom Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Kanyakumari",
+    "lat": 8.095,
+    "lon": 77.565
+  },
+  {
+    "id": "FLC_0208",
+    "name": "Idinthakarai Landing",
+    "state": "Tamil Nadu",
+    "district": "Tirunelveli",
+    "lat": 8.18,
+    "lon": 77.74
+  },
+  {
+    "id": "FLC_0209",
+    "name": "Perumanal Beach",
+    "state": "Tamil Nadu",
+    "district": "Tirunelveli",
+    "lat": 8.34,
+    "lon": 77.94
+  },
+  {
+    "id": "FLC_0210",
+    "name": "Uvari Beach Landing",
+    "state": "Tamil Nadu",
+    "district": "Tirunelveli",
+    "lat": 8.28,
+    "lon": 77.89
+  },
+  {
+    "id": "FLC_0211",
+    "name": "Kulasekharapatnam",
+    "state": "Tamil Nadu",
+    "district": "Thoothukudi",
+    "lat": 8.4,
+    "lon": 78.05
+  },
+  {
+    "id": "FLC_0212",
+    "name": "Kayalpattinam Jetty",
+    "state": "Tamil Nadu",
+    "district": "Thoothukudi",
+    "lat": 8.565,
+    "lon": 78.13
+  },
+  {
+    "id": "FLC_0213",
+    "name": "Tuticorin Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Thoothukudi",
+    "lat": 8.79,
+    "lon": 78.16
+  },
+  {
+    "id": "FLC_0214",
+    "name": "Vembar Beach Landing",
+    "state": "Tamil Nadu",
+    "district": "Thoothukudi",
+    "lat": 9.07,
+    "lon": 78.36
+  },
+  {
+    "id": "FLC_0215",
+    "name": "Mukkur Jetty",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.17,
+    "lon": 78.52
+  },
+  {
+    "id": "FLC_0216",
+    "name": "Valinokkam Harbour",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.155,
+    "lon": 78.65
+  },
+  {
+    "id": "FLC_0217",
+    "name": "Kilakarai Jetty",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.23,
+    "lon": 78.78
+  },
+  {
+    "id": "FLC_0218",
+    "name": "Mandapam Harbour",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.278,
+    "lon": 79.125
+  },
+  {
+    "id": "FLC_0219",
+    "name": "Pamban Jetty",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.28,
+    "lon": 79.21
+  },
+  {
+    "id": "FLC_0220",
+    "name": "Rameswaram Fishing Jetty",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.28,
+    "lon": 79.31
+  },
+  {
+    "id": "FLC_0221",
+    "name": "Dhanushkodi Landing",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.175,
+    "lon": 79.415
+  },
+  {
+    "id": "FLC_0222",
+    "name": "Devipattinam Landing",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.48,
+    "lon": 78.9
+  },
+  {
+    "id": "FLC_0223",
+    "name": "Tondi Jetty",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram",
+    "lat": 9.74,
+    "lon": 79.02
+  },
+  {
+    "id": "FLC_0224",
+    "name": "Kottaipattinam Harbour",
+    "state": "Tamil Nadu",
+    "district": "Pudukkottai",
+    "lat": 9.97,
+    "lon": 79.2
+  },
+  {
+    "id": "FLC_0225",
+    "name": "Jagadapattinam Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Pudukkottai",
+    "lat": 10.01,
+    "lon": 79.23
+  },
+  {
+    "id": "FLC_0226",
+    "name": "Manora Beach Landing",
+    "state": "Tamil Nadu",
+    "district": "Thanjavur",
+    "lat": 10.26,
+    "lon": 79.31
+  },
+  {
+    "id": "FLC_0227",
+    "name": "Mallipattinam Harbour",
+    "state": "Tamil Nadu",
+    "district": "Thanjavur",
+    "lat": 10.275,
+    "lon": 79.315
+  },
+  {
+    "id": "FLC_0228",
+    "name": "Sethubhavachatram",
+    "state": "Tamil Nadu",
+    "district": "Thanjavur",
+    "lat": 10.245,
+    "lon": 79.275
+  },
+  {
+    "id": "FLC_0229",
+    "name": "Muthupet Creek Landing",
+    "state": "Tamil Nadu",
+    "district": "Tiruvarur",
+    "lat": 10.4,
+    "lon": 79.51
+  },
+  {
+    "id": "FLC_0230",
+    "name": "Kodiakkarai (Point Calimere)",
+    "state": "Tamil Nadu",
+    "district": "Nagapattinam",
+    "lat": 10.29,
+    "lon": 79.86
+  },
+  {
+    "id": "FLC_0231",
+    "name": "Vedaranyam Landing",
+    "state": "Tamil Nadu",
+    "district": "Nagapattinam",
+    "lat": 10.37,
+    "lon": 79.85
+  },
+  {
+    "id": "FLC_0232",
+    "name": "Velankanni Beach Landing",
+    "state": "Tamil Nadu",
+    "district": "Nagapattinam",
+    "lat": 10.68,
+    "lon": 79.85
+  },
+  {
+    "id": "FLC_0233",
+    "name": "Nagapattinam Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Nagapattinam",
+    "lat": 10.76,
+    "lon": 79.84
+  },
+  {
+    "id": "FLC_0234",
+    "name": "Nagore Beach",
+    "state": "Tamil Nadu",
+    "district": "Nagapattinam",
+    "lat": 10.82,
+    "lon": 79.845
+  },
+  {
+    "id": "FLC_0235",
+    "name": "Karaikal Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Puducherry",
+    "lat": 10.91,
+    "lon": 79.84
+  },
+  {
+    "id": "FLC_0236",
+    "name": "Tranquebar (Tharangambadi)",
+    "state": "Tamil Nadu",
+    "district": "Mayiladuthurai",
+    "lat": 11.03,
+    "lon": 79.85
+  },
+  {
+    "id": "FLC_0237",
+    "name": "Poompuhar Harbour",
+    "state": "Tamil Nadu",
+    "district": "Mayiladuthurai",
+    "lat": 11.145,
+    "lon": 79.855
+  },
+  {
+    "id": "FLC_0238",
+    "name": "Pazhaiyar Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Mayiladuthurai",
+    "lat": 11.365,
+    "lon": 79.825
+  },
+  {
+    "id": "FLC_0239",
+    "name": "Mudasalodai (Parangipettai)",
+    "state": "Tamil Nadu",
+    "district": "Cuddalore",
+    "lat": 11.49,
+    "lon": 79.77
+  },
+  {
+    "id": "FLC_0240",
+    "name": "Cuddalore Old Town Harbour",
+    "state": "Tamil Nadu",
+    "district": "Cuddalore",
+    "lat": 11.74,
+    "lon": 79.77
+  },
+  {
+    "id": "FLC_0241",
+    "name": "Puducherry Fishing Harbour",
+    "state": "Tamil Nadu",
+    "district": "Puducherry",
+    "lat": 11.915,
+    "lon": 79.825
+  },
+  {
+    "id": "FLC_0242",
+    "name": "Kalapet Landing",
+    "state": "Tamil Nadu",
+    "district": "Puducherry",
+    "lat": 12.03,
+    "lon": 79.865
+  },
+  {
+    "id": "FLC_0243",
+    "name": "Marakkanam Bunder",
+    "state": "Tamil Nadu",
+    "district": "Villupuram",
+    "lat": 12.2,
+    "lon": 80.0
+  },
+  {
+    "id": "FLC_0244",
+    "name": "Alamparai Fort Landing",
+    "state": "Tamil Nadu",
+    "district": "Chengalpattu",
+    "lat": 12.26,
+    "lon": 80.05
+  },
+  {
+    "id": "FLC_0245",
+    "name": "Kalpakkam Fishermen Colony",
+    "state": "Tamil Nadu",
+    "district": "Chengalpattu",
+    "lat": 12.515,
+    "lon": 80.175
+  },
+  {
+    "id": "FLC_0246",
+    "name": "Mahabalipuram Beach",
+    "state": "Tamil Nadu",
+    "district": "Chengalpattu",
+    "lat": 12.615,
+    "lon": 80.2
+  },
+  {
+    "id": "FLC_0247",
+    "name": "Covelong (Kovalam) Jetty",
+    "state": "Tamil Nadu",
+    "district": "Chengalpattu",
+    "lat": 12.795,
+    "lon": 80.255
+  },
+  {
+    "id": "FLC_0248",
+    "name": "Thiruvanmiyur Landing",
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "lat": 12.985,
+    "lon": 80.265
+  },
+  {
+    "id": "FLC_0249",
+    "name": "Marina Light House Landing",
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "lat": 13.04,
+    "lon": 80.28
+  },
+  {
+    "id": "FLC_0250",
+    "name": "Chennai (Kasimedu Harbour)",
+    "state": "Tamil Nadu",
+    "district": "Chennai",
+    "lat": 13.125,
+    "lon": 80.297
+  },
+  {
+    "id": "FLC_0251",
+    "name": "Ennore Express Jetty",
+    "state": "Tamil Nadu",
+    "district": "Tiruvallur",
+    "lat": 13.23,
+    "lon": 80.32
+  },
+  {
+    "id": "FLC_0252",
+    "name": "Pulicat Lake Mouth Landing",
+    "state": "Tamil Nadu",
+    "district": "Tiruvallur",
+    "lat": 13.415,
+    "lon": 80.325
+  },
+  {
+    "id": "FLC_0253",
+    "name": "Durgarajupatnam Landing",
+    "state": "Andhra Pradesh",
+    "district": "Tirupati",
+    "lat": 13.98,
+    "lon": 80.15
+  },
+  {
+    "id": "FLC_0254",
+    "name": "Krishnapatnam Fishing Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Nellore",
+    "lat": 14.255,
+    "lon": 80.125
+  },
+  {
+    "id": "FLC_0255",
+    "name": "Mypadu Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Nellore",
+    "lat": 14.51,
+    "lon": 80.18
+  },
+  {
+    "id": "FLC_0256",
+    "name": "Kavali Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Nellore",
+    "lat": 14.915,
+    "lon": 80.055
+  },
+  {
+    "id": "FLC_0257",
+    "name": "Ramayapatnam Port",
+    "state": "Andhra Pradesh",
+    "district": "Prakasam",
+    "lat": 15.045,
+    "lon": 80.05
+  },
+  {
+    "id": "FLC_0258",
+    "name": "Kothapatnam Beach",
+    "state": "Andhra Pradesh",
+    "district": "Prakasam",
+    "lat": 15.44,
+    "lon": 80.17
+  },
+  {
+    "id": "FLC_0259",
+    "name": "Vodarevu Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Bapatla",
+    "lat": 15.785,
+    "lon": 80.365
+  },
+  {
+    "id": "FLC_0260",
+    "name": "Nizampatnam Fishing Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Bapatla",
+    "lat": 15.9,
+    "lon": 80.67
+  },
+  {
+    "id": "FLC_0261",
+    "name": "Hamsaladeevi Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Krishna",
+    "lat": 15.78,
+    "lon": 80.95
+  },
+  {
+    "id": "FLC_0262",
+    "name": "Manginapudi Beach",
+    "state": "Andhra Pradesh",
+    "district": "Krishna",
+    "lat": 16.24,
+    "lon": 81.18
+  },
+  {
+    "id": "FLC_0263",
+    "name": "Machilipatnam (Gilakaladindi)",
+    "state": "Andhra Pradesh",
+    "district": "Krishna",
+    "lat": 16.18,
+    "lon": 81.16
+  },
+  {
+    "id": "FLC_0264",
+    "name": "Antarvedi Mouth Landing",
+    "state": "Andhra Pradesh",
+    "district": "Dr. B.R. Ambedkar Konaseema",
+    "lat": 16.325,
+    "lon": 81.725
+  },
+  {
+    "id": "FLC_0265",
+    "name": "Odulalanka Bunder",
+    "state": "Andhra Pradesh",
+    "district": "Dr. B.R. Ambedkar Konaseema",
+    "lat": 16.48,
+    "lon": 81.94
+  },
+  {
+    "id": "FLC_0266",
+    "name": "Bhairavapalem Landing",
+    "state": "Andhra Pradesh",
+    "district": "Dr. B.R. Ambedkar Konaseema",
+    "lat": 16.74,
+    "lon": 82.32
+  },
+  {
+    "id": "FLC_0267",
+    "name": "Kakinada Fishing Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Kakinada",
+    "lat": 16.98,
+    "lon": 82.26
+  },
+  {
+    "id": "FLC_0268",
+    "name": "Uppada Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Kakinada",
+    "lat": 17.08,
+    "lon": 82.34
+  },
+  {
+    "id": "FLC_0269",
+    "name": "Pudimadaka Jetty",
+    "state": "Andhra Pradesh",
+    "district": "Anakapalli",
+    "lat": 17.5,
+    "lon": 83.0
+  },
+  {
+    "id": "FLC_0270",
+    "name": "Gangavaram Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Visakhapatnam",
+    "lat": 17.62,
+    "lon": 83.24
+  },
+  {
+    "id": "FLC_0271",
+    "name": "Visakhapatnam Fishing Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Visakhapatnam",
+    "lat": 17.695,
+    "lon": 83.298
+  },
+  {
+    "id": "FLC_0272",
+    "name": "Bheemunipatnam (Bheemili)",
+    "state": "Andhra Pradesh",
+    "district": "Visakhapatnam",
+    "lat": 17.895,
+    "lon": 83.455
+  },
+  {
+    "id": "FLC_0273",
+    "name": "Chintapalle Landing",
+    "state": "Andhra Pradesh",
+    "district": "Vizianagaram",
+    "lat": 18.11,
+    "lon": 83.65
+  },
+  {
+    "id": "FLC_0274",
+    "name": "Kalingapatnam Port",
+    "state": "Andhra Pradesh",
+    "district": "Srikakulam",
+    "lat": 18.335,
+    "lon": 84.125
+  },
+  {
+    "id": "FLC_0275",
+    "name": "Bhavanapadu Fishing Harbour",
+    "state": "Andhra Pradesh",
+    "district": "Srikakulam",
+    "lat": 18.575,
+    "lon": 84.345
+  },
+  {
+    "id": "FLC_0276",
+    "name": "Baruva Beach Landing",
+    "state": "Andhra Pradesh",
+    "district": "Srikakulam",
+    "lat": 18.88,
+    "lon": 84.59
+  },
+  {
+    "id": "FLC_0277",
+    "name": "Gopalpur Port Jetty",
+    "state": "Odisha",
+    "district": "Ganjam",
+    "lat": 19.3,
+    "lon": 84.96
+  },
+  {
+    "id": "FLC_0278",
+    "name": "Aryapalli Beach Landing",
+    "state": "Odisha",
+    "district": "Ganjam",
+    "lat": 19.32,
+    "lon": 85.0
+  },
+  {
+    "id": "FLC_0279",
+    "name": "Rushikulya River Mouth",
+    "state": "Odisha",
+    "district": "Ganjam",
+    "lat": 19.37,
+    "lon": 85.08
+  },
+  {
+    "id": "FLC_0280",
+    "name": "Chilika (Arakhakuda Jetty)",
+    "state": "Odisha",
+    "district": "Puri",
+    "lat": 19.715,
+    "lon": 85.745
+  },
+  {
+    "id": "FLC_0281",
+    "name": "Puri Pentakota Landing",
+    "state": "Odisha",
+    "district": "Puri",
+    "lat": 19.805,
+    "lon": 85.845
+  },
+  {
+    "id": "FLC_0282",
+    "name": "Chandrabhaga (Konark)",
+    "state": "Odisha",
+    "district": "Puri",
+    "lat": 19.87,
+    "lon": 86.11
+  },
+  {
+    "id": "FLC_0283",
+    "name": "Astranga Fishing Harbour",
+    "state": "Odisha",
+    "district": "Puri",
+    "lat": 19.985,
+    "lon": 86.275
+  },
+  {
+    "id": "FLC_0284",
+    "name": "Paradip Fishing Harbour",
+    "state": "Odisha",
+    "district": "Jagatsinghpur",
+    "lat": 20.315,
+    "lon": 86.675
+  },
+  {
+    "id": "FLC_0285",
+    "name": "Mahanadi Mouth Jetty",
+    "state": "Odisha",
+    "district": "Jagatsinghpur",
+    "lat": 20.29,
+    "lon": 86.71
+  },
+  {
+    "id": "FLC_0286",
+    "name": "Jamboo Landing",
+    "state": "Odisha",
+    "district": "Kendrapara",
+    "lat": 20.44,
+    "lon": 86.78
+  },
+  {
+    "id": "FLC_0287",
+    "name": "Kharinasi Bunder",
+    "state": "Odisha",
+    "district": "Kendrapara",
+    "lat": 20.52,
+    "lon": 86.82
+  },
+  {
+    "id": "FLC_0288",
+    "name": "Talasua Jetty",
+    "state": "Odisha",
+    "district": "Bhadrak",
+    "lat": 20.72,
+    "lon": 86.91
+  },
+  {
+    "id": "FLC_0289",
+    "name": "Dhamra Fishing Harbour",
+    "state": "Odisha",
+    "district": "Bhadrak",
+    "lat": 20.8,
+    "lon": 86.95
+  },
+  {
+    "id": "FLC_0290",
+    "name": "Chudamani Port",
+    "state": "Odisha",
+    "district": "Bhadrak",
+    "lat": 21.05,
+    "lon": 86.95
+  },
+  {
+    "id": "FLC_0291",
+    "name": "Kasafal Landing",
+    "state": "Odisha",
+    "district": "Balasore",
+    "lat": 21.37,
+    "lon": 87.01
+  },
+  {
+    "id": "FLC_0292",
+    "name": "Balaramgadi (Chandipur)",
+    "state": "Odisha",
+    "district": "Balasore",
+    "lat": 21.465,
+    "lon": 87.045
+  },
+  {
+    "id": "FLC_0293",
+    "name": "Bahabalpur Landing",
+    "state": "Odisha",
+    "district": "Balasore",
+    "lat": 21.525,
+    "lon": 87.125
+  },
+  {
+    "id": "FLC_0294",
+    "name": "Talsari Beach Landing",
+    "state": "Odisha",
+    "district": "Balasore",
+    "lat": 21.59,
+    "lon": 87.45
+  },
+  {
+    "id": "FLC_0295",
+    "name": "Digha (Sankarpur Harbour)",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 21.63,
+    "lon": 87.56
+  },
+  {
+    "id": "FLC_0296",
+    "name": "Chandpur Beach Landing",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 21.67,
+    "lon": 87.69
+  },
+  {
+    "id": "FLC_0297",
+    "name": "Junput Landing",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 21.725,
+    "lon": 87.815
+  },
+  {
+    "id": "FLC_0298",
+    "name": "Petuaghat (Deshapran Harbour)",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 21.785,
+    "lon": 87.915
+  },
+  {
+    "id": "FLC_0299",
+    "name": "Khejuri Wharf",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 21.86,
+    "lon": 87.96
+  },
+  {
+    "id": "FLC_0300",
+    "name": "Haldia Port Town Jetty",
+    "state": "West Bengal",
+    "district": "Purba Medinipur",
+    "lat": 22.02,
+    "lon": 88.07
+  },
+  {
+    "id": "FLC_0301",
+    "name": "Sagar Island (Gangasagar Landing)",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.64,
+    "lon": 88.08
+  },
+  {
+    "id": "FLC_0302",
+    "name": "Namkhana Jetty",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.76,
+    "lon": 88.23
+  },
+  {
+    "id": "FLC_0303",
+    "name": "Fraserganj Fishing Harbour",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.58,
+    "lon": 88.25
+  },
+  {
+    "id": "FLC_0304",
+    "name": "Bakkhali Landing",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.56,
+    "lon": 88.26
+  },
+  {
+    "id": "FLC_0305",
+    "name": "Kakdwip Jetty",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.87,
+    "lon": 88.18
+  },
+  {
+    "id": "FLC_0306",
+    "name": "Diamond Harbour Jetty",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 22.195,
+    "lon": 88.205
+  },
+  {
+    "id": "FLC_0307",
+    "name": "Raidighi Bunder",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 21.98,
+    "lon": 88.42
+  },
+  {
+    "id": "FLC_0308",
+    "name": "Canning Port Jetty",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "lat": 22.31,
+    "lon": 88.66
+  },
+  {
+    "id": "FLC_0309",
+    "name": "Dhamakhali Jetty",
+    "state": "West Bengal",
+    "district": "North 24 Parganas",
+    "lat": 22.36,
+    "lon": 88.85
+  },
+  {
+    "id": "FLC_0310",
+    "name": "Hasnabad Creek Landing",
+    "state": "West Bengal",
+    "district": "North 24 Parganas",
+    "lat": 22.58,
+    "lon": 88.92
+  },
+  {
+    "id": "FLC_0311",
+    "name": "Junglighat Fishing Harbour (Port Blair)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 11.66,
+    "lon": 92.725
+  },
+  {
+    "id": "FLC_0312",
+    "name": "Phoenix Bay Jetty",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 11.675,
+    "lon": 92.735
+  },
+  {
+    "id": "FLC_0313",
+    "name": "Dignabad Landing",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 11.685,
+    "lon": 92.745
+  },
+  {
+    "id": "FLC_0314",
+    "name": "Havelock (Swaraj Dweep Jetty)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 11.98,
+    "lon": 92.98
+  },
+  {
+    "id": "FLC_0315",
+    "name": "Neil Island (Shaheed Dweep)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 11.84,
+    "lon": 93.04
+  },
+  {
+    "id": "FLC_0316",
+    "name": "Rangat Bay Wharf",
+    "state": "Andaman & Nicobar Islands",
+    "district": "North and Middle Andaman",
+    "lat": 12.49,
+    "lon": 92.94
+  },
+  {
+    "id": "FLC_0317",
+    "name": "Mayabunder Harbour",
+    "state": "Andaman & Nicobar Islands",
+    "district": "North and Middle Andaman",
+    "lat": 12.92,
+    "lon": 92.89
+  },
+  {
+    "id": "FLC_0318",
+    "name": "Diglipur (Aerial Bay Jetty)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "North and Middle Andaman",
+    "lat": 13.27,
+    "lon": 93.04
+  },
+  {
+    "id": "FLC_0319",
+    "name": "Hut Bay Harbour (Little Andaman)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "South Andaman",
+    "lat": 10.59,
+    "lon": 92.54
+  },
+  {
+    "id": "FLC_0320",
+    "name": "Car Nicobar (Malacca Jetty)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "Nicobar",
+    "lat": 9.17,
+    "lon": 92.81
+  },
+  {
+    "id": "FLC_0321",
+    "name": "Campbell Bay Wharf (Great Nicobar)",
+    "state": "Andaman & Nicobar Islands",
+    "district": "Nicobar",
+    "lat": 7.01,
+    "lon": 93.93
+  },
+  {
+    "id": "FLC_0322",
+    "name": "Kavaratti Jetty",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 10.56,
+    "lon": 72.64
+  },
+  {
+    "id": "FLC_0323",
+    "name": "Agatti Island Bunder",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 10.85,
+    "lon": 72.18
+  },
+  {
+    "id": "FLC_0324",
+    "name": "Amini Island Landing",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 11.12,
+    "lon": 72.73
+  },
+  {
+    "id": "FLC_0325",
+    "name": "Kadmat Island Harbour",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 11.23,
+    "lon": 72.78
+  },
+  {
+    "id": "FLC_0326",
+    "name": "Andrott Island Jetty",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 10.82,
+    "lon": 73.68
+  },
+  {
+    "id": "FLC_0327",
+    "name": "Kalpeni Island Landing",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 10.07,
+    "lon": 73.65
+  },
+  {
+    "id": "FLC_0328",
+    "name": "Minicoy Island Fishing Harbour",
+    "state": "Lakshadweep Islands",
+    "district": "Lakshadweep",
+    "lat": 8.28,
+    "lon": 73.05
+  },
+  {
+    "id": "FLC_0329",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.428,
+    "lon": 68.6661
+  },
+  {
+    "id": "FLC_0330",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.626,
+    "lon": 68.7222
+  },
+  {
+    "id": "FLC_0331",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.7838,
+    "lon": 68.6975
+  },
+  {
+    "id": "FLC_0332",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.7376,
+    "lon": 68.615
+  },
+  {
+    "id": "FLC_0333",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.4046,
+    "lon": 68.8023
+  },
+  {
+    "id": "FLC_0334",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 23.1191,
+    "lon": 69.0745
+  },
+  {
+    "id": "FLC_0335",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.82,
+    "lon": 69.4755
+  },
+  {
+    "id": "FLC_0336",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.8151,
+    "lon": 69.5959
+  },
+  {
+    "id": "FLC_0337",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.8734,
+    "lon": 69.8843
+  },
+  {
+    "id": "FLC_0338",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.9367,
+    "lon": 70.0487
+  },
+  {
+    "id": "FLC_0339",
+    "name": "Kutch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.8264,
+    "lon": 69.8392
+  },
+  {
+    "id": "FLC_0340",
+    "name": "Kutch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "lat": 22.6509,
+    "lon": 69.4603
+  },
+  {
+    "id": "FLC_0341",
+    "name": "Devbhoomi Dwarka Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.4634,
+    "lon": 69.0832
+  },
+  {
+    "id": "FLC_0342",
+    "name": "Devbhoomi Dwarka Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.4568,
+    "lon": 69.0964
+  },
+  {
+    "id": "FLC_0343",
+    "name": "Devbhoomi Dwarka Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.38,
+    "lon": 69.0631
+  },
+  {
+    "id": "FLC_0344",
+    "name": "Devbhoomi Dwarka Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.3101,
+    "lon": 69.0163
+  },
+  {
+    "id": "FLC_0345",
+    "name": "Devbhoomi Dwarka Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.242,
+    "lon": 68.9687
+  },
+  {
+    "id": "FLC_0346",
+    "name": "Devbhoomi Dwarka Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.2459,
+    "lon": 68.9693
+  },
+  {
+    "id": "FLC_0347",
+    "name": "Devbhoomi Dwarka Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 22.1147,
+    "lon": 69.1053
+  },
+  {
+    "id": "FLC_0348",
+    "name": "Devbhoomi Dwarka Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Devbhoomi Dwarka",
+    "lat": 21.9794,
+    "lon": 69.2406
+  },
+  {
+    "id": "FLC_0349",
+    "name": "Porbandar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.7747,
+    "lon": 69.4556
+  },
+  {
+    "id": "FLC_0350",
+    "name": "Porbandar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.7093,
+    "lon": 69.5311
+  },
+  {
+    "id": "FLC_0351",
+    "name": "Porbandar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.5793,
+    "lon": 69.6684
+  },
+  {
+    "id": "FLC_0352",
+    "name": "Porbandar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.5166,
+    "lon": 69.7278
+  },
+  {
+    "id": "FLC_0353",
+    "name": "Porbandar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.3424,
+    "lon": 69.8949
+  },
+  {
+    "id": "FLC_0354",
+    "name": "Porbandar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Porbandar",
+    "lat": 21.2329,
+    "lon": 70.0009
+  },
+  {
+    "id": "FLC_0355",
+    "name": "Junagadh Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 21.0797,
+    "lon": 70.1546
+  },
+  {
+    "id": "FLC_0356",
+    "name": "Junagadh Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 21.0395,
+    "lon": 70.1991
+  },
+  {
+    "id": "FLC_0357",
+    "name": "Junagadh Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 20.966,
+    "lon": 70.2856
+  },
+  {
+    "id": "FLC_0358",
+    "name": "Junagadh Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Junagadh",
+    "lat": 20.934,
+    "lon": 70.3262
+  },
+  {
+    "id": "FLC_0359",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8974,
+    "lon": 70.3901
+  },
+  {
+    "id": "FLC_0360",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8937,
+    "lon": 70.4122
+  },
+  {
+    "id": "FLC_0361",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8742,
+    "lon": 70.4515
+  },
+  {
+    "id": "FLC_0362",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8583,
+    "lon": 70.468
+  },
+  {
+    "id": "FLC_0363",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8232,
+    "lon": 70.5246
+  },
+  {
+    "id": "FLC_0364",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8044,
+    "lon": 70.5642
+  },
+  {
+    "id": "FLC_0365",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7751,
+    "lon": 70.6248
+  },
+  {
+    "id": "FLC_0366",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7652,
+    "lon": 70.6446
+  },
+  {
+    "id": "FLC_0367",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7428,
+    "lon": 70.7046
+  },
+  {
+    "id": "FLC_0368",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7306,
+    "lon": 70.7442
+  },
+  {
+    "id": "FLC_0369",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7259,
+    "lon": 70.8279
+  },
+  {
+    "id": "FLC_0370",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7338,
+    "lon": 70.8708
+  },
+  {
+    "id": "FLC_0371",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.738,
+    "lon": 70.9464
+  },
+  {
+    "id": "FLC_0372",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7341,
+    "lon": 70.9777
+  },
+  {
+    "id": "FLC_0373",
+    "name": "Gir Somnath Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.7762,
+    "lon": 71.1255
+  },
+  {
+    "id": "FLC_0374",
+    "name": "Gir Somnath Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Gir Somnath",
+    "lat": 20.8224,
+    "lon": 71.241
+  },
+  {
+    "id": "FLC_0375",
+    "name": "Amreli Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 20.8816,
+    "lon": 71.4102
+  },
+  {
+    "id": "FLC_0376",
+    "name": "Amreli Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 20.8931,
+    "lon": 71.4603
+  },
+  {
+    "id": "FLC_0377",
+    "name": "Amreli Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 20.9644,
+    "lon": 71.5988
+  },
+  {
+    "id": "FLC_0378",
+    "name": "Amreli Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Amreli",
+    "lat": 21.0238,
+    "lon": 71.6856
+  },
+  {
+    "id": "FLC_0379",
+    "name": "Bhavnagar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.1131,
+    "lon": 71.8591
+  },
+  {
+    "id": "FLC_0380",
+    "name": "Bhavnagar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.1411,
+    "lon": 71.9433
+  },
+  {
+    "id": "FLC_0381",
+    "name": "Bhavnagar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.3383,
+    "lon": 72.1125
+  },
+  {
+    "id": "FLC_0382",
+    "name": "Bhavnagar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.5066,
+    "lon": 72.195
+  },
+  {
+    "id": "FLC_0383",
+    "name": "Bhavnagar Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.6866,
+    "lon": 72.379
+  },
+  {
+    "id": "FLC_0384",
+    "name": "Bhavnagar Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Bhavnagar",
+    "lat": 21.6932,
+    "lon": 72.478
+  },
+  {
+    "id": "FLC_0385",
+    "name": "Bharuch Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Bharuch",
+    "lat": 21.5053,
+    "lon": 72.5998
+  },
+  {
+    "id": "FLC_0386",
+    "name": "Bharuch Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Bharuch",
+    "lat": 21.3106,
+    "lon": 72.6196
+  },
+  {
+    "id": "FLC_0387",
+    "name": "Surat Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 21.1001,
+    "lon": 72.6631
+  },
+  {
+    "id": "FLC_0388",
+    "name": "Surat Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 21.0902,
+    "lon": 72.6862
+  },
+  {
+    "id": "FLC_0389",
+    "name": "Surat Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 21.014,
+    "lon": 72.7397
+  },
+  {
+    "id": "FLC_0390",
+    "name": "Surat Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Surat",
+    "lat": 20.948,
+    "lon": 72.7694
+  },
+  {
+    "id": "FLC_0391",
+    "name": "Navsari Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Navsari",
+    "lat": 20.7909,
+    "lon": 72.8363
+  },
+  {
+    "id": "FLC_0392",
+    "name": "Navsari Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Navsari",
+    "lat": 20.7018,
+    "lon": 72.8726
+  },
+  {
+    "id": "FLC_0393",
+    "name": "Valsad Sub-Creek Landing",
+    "state": "Gujarat",
+    "district": "Valsad",
+    "lat": 20.4747,
+    "lon": 72.8572
+  },
+  {
+    "id": "FLC_0394",
+    "name": "Valsad Fishermen Cove",
+    "state": "Gujarat",
+    "district": "Valsad",
+    "lat": 20.3394,
+    "lon": 72.8044
+  },
+  {
+    "id": "FLC_0395",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.0947,
+    "lon": 72.7474
+  },
+  {
+    "id": "FLC_0396",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.0875,
+    "lon": 72.7437
+  },
+  {
+    "id": "FLC_0397",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.0668,
+    "lon": 72.7383
+  },
+  {
+    "id": "FLC_0398",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.0536,
+    "lon": 72.7367
+  },
+  {
+    "id": "FLC_0399",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 20.0169,
+    "lon": 72.7334
+  },
+  {
+    "id": "FLC_0400",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.9938,
+    "lon": 72.7317
+  },
+  {
+    "id": "FLC_0401",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.9436,
+    "lon": 72.7251
+  },
+  {
+    "id": "FLC_0402",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.9172,
+    "lon": 72.7201
+  },
+  {
+    "id": "FLC_0403",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.8669,
+    "lon": 72.7117
+  },
+  {
+    "id": "FLC_0404",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.8438,
+    "lon": 72.7084
+  },
+  {
+    "id": "FLC_0405",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.7903,
+    "lon": 72.7034
+  },
+  {
+    "id": "FLC_0406",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.7606,
+    "lon": 72.7017
+  },
+  {
+    "id": "FLC_0407",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.7168,
+    "lon": 72.6984
+  },
+  {
+    "id": "FLC_0408",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.7036,
+    "lon": 72.6967
+  },
+  {
+    "id": "FLC_0409",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.6735,
+    "lon": 72.6999
+  },
+  {
+    "id": "FLC_0410",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.657,
+    "lon": 72.7049
+  },
+  {
+    "id": "FLC_0411",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.6301,
+    "lon": 72.7133
+  },
+  {
+    "id": "FLC_0412",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.6202,
+    "lon": 72.7166
+  },
+  {
+    "id": "FLC_0413",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.5869,
+    "lon": 72.7266
+  },
+  {
+    "id": "FLC_0414",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.5638,
+    "lon": 72.7332
+  },
+  {
+    "id": "FLC_0415",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.5268,
+    "lon": 72.7416
+  },
+  {
+    "id": "FLC_0416",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.5136,
+    "lon": 72.7433
+  },
+  {
+    "id": "FLC_0417",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.4842,
+    "lon": 72.746
+  },
+  {
+    "id": "FLC_0418",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.4683,
+    "lon": 72.747
+  },
+  {
+    "id": "FLC_0419",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.4124,
+    "lon": 72.7658
+  },
+  {
+    "id": "FLC_0420",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.3728,
+    "lon": 72.7836
+  },
+  {
+    "id": "FLC_0421",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.3379,
+    "lon": 72.8129
+  },
+  {
+    "id": "FLC_0422",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.3439,
+    "lon": 72.8238
+  },
+  {
+    "id": "FLC_0423",
+    "name": "Palghar Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.3276,
+    "lon": 72.8139
+  },
+  {
+    "id": "FLC_0424",
+    "name": "Palghar Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Palghar",
+    "lat": 19.3051,
+    "lon": 72.7928
+  },
+  {
+    "id": "FLC_0425",
+    "name": "Thane Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Thane",
+    "lat": 19.2685,
+    "lon": 72.7733
+  },
+  {
+    "id": "FLC_0426",
+    "name": "Thane Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Thane",
+    "lat": 19.2549,
+    "lon": 72.7756
+  },
+  {
+    "id": "FLC_0427",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.2301,
+    "lon": 72.78
+  },
+  {
+    "id": "FLC_0428",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.2192,
+    "lon": 72.782
+  },
+  {
+    "id": "FLC_0429",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.2037,
+    "lon": 72.7886
+  },
+  {
+    "id": "FLC_0430",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1994,
+    "lon": 72.7932
+  },
+  {
+    "id": "FLC_0431",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1894,
+    "lon": 72.797
+  },
+  {
+    "id": "FLC_0432",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1838,
+    "lon": 72.796
+  },
+  {
+    "id": "FLC_0433",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1638,
+    "lon": 72.8006
+  },
+  {
+    "id": "FLC_0434",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1496,
+    "lon": 72.8062
+  },
+  {
+    "id": "FLC_0435",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1228,
+    "lon": 72.8166
+  },
+  {
+    "id": "FLC_0436",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.1106,
+    "lon": 72.8212
+  },
+  {
+    "id": "FLC_0437",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0897,
+    "lon": 72.8263
+  },
+  {
+    "id": "FLC_0438",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0815,
+    "lon": 72.8267
+  },
+  {
+    "id": "FLC_0439",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0651,
+    "lon": 72.825
+  },
+  {
+    "id": "FLC_0440",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0572,
+    "lon": 72.823
+  },
+  {
+    "id": "FLC_0441",
+    "name": "Mumbai Suburban Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0464,
+    "lon": 72.8269
+  },
+  {
+    "id": "FLC_0442",
+    "name": "Mumbai Suburban Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai Suburban",
+    "lat": 19.0437,
+    "lon": 72.8329
+  },
+  {
+    "id": "FLC_0443",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0352,
+    "lon": 72.8304
+  },
+  {
+    "id": "FLC_0444",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0295,
+    "lon": 72.8218
+  },
+  {
+    "id": "FLC_0445",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9877,
+    "lon": 72.8147
+  },
+  {
+    "id": "FLC_0446",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9519,
+    "lon": 72.8163
+  },
+  {
+    "id": "FLC_0447",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9147,
+    "lon": 72.8205
+  },
+  {
+    "id": "FLC_0448",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9145,
+    "lon": 72.823
+  },
+  {
+    "id": "FLC_0449",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9273,
+    "lon": 72.8333
+  },
+  {
+    "id": "FLC_0450",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9405,
+    "lon": 72.841
+  },
+  {
+    "id": "FLC_0451",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9675,
+    "lon": 72.8526
+  },
+  {
+    "id": "FLC_0452",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9811,
+    "lon": 72.8563
+  },
+  {
+    "id": "FLC_0453",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0,
+    "lon": 72.8699
+  },
+  {
+    "id": "FLC_0454",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0049,
+    "lon": 72.8798
+  },
+  {
+    "id": "FLC_0455",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0084,
+    "lon": 72.9048
+  },
+  {
+    "id": "FLC_0456",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 19.0067,
+    "lon": 72.9197
+  },
+  {
+    "id": "FLC_0457",
+    "name": "Mumbai Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9736,
+    "lon": 72.935
+  },
+  {
+    "id": "FLC_0458",
+    "name": "Mumbai Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Mumbai",
+    "lat": 18.9423,
+    "lon": 72.935
+  },
+  {
+    "id": "FLC_0459",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.8935,
+    "lon": 72.9297
+  },
+  {
+    "id": "FLC_0460",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.877,
+    "lon": 72.9244
+  },
+  {
+    "id": "FLC_0461",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.8366,
+    "lon": 72.9094
+  },
+  {
+    "id": "FLC_0462",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.8131,
+    "lon": 72.8999
+  },
+  {
+    "id": "FLC_0463",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.7768,
+    "lon": 72.8837
+  },
+  {
+    "id": "FLC_0464",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.7646,
+    "lon": 72.8775
+  },
+  {
+    "id": "FLC_0465",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.7381,
+    "lon": 72.869
+  },
+  {
+    "id": "FLC_0466",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.7243,
+    "lon": 72.867
+  },
+  {
+    "id": "FLC_0467",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6952,
+    "lon": 72.866
+  },
+  {
+    "id": "FLC_0468",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6803,
+    "lon": 72.867
+  },
+  {
+    "id": "FLC_0469",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6572,
+    "lon": 72.869
+  },
+  {
+    "id": "FLC_0470",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6494,
+    "lon": 72.87
+  },
+  {
+    "id": "FLC_0471",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.631,
+    "lon": 72.8756
+  },
+  {
+    "id": "FLC_0472",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6207,
+    "lon": 72.8802
+  },
+  {
+    "id": "FLC_0473",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.6034,
+    "lon": 72.8867
+  },
+  {
+    "id": "FLC_0474",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5968,
+    "lon": 72.8883
+  },
+  {
+    "id": "FLC_0475",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5801,
+    "lon": 72.8949
+  },
+  {
+    "id": "FLC_0476",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5702,
+    "lon": 72.8999
+  },
+  {
+    "id": "FLC_0477",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5574,
+    "lon": 72.9109
+  },
+  {
+    "id": "FLC_0478",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5547,
+    "lon": 72.9169
+  },
+  {
+    "id": "FLC_0479",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5461,
+    "lon": 72.9187
+  },
+  {
+    "id": "FLC_0480",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5401,
+    "lon": 72.9144
+  },
+  {
+    "id": "FLC_0481",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.5033,
+    "lon": 72.9083
+  },
+  {
+    "id": "FLC_0482",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.4726,
+    "lon": 72.9067
+  },
+  {
+    "id": "FLC_0483",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.4209,
+    "lon": 72.9099
+  },
+  {
+    "id": "FLC_0484",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.4007,
+    "lon": 72.9149
+  },
+  {
+    "id": "FLC_0485",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.3625,
+    "lon": 72.9319
+  },
+  {
+    "id": "FLC_0486",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.345,
+    "lon": 72.9438
+  },
+  {
+    "id": "FLC_0487",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.3214,
+    "lon": 72.959
+  },
+  {
+    "id": "FLC_0488",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.3158,
+    "lon": 72.9619
+  },
+  {
+    "id": "FLC_0489",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.3027,
+    "lon": 72.9663
+  },
+  {
+    "id": "FLC_0490",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.2955,
+    "lon": 72.9676
+  },
+  {
+    "id": "FLC_0491",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.2854,
+    "lon": 72.9759
+  },
+  {
+    "id": "FLC_0492",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.2827,
+    "lon": 72.9829
+  },
+  {
+    "id": "FLC_0493",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.2437,
+    "lon": 72.99
+  },
+  {
+    "id": "FLC_0494",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.2074,
+    "lon": 72.99
+  },
+  {
+    "id": "FLC_0495",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.1469,
+    "lon": 72.9916
+  },
+  {
+    "id": "FLC_0496",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.1238,
+    "lon": 72.9933
+  },
+  {
+    "id": "FLC_0497",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.0819,
+    "lon": 72.9999
+  },
+  {
+    "id": "FLC_0498",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.0637,
+    "lon": 73.0049
+  },
+  {
+    "id": "FLC_0499",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.0282,
+    "lon": 73.0143
+  },
+  {
+    "id": "FLC_0500",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 18.0113,
+    "lon": 73.0186
+  },
+  {
+    "id": "FLC_0501",
+    "name": "Raigad Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 17.9887,
+    "lon": 73.0322
+  },
+  {
+    "id": "FLC_0502",
+    "name": "Raigad Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Raigad",
+    "lat": 17.9834,
+    "lon": 73.0415
+  },
+  {
+    "id": "FLC_0503",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.9598,
+    "lon": 73.0536
+  },
+  {
+    "id": "FLC_0504",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.9417,
+    "lon": 73.0563
+  },
+  {
+    "id": "FLC_0505",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.9006,
+    "lon": 73.0659
+  },
+  {
+    "id": "FLC_0506",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.8781,
+    "lon": 73.0729
+  },
+  {
+    "id": "FLC_0507",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.8395,
+    "lon": 73.0836
+  },
+  {
+    "id": "FLC_0508",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.824,
+    "lon": 73.0873
+  },
+  {
+    "id": "FLC_0509",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.7961,
+    "lon": 73.0999
+  },
+  {
+    "id": "FLC_0510",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.7842,
+    "lon": 73.1088
+  },
+  {
+    "id": "FLC_0511",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.7103,
+    "lon": 73.1352
+  },
+  {
+    "id": "FLC_0512",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.6486,
+    "lon": 73.1523
+  },
+  {
+    "id": "FLC_0513",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.552,
+    "lon": 73.1763
+  },
+  {
+    "id": "FLC_0514",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.519,
+    "lon": 73.1825
+  },
+  {
+    "id": "FLC_0515",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.4243,
+    "lon": 73.1986
+  },
+  {
+    "id": "FLC_0516",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.3636,
+    "lon": 73.2081
+  },
+  {
+    "id": "FLC_0517",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.2495,
+    "lon": 73.2335
+  },
+  {
+    "id": "FLC_0518",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.198,
+    "lon": 73.249
+  },
+  {
+    "id": "FLC_0519",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.0935,
+    "lon": 73.2713
+  },
+  {
+    "id": "FLC_0520",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 17.042,
+    "lon": 73.2775
+  },
+  {
+    "id": "FLC_0521",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.9821,
+    "lon": 73.2876
+  },
+  {
+    "id": "FLC_0522",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.9751,
+    "lon": 73.2913
+  },
+  {
+    "id": "FLC_0523",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.9152,
+    "lon": 73.2999
+  },
+  {
+    "id": "FLC_0524",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.8624,
+    "lon": 73.3049
+  },
+  {
+    "id": "FLC_0525",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.74,
+    "lon": 73.3239
+  },
+  {
+    "id": "FLC_0526",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.672,
+    "lon": 73.3377
+  },
+  {
+    "id": "FLC_0527",
+    "name": "Ratnagiri Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.5875,
+    "lon": 73.3477
+  },
+  {
+    "id": "FLC_0528",
+    "name": "Ratnagiri Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Ratnagiri",
+    "lat": 16.573,
+    "lon": 73.3434
+  },
+  {
+    "id": "FLC_0529",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.4996,
+    "lon": 73.3509
+  },
+  {
+    "id": "FLC_0530",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.4412,
+    "lon": 73.3628
+  },
+  {
+    "id": "FLC_0531",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.3239,
+    "lon": 73.3961
+  },
+  {
+    "id": "FLC_0532",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.2668,
+    "lon": 73.4172
+  },
+  {
+    "id": "FLC_0533",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.1578,
+    "lon": 73.4479
+  },
+  {
+    "id": "FLC_0534",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.1077,
+    "lon": 73.4568
+  },
+  {
+    "id": "FLC_0535",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.0458,
+    "lon": 73.4739
+  },
+  {
+    "id": "FLC_0536",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 16.0355,
+    "lon": 73.4818
+  },
+  {
+    "id": "FLC_0537",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.9943,
+    "lon": 73.5032
+  },
+  {
+    "id": "FLC_0538",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.9636,
+    "lon": 73.5164
+  },
+  {
+    "id": "FLC_0539",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.9082,
+    "lon": 73.563
+  },
+  {
+    "id": "FLC_0540",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.8845,
+    "lon": 73.596
+  },
+  {
+    "id": "FLC_0541",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.8336,
+    "lon": 73.6465
+  },
+  {
+    "id": "FLC_0542",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.8072,
+    "lon": 73.663
+  },
+  {
+    "id": "FLC_0543",
+    "name": "Sindhudurg Sub-Creek Landing",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.7708,
+    "lon": 73.6751
+  },
+  {
+    "id": "FLC_0544",
+    "name": "Sindhudurg Fishermen Cove",
+    "state": "Maharashtra",
+    "district": "Sindhudurg",
+    "lat": 15.7615,
+    "lon": 73.6701
+  },
+  {
+    "id": "FLC_0545",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.7071,
+    "lon": 73.694
+  },
+  {
+    "id": "FLC_0546",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.6962,
+    "lon": 73.6979
+  },
+  {
+    "id": "FLC_0547",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.6636,
+    "lon": 73.7112
+  },
+  {
+    "id": "FLC_0548",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.6421,
+    "lon": 73.7205
+  },
+  {
+    "id": "FLC_0549",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.6151,
+    "lon": 73.7326
+  },
+  {
+    "id": "FLC_0550",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.6101,
+    "lon": 73.7353
+  },
+  {
+    "id": "FLC_0551",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.5836,
+    "lon": 73.7436
+  },
+  {
+    "id": "FLC_0552",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.5621,
+    "lon": 73.7492
+  },
+  {
+    "id": "FLC_0553",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.5252,
+    "lon": 73.7599
+  },
+  {
+    "id": "FLC_0554",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.5103,
+    "lon": 73.7649
+  },
+  {
+    "id": "FLC_0555",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.4976,
+    "lon": 73.7911
+  },
+  {
+    "id": "FLC_0556",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.5003,
+    "lon": 73.8122
+  },
+  {
+    "id": "FLC_0557",
+    "name": "North Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.473,
+    "lon": 73.8244
+  },
+  {
+    "id": "FLC_0558",
+    "name": "North Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "North Goa",
+    "lat": 15.4429,
+    "lon": 73.8149
+  },
+  {
+    "id": "FLC_0559",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.3981,
+    "lon": 73.8133
+  },
+  {
+    "id": "FLC_0560",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.3843,
+    "lon": 73.8215
+  },
+  {
+    "id": "FLC_0561",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.3568,
+    "lon": 73.8465
+  },
+  {
+    "id": "FLC_0562",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.3436,
+    "lon": 73.863
+  },
+  {
+    "id": "FLC_0563",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.3069,
+    "lon": 73.8915
+  },
+  {
+    "id": "FLC_0564",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.2838,
+    "lon": 73.9031
+  },
+  {
+    "id": "FLC_0565",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.2263,
+    "lon": 73.9272
+  },
+  {
+    "id": "FLC_0566",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.1927,
+    "lon": 73.9394
+  },
+  {
+    "id": "FLC_0567",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.1547,
+    "lon": 73.9546
+  },
+  {
+    "id": "FLC_0568",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.1514,
+    "lon": 73.9573
+  },
+  {
+    "id": "FLC_0569",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.114,
+    "lon": 73.9682
+  },
+  {
+    "id": "FLC_0570",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.08,
+    "lon": 73.9765
+  },
+  {
+    "id": "FLC_0571",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.0335,
+    "lon": 73.9965
+  },
+  {
+    "id": "FLC_0572",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.0219,
+    "lon": 74.0081
+  },
+  {
+    "id": "FLC_0573",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 15.0017,
+    "lon": 74.0282
+  },
+  {
+    "id": "FLC_0574",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 14.9935,
+    "lon": 74.0365
+  },
+  {
+    "id": "FLC_0575",
+    "name": "South Goa Sub-Creek Landing",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 14.9603,
+    "lon": 74.0566
+  },
+  {
+    "id": "FLC_0576",
+    "name": "South Goa Fishermen Cove",
+    "state": "Goa",
+    "district": "South Goa",
+    "lat": 14.9355,
+    "lon": 74.0681
+  },
+  {
+    "id": "FLC_0577",
+    "name": "Uttara Kannada Sub-Creek Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.8687,
+    "lon": 74.1033
+  },
+  {
+    "id": "FLC_0578",
+    "name": "Uttara Kannada Fishermen Cove",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.8373,
+    "lon": 74.1115
+  },
+  {
+    "id": "FLC_0579",
+    "name": "Uttara Kannada Sub-Creek Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7967,
+    "lon": 74.1299
+  },
+  {
+    "id": "FLC_0580",
+    "name": "Uttara Kannada Fishermen Cove",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7885,
+    "lon": 74.1398
+  },
+  {
+    "id": "FLC_0581",
+    "name": "Uttara Kannada Sub-Creek Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7684,
+    "lon": 74.1599
+  },
+  {
+    "id": "FLC_0582",
+    "name": "Uttara Kannada Fishermen Cove",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7569,
+    "lon": 74.1698
+  },
+  {
+    "id": "FLC_0583",
+    "name": "Uttara Kannada Sub-Creek Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7318,
+    "lon": 74.2081
+  },
+  {
+    "id": "FLC_0584",
+    "name": "Uttara Kannada Fishermen Cove",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.7186,
+    "lon": 74.2361
+  },
+  {
+    "id": "FLC_0585",
+    "name": "Uttara Kannada Sub-Creek Landing",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.6522,
+    "lon": 74.2815
+  },
+  {
+    "id": "FLC_0586",
+    "name": "Uttara Kannada Fishermen Cove",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "lat": 14.5994,
+    "lon": 74.298
+  }
+]

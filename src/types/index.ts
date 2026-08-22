@@ -7,12 +7,12 @@ export interface MapMarker {
   lat: number;
   lon: number;
   float_id: string;
-  date: string;
+  date?: string;
   label?: string;
 }
 
 export interface ChartData {
-  chart_type: 'depth_profile' | 'time_series' | 'bar' | 'scatter' | 'map';
+  chart_type: 'depth_profile' | 'time_series' | 'bar' | 'scatter' | 'map' | string;
   data: any[];
   x_key: string;
   y_keys: string[];
@@ -40,20 +40,20 @@ export interface DetectedLanguage {
 
 export interface ChatResponse {
   summary?: string;
-  answer: string;
+  answer?: string;
   hero_stat?: HeroStat | null;
   stats?: StatItem[] | null;
   reading_count?: number;
-  sql: string | null;
-  data: Record<string, unknown>[] | null;
-  chart: ChartData | null;
-  map_markers: MapMarker[] | null;
-  query_route?: 'sql_data' | 'ocean_science_rag' | 'species_advisory' | 'hybrid' | 'error' | null;
+  sql?: string | null;
+  data?: Record<string, unknown>[] | null;
+  chart?: ChartData | null;
+  map_markers?: MapMarker[] | null;
+  query_route?: 'sql_data' | 'ocean_science_rag' | 'species_advisory' | 'hybrid' | 'error' | string | null;
   species_detected?: string | null;
   knowledge_sources?: string[] | null;
   detected_language?: DetectedLanguage | null;
   data_sources?: string[];
-  error: string | null;
+  error?: string | null;
 }
 
 export interface ChatMessage {
@@ -71,7 +71,7 @@ export interface ChatMessage {
   data?: Record<string, unknown>[] | null;
   chart?: ChartData | null;
   map_markers?: MapMarker[] | null;
-  query_route?: 'sql_data' | 'ocean_science_rag' | 'species_advisory' | 'hybrid' | 'error' | null;
+  query_route?: string | null;
   species_detected?: string | null;
   knowledge_sources?: string[] | null;
   data_sources?: string[];
@@ -79,19 +79,23 @@ export interface ChatMessage {
 }
 
 export interface FloatSummary {
-  profile_id?: number;
+  profile_id?: number | string;
   float_id: string;
   latitude: number;
   longitude: number;
   date: string;
-  max_depth: number | null;
+  max_depth?: number | null;
+  surface_temp?: number | null;
+  surface_salinity?: number | null;
+  temp?: number | null;
+  salinity?: number | null;
 }
 
 export interface DepthMeasurement {
   depth: number;
-  pressure: number | null;
-  temperature: number | null;
-  salinity: number | null;
+  pressure?: number | null;
+  temperature?: number | null;
+  salinity?: number | null;
   [key: string]: any;
 }
 
@@ -104,7 +108,7 @@ export interface AnomalyAlert {
   parameter: string;
   value: number;
   threshold: number;
-  severity: 'low' | 'medium' | 'high' | 'critical';
+  severity: 'low' | 'medium' | 'high' | 'critical' | string;
   mhw_category?: string | null;
   description: string;
   created_at?: string;
@@ -113,7 +117,7 @@ export interface AnomalyAlert {
 export interface PFZHarbour {
   harbour: string;
   distance_km: number;
-  bearing_deg: number;
+  bearing_deg?: number;
   compass: string;
 }
 
@@ -121,13 +125,14 @@ export interface PFZAdvisory {
   float_id: string;
   latitude: number;
   longitude: number;
-  date: string;
+  date?: string;
+  region?: string;
   sst_celsius: number;
   satellite_sst?: number | null;
   chlorophyll_mg_m3?: number | null;
   chlorophyll_gradient?: number | null;
-  mld_meters: number | null;
-  pfz_rating: 'Excellent' | 'Good' | 'Fair' | 'Poor';
+  mld_meters?: number | null;
+  pfz_rating: 'Excellent' | 'Good' | 'Fair' | 'Poor' | 'OPTIMAL' | 'HIGH' | 'MODERATE' | string;
   pfz_score: number;
   data_confidence?: string;
   data_sources?: string[];
@@ -144,7 +149,7 @@ export interface SatelliteGridPoint {
   gradient: number;
   thermal_front: boolean;
   chlorophyll_front: boolean;
-  pfz_potential: 'Excellent' | 'Good' | 'Moderate' | 'Low';
+  pfz_potential: 'Excellent' | 'Good' | 'Moderate' | 'Low' | string;
 }
 
 export interface SatelliteGridResponse {
