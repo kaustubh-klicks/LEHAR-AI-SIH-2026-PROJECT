@@ -297,7 +297,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
   const [speciesMenuOpen, setSpeciesMenuOpen] = useState<boolean>(false);
 
   // User vessel GPS & Routing Target
-  const [userVesselPos, setUserVesselPos] = useState<[number, number] | null>([18.72, 72.45]); // Default active position off Maharashtra/Goa
+  const [userVesselPos, setUserVesselPos] = useState<[number, number] | null>([18.72, 72.45]);
   const [isLocating, setIsLocating] = useState<boolean>(false);
   const [isVesselHudExpanded, setIsVesselHudExpanded] = useState<boolean>(false);
   const [activeTargetPfz, setActiveTargetPfz] = useState<PFZAdvisory | null>(null);
@@ -307,9 +307,10 @@ export const OceanMap: React.FC<OceanMapProps> = ({
   const [portTargetPfz, setPortTargetPfz] = useState<any | null>(null);
   const [isPortHudExpanded, setIsPortHudExpanded] = useState<boolean>(false);
 
-  // Active Popup Info Guides
+  // Active Popup & Dropdown Info Guides
   const [activePopupView, setActivePopupView] = useState<'grid' | 'info_guide' | 'temp_guide' | 'sal_guide'>('grid');
   const [pfzPopupView, setPfzPopupView] = useState<{ [key: string]: 'main' | 'guide' | 'argo_info' | 'sat_info' | 'chl_info' }>({});
+  const [satLayerInfoView, setSatLayerInfoView] = useState<'none' | 'sst' | 'chl'>('none');
 
   const [sectorMenuOpen, setSectorMenuOpen] = useState<boolean>(false);
   const [satLayersMenuOpen, setSatLayersMenuOpen] = useState<boolean>(false);
@@ -421,6 +422,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
     setSatLayersMenuOpen((prev) => !prev);
     setSectorMenuOpen(false);
     setSpeciesMenuOpen(false);
+    setSatLayerInfoView('none');
   };
 
   const activeSpecies = TARGET_SPECIES_OPTIONS.find((s) => s.id === selectedSpecies);
@@ -615,6 +617,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
             <span>PFZ ({displayedPfzZones.length})</span>
           </button>
 
+          {/* Satellite Layer Dropdown Menu with Information Guides */}
           <div className="relative pointer-events-auto">
             <button
               type="button"
@@ -633,62 +636,155 @@ export const OceanMap: React.FC<OceanMapProps> = ({
 
             {satLayersMenuOpen && (
               <div 
-                className="absolute right-0 top-full mt-2 w-64 bg-[#071322] border border-cyan-500/40 rounded-xl shadow-2xl p-2 z-[99999] space-y-1.5 ring-1 ring-cyan-500/20 pointer-events-auto"
+                className="absolute right-0 top-full mt-2 w-72 bg-[#071322]/98 border border-cyan-500/40 rounded-xl shadow-2xl p-2.5 z-[99999] space-y-2 ring-1 ring-cyan-500/20 backdrop-blur-2xl pointer-events-auto font-sans animate-in fade-in zoom-in-95 duration-100"
                 onClick={(e) => e.stopPropagation()}
                 onMouseDown={(e) => e.stopPropagation()}
               >
-                <div className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center justify-between border-b border-slate-800 pb-1">
-                  <span>Satellite Coverage</span>
-                  <Satellite className="w-3.5 h-3.5 text-ocean-cyan" />
+                {/* Header */}
+                <div className="px-1 py-0.5 text-[9px] font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center justify-between border-b border-slate-800 pb-1.5">
+                  <span className="flex items-center gap-1.5 text-cyan-300">
+                    <Satellite className="w-3.5 h-3.5" /> Satellite Remote Sensing
+                  </span>
+                  {satLayerInfoView !== 'none' && (
+                    <button
+                      type="button"
+                      onClick={() => setSatLayerInfoView('none')}
+                      className="text-[9px] text-slate-400 hover:text-white transition flex items-center gap-0.5 font-mono cursor-pointer"
+                    >
+                      <X className="w-3 h-3" /> Back
+                    </button>
+                  )}
                 </div>
 
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowSatelliteSST(!showSatelliteSST);
-                  }}
-                  className={`w-full flex items-center justify-between p-2 rounded-lg text-xs transition cursor-pointer ${
-                    showSatelliteSST
-                      ? 'bg-rose-950/70 border border-rose-500/40 text-rose-300 font-bold'
-                      : 'hover:bg-[#0c1e34] text-slate-300 hover:text-white'
-                  }`}
-                >
-                  <div className="flex items-center space-x-2 text-left">
-                    <Satellite className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                    <div>
-                      <div className="text-xs font-semibold">Thermal Grid</div>
-                      <div className="text-[9px] text-slate-400">NOAA MUR SST</div>
-                    </div>
-                  </div>
-                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${showSatelliteSST ? 'bg-rose-900/80 text-rose-200' : 'bg-abyssal-800 text-slate-500'}`}>
-                    {showSatelliteSST ? 'ON' : 'OFF'}
-                  </span>
-                </button>
+                {/* Main Layer Switches */}
+                {satLayerInfoView === 'none' && (
+                  <div className="space-y-1.5">
+                    
+                    {/* 1. Thermal Grid (SST) */}
+                    <div className="rounded-xl border border-rose-500/25 bg-rose-950/20 p-1.5 transition hover:border-rose-500/40">
+                      <div className="flex items-center justify-between">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowSatelliteSST(!showSatelliteSST);
+                          }}
+                          className="flex-1 flex items-center space-x-2 text-left cursor-pointer"
+                        >
+                          <div className="p-1 rounded-lg bg-rose-500/15 text-rose-400 border border-rose-500/30 shrink-0">
+                            <Satellite className="w-3.5 h-3.5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-semibold text-slate-100">Thermal Grid</div>
+                            <div className="text-[9px] text-rose-300/80 font-mono">NOAA MUR SST (1km)</div>
+                          </div>
+                        </button>
 
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowChlorophyll(!showChlorophyll);
-                  }}
-                  className={`w-full flex items-center justify-between p-2 rounded-lg text-xs transition cursor-pointer ${
-                    showChlorophyll
-                      ? 'bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 font-bold'
-                      : 'hover:bg-[#0c1e34] text-slate-300 hover:text-white'
-                  }`}
-                >
-                  <div className="flex items-center space-x-2 text-left">
-                    <Leaf className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <div>
-                      <div className="text-xs font-semibold">Phytoplankton Density</div>
-                      <div className="text-[9px] text-slate-400">NASA Chlorophyll-a</div>
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            type="button"
+                            onClick={() => setSatLayerInfoView('sst')}
+                            className="p-1 rounded-full text-slate-400 hover:text-amber-300 hover:bg-abyssal-800/80 transition cursor-pointer"
+                            title="How Thermal SST locates fish"
+                          >
+                            <HelpCircle className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setShowSatelliteSST(!showSatelliteSST)}
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded cursor-pointer transition font-bold ${
+                              showSatelliteSST ? 'bg-rose-600 text-white shadow-md' : 'bg-abyssal-900 text-slate-400 border border-slate-700'
+                            }`}
+                          >
+                            {showSatelliteSST ? 'ON' : 'OFF'}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 2. Phytoplankton Density (Chlorophyll-a) */}
+                    <div className="rounded-xl border border-emerald-500/25 bg-emerald-950/20 p-1.5 transition hover:border-emerald-500/40">
+                      <div className="flex items-center justify-between">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowChlorophyll(!showChlorophyll);
+                          }}
+                          className="flex-1 flex items-center space-x-2 text-left cursor-pointer"
+                        >
+                          <div className="p-1 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shrink-0">
+                            <Leaf className="w-3.5 h-3.5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-semibold text-slate-100">Phytoplankton Density</div>
+                            <div className="text-[9px] text-emerald-300/80 font-mono">NASA Chlorophyll-a</div>
+                          </div>
+                        </button>
+
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            type="button"
+                            onClick={() => setSatLayerInfoView('chl')}
+                            className="p-1 rounded-full text-slate-400 hover:text-emerald-300 hover:bg-abyssal-800/80 transition cursor-pointer"
+                            title="How Chlorophyll locates fish"
+                          >
+                            <HelpCircle className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setShowChlorophyll(!showChlorophyll)}
+                            className={`text-[10px] font-mono px-2 py-0.5 rounded cursor-pointer transition font-bold ${
+                              showChlorophyll ? 'bg-emerald-600 text-white shadow-md' : 'bg-abyssal-900 text-slate-400 border border-slate-700'
+                            }`}
+                          >
+                            {showChlorophyll ? 'ON' : 'OFF'}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+
+                {/* Sub-View: Thermal Grid Guide */}
+                {satLayerInfoView === 'sst' && (
+                  <div className="p-2 rounded-xl bg-[#0e1724] border border-rose-500/40 text-[10.5px] text-slate-200 space-y-1.5 animate-in fade-in duration-100 font-sans">
+                    <div className="flex items-center gap-1.5 font-bold text-rose-300 text-xs">
+                      <Satellite className="w-3.5 h-3.5 text-rose-400" />
+                      <span>Thermal Fronts & Fishing</span>
+                    </div>
+                    <p className="text-slate-300 leading-relaxed">
+                      Fish are cold-blooded and aggregate along <strong>Thermal Fronts</strong> (boundaries where cold upwelled water meets warm surface water).
+                    </p>
+                    <div className="font-mono text-[9.5px] space-y-1 bg-abyssal-950/70 p-1.5 rounded-lg border border-slate-800">
+                      <div>• <span className="text-cyan-300">26.0–28.5°C:</span> Peak Tuna, Surmai & Pomfret feeding zones.</div>
+                      <div>• <span className="text-amber-300">Thermal Gradients:</span> Sharp temperature drops trap baitfish schools.</div>
                     </div>
                   </div>
-                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${showChlorophyll ? 'bg-emerald-900/80 text-emerald-200' : 'bg-abyssal-800 text-slate-500'}`}>
-                    {showChlorophyll ? 'ON' : 'OFF'}
-                  </span>
-                </button>
+                )}
+
+                {/* Sub-View: Chlorophyll-a Guide */}
+                {satLayerInfoView === 'chl' && (
+                  <div className="p-2 rounded-xl bg-[#071d18] border border-emerald-500/40 text-[10.5px] text-slate-200 space-y-1.5 animate-in fade-in duration-100 font-sans">
+                    <div className="flex items-center gap-1.5 font-bold text-emerald-300 text-xs">
+                      <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Chlorophyll & Marine Food Chain</span>
+                    </div>
+                    <p className="text-slate-300 leading-relaxed">
+                      Chlorophyll-a measures <strong>microscopic phytoplankton density</strong>, the fundamental base of the entire marine food chain.
+                    </p>
+                    <div className="font-mono text-[9.5px] space-y-1 bg-abyssal-950/70 p-1.5 rounded-lg border border-slate-800">
+                      <div>• <span className="text-emerald-300">&gt; 0.45 mg/m³:</span> High primary productivity attracting Sardines & Mackerel.</div>
+                      <div>• <span className="text-teal-300">PFZ Overlay:</span> High Chlorophyll + sharp Thermal Front = <strong>High Yield PFZ</strong>.</div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="pt-1 border-t border-slate-800 text-[9px] text-cyan-300/80 font-mono text-center">
+                  INCOIS Multi-Sensor Oceanic Fusion
+                </div>
+
               </div>
             )}
           </div>
