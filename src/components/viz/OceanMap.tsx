@@ -1013,8 +1013,6 @@ export const OceanMap: React.FC<OceanMapProps> = ({
         {showPFZ &&
           displayedPfzZones.map((pfz, idx) => {
             const isHighYield = pfz.pfz_score >= 75;
-            
-            // Calculate distance strictly based on the boat's location if available, otherwise nearest harbour
             const activeDistanceKm = userVesselPos
               ? Math.round(haversineDistKm(userVesselPos[0], userVesselPos[1], pfz.latitude, pfz.longitude) * 10) / 10
               : pfz.nearest_harbour?.distance_km || 120;
@@ -1192,7 +1190,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
                           </div>
                         )}
 
-                        {/* Guide View: General Overview & Voyage Calculations */}
+                        {/* Guide View: General Overview & Voyage */}
                         {currentView === 'guide' && (
                           <div className="p-2.5 rounded-xl bg-[#071926] border border-amber-500/40 text-[10.5px] text-slate-200 flex flex-col justify-between h-full animate-in fade-in duration-100 font-mono">
                             <div className="flex items-center justify-between border-b border-amber-500/30 pb-1 mb-1 font-sans">
@@ -1584,23 +1582,21 @@ export const OceanMap: React.FC<OceanMapProps> = ({
 
         {/* Live Vessel GPS Tracker */}
         {userVesselPos && (
-          <>
-            <Marker position={userVesselPos} icon={createVesselIcon()}>
-              <Popup>
-                <div className="p-1 space-y-1.5 font-mono text-xs text-slate-100 min-w-[210px]">
-                  <div className="font-bold text-emerald-400 flex items-center gap-1">
-                    <Navigation className="w-3.5 h-3.5 text-emerald-400" /> Your Coastal Vessel (GPS)
-                  </div>
-                  <div>Coordinates: <strong className="text-white">{userVesselPos[0].toFixed(3)}°N, {userVesselPos[1].toFixed(3)}°E</strong></div>
-                  {activeTargetPfz && vesselDistanceKm && (
-                    <div className="text-[11px] text-amber-300 pt-1 border-t border-slate-700">
-                      Active PFZ Route: <strong>{vesselDistanceKm} km</strong> ({activeTargetPfz.target_species.slice(0, 2).join(', ')})
-                    </div>
-                  )}
+          <Marker position={userVesselPos} icon={createVesselIcon()}>
+            <Popup>
+              <div className="p-1 space-y-1.5 font-mono text-xs text-slate-100 min-w-[210px]">
+                <div className="font-bold text-emerald-400 flex items-center gap-1">
+                  <Navigation className="w-3.5 h-3.5 text-emerald-400" /> Your Coastal Vessel (GPS)
                 </div>
-              </Popup>
-            </Marker>
-          </>
+                <div>Coordinates: <strong className="text-white">{userVesselPos[0].toFixed(3)}°N, {userVesselPos[1].toFixed(3)}°E</strong></div>
+                {activeTargetPfz && vesselDistanceKm && (
+                  <div className="text-[11px] text-amber-300 pt-1 border-t border-slate-700">
+                    Active PFZ Route: <strong>{vesselDistanceKm} km</strong> ({activeTargetPfz.target_species.slice(0, 2).join(', ')})
+                  </div>
+                )}
+              </div>
+            </Popup>
+          </Marker>
         )}
       </MapContainer>
 
