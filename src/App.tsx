@@ -4,6 +4,8 @@ import { ChatPanel } from './components/chat/ChatPanel';
 import { OceanMap } from './components/viz/OceanMap';
 import { DepthChart } from './components/viz/DepthChart';
 import { OceanLens3D } from './components/viz/OceanLens3D';
+import { HydrographicTransect } from './components/viz/HydrographicTransect';
+import { TSDiagram3D } from './components/viz/TSDiagram3D';
 import { AnomalyRadar } from './components/anomaly/AnomalyRadar';
 import { AdoptFloat } from './components/education/AdoptFloat';
 import { WhatsAppSimulator } from './components/whatsapp/WhatsAppSimulator';
@@ -16,7 +18,9 @@ import {
   Box, 
   Compass, 
   Waves, 
-  ArrowRight
+  ArrowRight,
+  Layers,
+  ScatterChart
 } from 'lucide-react';
 
 import {
@@ -53,7 +57,8 @@ export function App() {
   const [stageView, setStageView] = useState<'map' | 'chart' | '3d'>('map');
   const [hasEverQueried, setHasEverQueried] = useState<boolean>(false);
 
-  const [explorerView, setExplorerView] = useState<'map' | '3d'>('map');
+  // Ocean Explorer Sub-View Switcher (Map vs Transect vs 3D TS vs 3D Lens)
+  const [explorerView, setExplorerView] = useState<'map' | 'transect' | 'ts' | '3d'>('map');
 
   const [activeChart, setActiveChart] = useState<ChartData | null>(null);
   const [highlightMarkers, setHighlightMarkers] = useState<MapMarker[] | null>(null);
@@ -489,24 +494,82 @@ export function App() {
         {(currentMode === 'map' || currentMode === '3d') && (
           <div className="flex-1 min-h-0 h-full flex flex-col relative rounded-2xl overflow-hidden shadow-2xl border border-cyan-500/20 glow-organism-cyan bg-abyssal-950">
             <HudCornerBrackets />
-            <div className="flex items-center justify-between px-4 py-2 bg-abyssal-900/95 border-b border-abyssal-800/90 shrink-0 z-30">
+            
+            {/* Top Command Deck with View Switcher */}
+            <div className="flex items-center justify-between px-4 py-2 bg-abyssal-900/95 border-b border-abyssal-800/90 shrink-0 z-30 flex-wrap gap-2">
               <div className="flex items-center gap-2.5 min-w-0">
                 <div className="p-1.5 rounded-lg bg-ocean-cyan/15 text-ocean-cyan shrink-0">
                   <Compass className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-xs sm:text-sm font-bold text-white font-heading truncate">
-                    Ocean Explorer & Geospatial Fleet GIS
+                    Ocean Operations & Hydrographic Research Deck
                   </h3>
                   <p className="text-[10px] text-cyan-300/80 font-mono leading-tight truncate">
-                    97 Active ARGO Floats • Multi-Sensor Thermal Fronts • Live NavIC GPS
+                    INCOIS GIS Fleet Mapping • 3D Habitat Slicers • Water Mass T-S Clouds
                   </p>
                 </div>
               </div>
+
+              {/* Explorer Tab Switcher */}
+              <div className="flex items-center gap-1 bg-abyssal-950 p-1 rounded-xl border border-abyssal-800 shrink-0 shadow-inner font-mono text-xs">
+                <button
+                  type="button"
+                  onClick={() => setExplorerView('map')}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg transition cursor-pointer active:scale-95 ${
+                    explorerView === 'map'
+                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-abyssal-900'
+                  }`}
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Fleet GIS Map</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setExplorerView('transect')}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg transition cursor-pointer active:scale-95 ${
+                    explorerView === 'transect'
+                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-abyssal-900'
+                  }`}
+                >
+                  <Layers className="w-3.5 h-3.5" />
+                  <span>Subsurface Slicer</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setExplorerView('ts')}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg transition cursor-pointer active:scale-95 ${
+                    explorerView === 'ts'
+                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-abyssal-900'
+                  }`}
+                >
+                  <ScatterChart className="w-3.5 h-3.5" />
+                  <span>3D T-S Diagram</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setExplorerView('3d')}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg transition cursor-pointer active:scale-95 ${
+                    explorerView === '3d'
+                      ? 'bg-gradient-to-r from-ocean-cyan to-teal-400 text-abyssal-950 font-bold shadow-md shadow-ocean-cyan/25'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-abyssal-900'
+                  }`}
+                >
+                  <Box className="w-3.5 h-3.5" />
+                  <span>3D OceanLens</span>
+                </button>
+              </div>
             </div>
 
+            {/* Active Explorer View Display */}
             <div className="flex-1 w-full h-full relative min-h-0 overflow-hidden">
-              {explorerView === 'map' ? (
+              {explorerView === 'map' && (
                 <OceanMap
                   floats={floats}
                   highlightMarkers={highlightMarkers}
@@ -515,7 +578,17 @@ export function App() {
                   selectedFloatId={selectedFloatId}
                   trajectory={floatTrajectory}
                 />
-              ) : (
+              )}
+
+              {explorerView === 'transect' && (
+                <HydrographicTransect floats={floats} />
+              )}
+
+              {explorerView === 'ts' && (
+                <TSDiagram3D floats={floats} />
+              )}
+
+              {explorerView === '3d' && (
                 <OceanLens3D
                   selectedFloatId={selectedFloatId}
                   profileData={activeChart?.chart_type === 'depth_profile' ? activeChart.data : []}
