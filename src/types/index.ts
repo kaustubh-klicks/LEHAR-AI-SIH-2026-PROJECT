@@ -242,4 +242,4 @@ export interface SystemStatusResponse {
   };
 }
 
-export type AppMode = 'chat' | 'map' | 'anomaly' | 'classroom' | 'whatsapp' | 'pipeline' | '3d';
+export type AppMode = 'chat' | 'map' | 'anomaly' | 'telegram' | 'whatsapp' | 'pipeline' | '3d';

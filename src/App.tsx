@@ -7,7 +7,7 @@ import { OceanLens3D } from './components/viz/OceanLens3D';
 import { HydrographicTransect } from './components/viz/HydrographicTransect';
 import { TSDiagram3D } from './components/viz/TSDiagram3D';
 import { AnomalyRadar } from './components/anomaly/AnomalyRadar';
-import { AdoptFloat } from './components/education/AdoptFloat';
+import { TelegramGateway } from './components/telegram/TelegramGateway';
 import { WhatsAppSimulator } from './components/whatsapp/WhatsAppSimulator';
 import { ArchitecturePipeline } from './components/pipeline/ArchitecturePipeline';
 import { OceanAtmosphere } from './components/common/OceanAtmosphere';
@@ -57,7 +57,7 @@ export function App() {
   const [stageView, setStageView] = useState<'map' | 'chart' | '3d'>('map');
   const [hasEverQueried, setHasEverQueried] = useState<boolean>(false);
 
-  // Ocean Explorer Sub-View Switcher (Map vs Transect vs 3D TS vs 3D Lens)
+  // 4 Core Explorer Views
   const [explorerView, setExplorerView] = useState<'map' | 'transect' | 'ts' | '3d'>('map');
 
   const [activeChart, setActiveChart] = useState<ChartData | null>(null);
@@ -495,7 +495,7 @@ export function App() {
           <div className="flex-1 min-h-0 h-full flex flex-col relative rounded-2xl overflow-hidden shadow-2xl border border-cyan-500/20 glow-organism-cyan bg-abyssal-950">
             <HudCornerBrackets />
             
-            {/* Top Command Deck with View Switcher */}
+            {/* Top Command Deck with 4-Tab Switcher */}
             <div className="flex items-center justify-between px-4 py-2 bg-abyssal-900/95 border-b border-abyssal-800/90 shrink-0 z-30 flex-wrap gap-2">
               <div className="flex items-center gap-2.5 min-w-0">
                 <div className="p-1.5 rounded-lg bg-ocean-cyan/15 text-ocean-cyan shrink-0">
@@ -511,7 +511,7 @@ export function App() {
                 </div>
               </div>
 
-              {/* Explorer Tab Switcher */}
+              {/* Clean 4-Button Explorer View Switcher */}
               <div className="flex items-center gap-1 bg-abyssal-950 p-1 rounded-xl border border-abyssal-800 shrink-0 shadow-inner font-mono text-xs">
                 <button
                   type="button"
@@ -649,14 +649,9 @@ export function App() {
           </div>
         )}
 
-        {currentMode === 'classroom' && (
+        {currentMode === 'telegram' && (
           <div className="flex-1 min-h-0 h-full flex flex-col overflow-hidden">
-            <AdoptFloat
-              floats={floats}
-              onSelectFloatForMap={(fId) => {
-                handleInspectFloat(fId);
-              }}
-            />
+            <TelegramGateway />
           </div>
         )}
 

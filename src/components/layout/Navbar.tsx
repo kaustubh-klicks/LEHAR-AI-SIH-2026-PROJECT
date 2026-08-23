@@ -3,12 +3,12 @@ import {
   MessageSquare,
   Compass,
   Radar,
-  GraduationCap,
   ChevronDown,
   Smartphone,
   GitBranch,
   Sparkles,
-  Activity
+  Activity,
+  Send
 } from 'lucide-react';
 import type { AppMode } from '../../types';
 
@@ -51,11 +51,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       icon: Smartphone
     },
     {
-      id: 'classroom' as AppMode,
-      label: 'Classroom (NEP 2020)',
-      desc: 'Adopt an ARGO Float & interactive ocean science quizzes',
-      tag: 'Education',
-      icon: GraduationCap
+      id: 'telegram' as AppMode,
+      label: 'Telegram Bot',
+      desc: '24/7 Multimodal INCOIS ocean alerts & PFZ coordinates',
+      tag: 'Live Field',
+      icon: Send
     },
     {
       id: 'pipeline' as AppMode,
@@ -160,7 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${demoOpen ? 'rotate-180 text-cyan-400' : 'text-slate-400'}`} />
             </button>
 
-            {/* Dropdown Popover (100% Solid Deep Navy Opaque Background) */}
+            {/* Dropdown Popover */}
             {demoOpen && (
               <div className="absolute right-0 mt-2 w-72 bg-[#071322] border border-cyan-500/30 rounded-2xl shadow-2xl shadow-black p-2 z-[9999] space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 ring-1 ring-cyan-500/20">
                 <div className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center justify-between border-b border-slate-800 pb-1.5 mb-1">
