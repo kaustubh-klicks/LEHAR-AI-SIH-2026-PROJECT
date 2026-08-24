@@ -17,6 +17,16 @@ interface HydrographicTransectProps {
   floats: FloatSummary[];
 }
 
+interface HorizonConfig {
+  tempRange: string;
+  minDepth: number;
+  maxDepth: number;
+  avgOxygen: string;
+  oxygenVal: number;
+  phytoAbundance: string;
+  lightPenetration: string;
+}
+
 interface SectorProfile {
   id: string;
   name: string;
@@ -30,21 +40,21 @@ interface SectorProfile {
   omzIntensity: string;
   doMin: number;
   hydroSummary: string;
+  horizons: {
+    surface_warm: HorizonConfig;
+    upper_thermocline: HorizonConfig;
+    mesopelagic_omz: HorizonConfig;
+    bathypelagic_abyss: HorizonConfig;
+  };
 }
 
-interface ThermalPreset {
-  id: string;
+interface ThermalPresetMeta {
+  id: 'surface_warm' | 'upper_thermocline' | 'mesopelagic_omz' | 'bathypelagic_abyss';
   name: string;
-  tempRange: string;
-  minDepth: number;
-  maxDepth: number;
-  avgOxygen: string;
-  phytoAbundance: string;
-  lightPenetration: string;
-  speciesBySector: Record<string, { name: string; type: string; depthHabit: string }[]>;
   description: string;
   color: string;
   hexColor: number;
+  speciesBySector: Record<string, { name: string; type: string; depthHabit: string }[]>;
 }
 
 interface GlossaryModal {
@@ -65,9 +75,47 @@ const INDIAN_OCEAN_SECTORS: SectorProfile[] = [
     surfaceTemp: '28.8°C',
     tempVal: 28.8,
     mldDepth: 85,
-    omzIntensity: '< 12 µmol/kg (Dead Zone at 300–900m)',
+    omzIntensity: '< 12 µmol/kg (Dead Zone at 180–850m)',
     doMin: 4.8,
     hydroSummary: 'Intense Southwest Monsoon upwelling along the western coast driving massive primary production and a deep sub-surface hypoxic envelope.',
+    horizons: {
+      surface_warm: {
+        tempRange: '26.5°C – 30.0°C',
+        minDepth: 0,
+        maxDepth: 85,
+        avgOxygen: '210 µmol/kg',
+        oxygenVal: 210,
+        phytoAbundance: '0.85 mg/m³ (Peak Plume)',
+        lightPenetration: '100% – Full Sunlit Euphotic',
+      },
+      upper_thermocline: {
+        tempRange: '18.0°C – 25.0°C',
+        minDepth: 85,
+        maxDepth: 250,
+        avgOxygen: '75 µmol/kg',
+        oxygenVal: 75,
+        phytoAbundance: '0.12 mg/m³ (Subsurface)',
+        lightPenetration: '12% – Twilight Stratum',
+      },
+      mesopelagic_omz: {
+        tempRange: '8.0°C – 15.0°C',
+        minDepth: 180,
+        maxDepth: 850,
+        avgOxygen: '4.8 µmol/kg (Lethal Hypoxia)',
+        oxygenVal: 4.8,
+        phytoAbundance: '0.00 mg/m³ (Aphotic)',
+        lightPenetration: '0.0% – Dark Zone',
+      },
+      bathypelagic_abyss: {
+        tempRange: '2.4°C – 5.0°C',
+        minDepth: 850,
+        maxDepth: 2000,
+        avgOxygen: '42 µmol/kg',
+        oxygenVal: 42,
+        phytoAbundance: '0.00 mg/m³ (Marine Snow)',
+        lightPenetration: '0% – Pitch Black',
+      },
+    },
   },
   {
     id: 'bay_of_bengal',
@@ -78,10 +126,48 @@ const INDIAN_OCEAN_SECTORS: SectorProfile[] = [
     salinityVal: 32.4,
     surfaceTemp: '29.6°C',
     tempVal: 29.6,
-    mldDepth: 55,
+    mldDepth: 45,
     omzIntensity: '35 µmol/kg (Moderate Mesopelagic OMZ)',
     doMin: 22.0,
     hydroSummary: 'Ganga-Brahmaputra river discharge creates a low-salinity freshwater cap, preventing vertical mixing and preserving heat.',
+    horizons: {
+      surface_warm: {
+        tempRange: '27.5°C – 30.5°C',
+        minDepth: 0,
+        maxDepth: 45,
+        avgOxygen: '205 µmol/kg',
+        oxygenVal: 205,
+        phytoAbundance: '0.72 mg/m³ (Riverine Plume)',
+        lightPenetration: '100% – Full Sunlit Euphotic',
+      },
+      upper_thermocline: {
+        tempRange: '19.0°C – 26.0°C',
+        minDepth: 45,
+        maxDepth: 220,
+        avgOxygen: '98 µmol/kg',
+        oxygenVal: 98,
+        phytoAbundance: '0.18 mg/m³ (Barrier Layer)',
+        lightPenetration: '15% – Twilight Stratum',
+      },
+      mesopelagic_omz: {
+        tempRange: '9.0°C – 16.0°C',
+        minDepth: 250,
+        maxDepth: 700,
+        avgOxygen: '22.0 µmol/kg (Moderate OMZ)',
+        oxygenVal: 22.0,
+        phytoAbundance: '0.00 mg/m³ (Aphotic)',
+        lightPenetration: '0.1% – Twilight Zone',
+      },
+      bathypelagic_abyss: {
+        tempRange: '2.8°C – 5.5°C',
+        minDepth: 700,
+        maxDepth: 2000,
+        avgOxygen: '50 µmol/kg',
+        oxygenVal: 50,
+        phytoAbundance: '0.00 mg/m³ (Marine Snow)',
+        lightPenetration: '0% – Pitch Black',
+      },
+    },
   },
   {
     id: 'lakshadweep_sea',
@@ -92,10 +178,48 @@ const INDIAN_OCEAN_SECTORS: SectorProfile[] = [
     salinityVal: 35.4,
     surfaceTemp: '29.2°C',
     tempVal: 29.2,
-    mldDepth: 70,
+    mldDepth: 65,
     omzIntensity: '55 µmol/kg',
     doMin: 35.0,
     hydroSummary: 'Productive continental shelf break with active coral lagoon ecosystems and primary skipjack tuna feeding grounds.',
+    horizons: {
+      surface_warm: {
+        tempRange: '27.0°C – 30.0°C',
+        minDepth: 0,
+        maxDepth: 65,
+        avgOxygen: '218 µmol/kg',
+        oxygenVal: 218,
+        phytoAbundance: '0.92 mg/m³ (Atoll Bloom)',
+        lightPenetration: '100% – Coral Photic',
+      },
+      upper_thermocline: {
+        tempRange: '18.5°C – 25.5°C',
+        minDepth: 65,
+        maxDepth: 220,
+        avgOxygen: '110 µmol/kg',
+        oxygenVal: 110,
+        phytoAbundance: '0.16 mg/m³ (Upwelling Shelf)',
+        lightPenetration: '18% – Twilight Stratum',
+      },
+      mesopelagic_omz: {
+        tempRange: '8.5°C – 15.5°C',
+        minDepth: 220,
+        maxDepth: 650,
+        avgOxygen: '35.0 µmol/kg (Sub-Hypoxic)',
+        oxygenVal: 35.0,
+        phytoAbundance: '0.00 mg/m³ (Aphotic)',
+        lightPenetration: '0.1% – Twilight Zone',
+      },
+      bathypelagic_abyss: {
+        tempRange: '2.5°C – 5.0°C',
+        minDepth: 650,
+        maxDepth: 2000,
+        avgOxygen: '48 µmol/kg',
+        oxygenVal: 48,
+        phytoAbundance: '0.00 mg/m³ (Marine Snow)',
+        lightPenetration: '0% – Pitch Black',
+      },
+    },
   },
   {
     id: 'andaman_sea',
@@ -106,10 +230,48 @@ const INDIAN_OCEAN_SECTORS: SectorProfile[] = [
     salinityVal: 33.2,
     surfaceTemp: '29.4°C',
     tempVal: 29.4,
-    mldDepth: 65,
+    mldDepth: 55,
     omzIntensity: '48 µmol/kg',
     doMin: 45.0,
     hydroSummary: 'Deep volcanic trenches with strong tidal internal waves and rich benthic coral-shelf ecosystems.',
+    horizons: {
+      surface_warm: {
+        tempRange: '27.2°C – 30.2°C',
+        minDepth: 0,
+        maxDepth: 55,
+        avgOxygen: '212 µmol/kg',
+        oxygenVal: 212,
+        phytoAbundance: '0.68 mg/m³ (Island Shelf)',
+        lightPenetration: '100% – Full Sunlit Euphotic',
+      },
+      upper_thermocline: {
+        tempRange: '18.0°C – 25.0°C',
+        minDepth: 55,
+        maxDepth: 280,
+        avgOxygen: '125 µmol/kg (Internal Wave Pumping)',
+        oxygenVal: 125,
+        phytoAbundance: '0.22 mg/m³ (Subsurface)',
+        lightPenetration: '14% – Twilight Stratum',
+      },
+      mesopelagic_omz: {
+        tempRange: '8.0°C – 15.0°C',
+        minDepth: 300,
+        maxDepth: 600,
+        avgOxygen: '45.0 µmol/kg (Trench Buffer)',
+        oxygenVal: 45.0,
+        phytoAbundance: '0.00 mg/m³ (Aphotic)',
+        lightPenetration: '0.1% – Twilight Zone',
+      },
+      bathypelagic_abyss: {
+        tempRange: '2.2°C – 4.8°C',
+        minDepth: 600,
+        maxDepth: 2000,
+        avgOxygen: '54 µmol/kg',
+        oxygenVal: 54,
+        phytoAbundance: '0.00 mg/m³ (Hadal Ridge Snow)',
+        lightPenetration: '0% – Pitch Black',
+      },
+    },
   },
   {
     id: 'equatorial_basin',
@@ -124,19 +286,51 @@ const INDIAN_OCEAN_SECTORS: SectorProfile[] = [
     omzIntensity: '85 µmol/kg (Well-Ventilated)',
     doMin: 78.0,
     hydroSummary: 'Regulated by the Wyrtki Jet and Indian Ocean Dipole (IOD) oscillations, acting as an open pelagic highway.',
+    horizons: {
+      surface_warm: {
+        tempRange: '26.0°C – 29.5°C',
+        minDepth: 0,
+        maxDepth: 120,
+        avgOxygen: '220 µmol/kg (High Dynamic Mixing)',
+        oxygenVal: 220,
+        phytoAbundance: '0.55 mg/m³ (Pelagic Dispersed)',
+        lightPenetration: '100% – Full Sunlit Euphotic',
+      },
+      upper_thermocline: {
+        tempRange: '17.5°C – 24.5°C',
+        minDepth: 120,
+        maxDepth: 350,
+        avgOxygen: '145 µmol/kg (Undercurrent Vent)',
+        oxygenVal: 145,
+        phytoAbundance: '0.08 mg/m³ (Deep Euphotic)',
+        lightPenetration: '8% – Twilight Stratum',
+      },
+      mesopelagic_omz: {
+        tempRange: '7.5°C – 14.5°C',
+        minDepth: 400,
+        maxDepth: 600,
+        avgOxygen: '78.0 µmol/kg (Unrestricted Breathing)',
+        oxygenVal: 78.0,
+        phytoAbundance: '0.00 mg/m³ (Aphotic)',
+        lightPenetration: '0.05% – Twilight Zone',
+      },
+      bathypelagic_abyss: {
+        tempRange: '1.8°C – 4.2°C',
+        minDepth: 600,
+        maxDepth: 2000,
+        avgOxygen: '68 µmol/kg (Antarctic Flow)',
+        oxygenVal: 68,
+        phytoAbundance: '0.00 mg/m³ (Marine Snow)',
+        lightPenetration: '0% – Pitch Black',
+      },
+    },
   },
 ];
 
-const THERMAL_PRESETS: ThermalPreset[] = [
+const PRESETS_META: ThermalPresetMeta[] = [
   {
     id: 'surface_warm',
-    name: 'Tropical Warm Pool (> 26.5°C)',
-    tempRange: '26.5°C – 30.0°C',
-    minDepth: 0,
-    maxDepth: 100,
-    avgOxygen: '210 µmol/kg',
-    phytoAbundance: '0.85 mg/m³ (Peak Plume)',
-    lightPenetration: '100% – Full Sunlit Euphotic',
+    name: 'Tropical Warm Pool',
     description: 'The epipelagic photic blanket driven by monsoonal solar heating and surface wind mixing. Primary breeding and feeding ground.',
     color: '#ff3366',
     hexColor: 0xff3366,
@@ -145,22 +339,22 @@ const THERMAL_PRESETS: ThermalPreset[] = [
         { name: 'Indian Oil Sardine (Sardinella longiceps)', type: 'Coastal Pelagic', depthHabit: '0–45m' },
         { name: 'Indian Mackerel (Rastrelliger kanagurta)', type: 'Schooling Forager', depthHabit: '15–70m' },
         { name: 'Silver Pomfret', type: 'Commercial Catch', depthHabit: '10–55m' },
-        { name: 'Ribbonfish', type: 'Predatory Pelagic', depthHabit: '30–100m' },
+        { name: 'Ribbonfish', type: 'Predatory Pelagic', depthHabit: '30–85m' },
       ],
       bay_of_bengal: [
-        { name: 'Hilsa Shad (Tenualosa ilisha)', type: 'Anadromous Forager', depthHabit: '0–50m' },
-        { name: 'Bombay Duck (Harpadon nehereus)', type: 'Estuarine Coastal', depthHabit: '10–60m' },
+        { name: 'Hilsa Shad (Tenualosa ilisha)', type: 'Anadromous Forager', depthHabit: '0–40m' },
+        { name: 'Bombay Duck (Harpadon nehereus)', type: 'Estuarine Coastal', depthHabit: '10–45m' },
         { name: 'Tiger Prawns (Penaeus monodon)', type: 'Coastal Planktonic', depthHabit: '0–35m' },
         { name: 'Anchovies', type: 'Phytoplankton Feeder', depthHabit: '0–40m' },
       ],
       lakshadweep_sea: [
-        { name: 'Skipjack Tuna (Katsuwonus pelamis)', type: 'Surface Feeder', depthHabit: '0–80m' },
-        { name: 'Bluefin Trevally', type: 'Reef Pelagic', depthHabit: '5–60m' },
+        { name: 'Skipjack Tuna (Katsuwonus pelamis)', type: 'Surface Feeder', depthHabit: '0–60m' },
+        { name: 'Bluefin Trevally', type: 'Reef Pelagic', depthHabit: '5–55m' },
         { name: 'Needlefish', type: 'Surface Hunter', depthHabit: '0–20m' },
       ],
       andaman_sea: [
-        { name: 'Spanish Mackerel (Seerfish)', type: 'Coastal Predator', depthHabit: '10–75m' },
-        { name: 'Coral Trout & Groupers', type: 'Reef Benthic', depthHabit: '15–90m' },
+        { name: 'Spanish Mackerel (Seerfish)', type: 'Coastal Predator', depthHabit: '10–50m' },
+        { name: 'Coral Trout & Groupers', type: 'Reef Benthic', depthHabit: '15–55m' },
         { name: 'Flying Fish', type: 'Epipelagic', depthHabit: '0–15m' },
       ],
       equatorial_basin: [
@@ -172,114 +366,96 @@ const THERMAL_PRESETS: ThermalPreset[] = [
   },
   {
     id: 'upper_thermocline',
-    name: 'Upper Thermocline (18°C – 25°C)',
-    tempRange: '18.0°C – 25.0°C',
-    minDepth: 100,
-    maxDepth: 300,
-    avgOxygen: '95 µmol/kg',
-    phytoAbundance: '0.15 mg/m³ (Subsurface)',
-    lightPenetration: '10% – Twilight Stratum',
+    name: 'Upper Thermocline',
     description: 'Zone of sharpest thermal decline. Active hunting corridor for deep-diving pelagic gamefish.',
     color: '#ffbb00',
     hexColor: 0xffbb00,
     speciesBySector: {
       arabian_sea: [
-        { name: 'Yellowfin Tuna (Thunnus albacares)', type: 'Apex Migrator', depthHabit: '100–250m' },
-        { name: 'Skipjack Tuna', type: 'Thermocline Feeder', depthHabit: '80–200m' },
-        { name: 'Swordfish (Xiphias gladius)', type: 'Deep Billfish', depthHabit: '120–300m' },
+        { name: 'Yellowfin Tuna (Thunnus albacares)', type: 'Apex Migrator', depthHabit: '85–240m' },
+        { name: 'Skipjack Tuna', type: 'Thermocline Feeder', depthHabit: '85–200m' },
+        { name: 'Swordfish (Xiphias gladius)', type: 'Deep Billfish', depthHabit: '120–250m' },
       ],
       bay_of_bengal: [
-        { name: 'Bigeye Tuna (Thunnus obesus)', type: 'Deep Predator', depthHabit: '110–280m' },
-        { name: 'Barracuda', type: 'Mesopelagic Hunter', depthHabit: '90–220m' },
-        { name: 'Oceanic Squid', type: 'Cephalopod', depthHabit: '100–300m' },
+        { name: 'Bigeye Tuna (Thunnus obesus)', type: 'Deep Predator', depthHabit: '50–220m' },
+        { name: 'Barracuda', type: 'Mesopelagic Hunter', depthHabit: '60–200m' },
+        { name: 'Oceanic Squid', type: 'Cephalopod', depthHabit: '50–220m' },
       ],
       lakshadweep_sea: [
-        { name: 'Yellowfin Tuna', type: 'Commercial Pelagic', depthHabit: '100–240m' },
-        { name: 'Wahoo (Acanthocybium solandri)', type: 'Speed Predator', depthHabit: '80–180m' },
-        { name: 'Manta Rays', type: 'Thermocline Filterer', depthHabit: '50–220m' },
+        { name: 'Yellowfin Tuna', type: 'Commercial Pelagic', depthHabit: '70–220m' },
+        { name: 'Wahoo (Acanthocybium solandri)', type: 'Speed Predator', depthHabit: '70–180m' },
+        { name: 'Manta Rays', type: 'Thermocline Filterer', depthHabit: '65–200m' },
       ],
       andaman_sea: [
-        { name: 'Dogtooth Tuna', type: 'Drop-off Hunter', depthHabit: '100–260m' },
-        { name: 'Giant Trevally (GT)', type: 'Deep Shelf Hunter', depthHabit: '80–200m' },
-        { name: 'Reef Sharks', type: 'Subsurface Hunter', depthHabit: '90–250m' },
+        { name: 'Dogtooth Tuna', type: 'Drop-off Hunter', depthHabit: '60–260m' },
+        { name: 'Giant Trevally (GT)', type: 'Deep Shelf Hunter', depthHabit: '60–200m' },
+        { name: 'Reef Sharks', type: 'Subsurface Hunter', depthHabit: '60–250m' },
       ],
       equatorial_basin: [
-        { name: 'Bigeye Tuna', type: 'Trans-Oceanic', depthHabit: '120–300m' },
-        { name: 'Blue Marlin', type: 'Apex Billfish', depthHabit: '100–280m' },
-        { name: 'Silky Shark', type: 'Pelagic Predator', depthHabit: '100–250m' },
+        { name: 'Bigeye Tuna', type: 'Trans-Oceanic', depthHabit: '120–350m' },
+        { name: 'Blue Marlin', type: 'Apex Billfish', depthHabit: '120–300m' },
+        { name: 'Silky Shark', type: 'Pelagic Predator', depthHabit: '120–280m' },
       ],
     },
   },
   {
     id: 'mesopelagic_omz',
-    name: 'Mesopelagic OMZ (8°C – 15°C)',
-    tempRange: '8.0°C – 15.0°C',
-    minDepth: 300,
-    maxDepth: 1000,
-    avgOxygen: '< 18 µmol/kg',
-    phytoAbundance: '0.00 mg/m³ (Aphotic)',
-    lightPenetration: '0.1% – Twilight Zone',
+    name: 'Mesopelagic OMZ',
     description: 'Mid-water hypoxic zone. Sustains massive biomass of lanternfish undergoing nocturnal vertical migration.',
     color: '#d946ef',
     hexColor: 0xd946ef,
     speciesBySector: {
       arabian_sea: [
-        { name: 'Lanternfish (Benthosema pterotum)', type: 'Bioluminescent Biomass', depthHabit: '400–850m' },
-        { name: 'Purpleback Flying Squid (Sthenoteuthis)', type: 'Hypoxia Tolerant', depthHabit: '350–700m' },
-        { name: 'Deep-Sea Hatchetfish', type: 'Photophore Specialist', depthHabit: '450–900m' },
+        { name: 'Lanternfish (Benthosema pterotum)', type: 'Bioluminescent Biomass', depthHabit: '200–800m' },
+        { name: 'Purpleback Flying Squid (Sthenoteuthis)', type: 'Hypoxia Tolerant', depthHabit: '200–700m' },
+        { name: 'Deep-Sea Hatchetfish', type: 'Photophore Specialist', depthHabit: '300–850m' },
       ],
       bay_of_bengal: [
-        { name: 'Myctophid Lanternfish', type: 'Diel Migrator', depthHabit: '350–800m' },
-        { name: 'Bristlemouths (Cyclothone)', type: 'Abundant Mesopelagic', depthHabit: '400–950m' },
-        { name: 'Glass Squid', type: 'Transparent Cephalopod', depthHabit: '500–900m' },
+        { name: 'Myctophid Lanternfish', type: 'Diel Migrator', depthHabit: '260–700m' },
+        { name: 'Bristlemouths (Cyclothone)', type: 'Abundant Mesopelagic', depthHabit: '300–700m' },
+        { name: 'Glass Squid', type: 'Transparent Cephalopod', depthHabit: '350–700m' },
       ],
       lakshadweep_sea: [
-        { name: 'Deep Snappers (Etelis coruscans)', type: 'Seamount Benthic', depthHabit: '300–600m' },
-        { name: 'Lanternfish Clusters', type: 'Forage Base', depthHabit: '400–850m' },
+        { name: 'Deep Snappers (Etelis coruscans)', type: 'Seamount Benthic', depthHabit: '240–650m' },
+        { name: 'Lanternfish Clusters', type: 'Forage Base', depthHabit: '250–650m' },
       ],
       andaman_sea: [
-        { name: 'Andaman Deep-Sea Lobster', type: 'Trench Benthic', depthHabit: '350–750m' },
-        { name: 'Bioluminescent Jellyfish', type: 'Cnidarian', depthHabit: '400–900m' },
+        { name: 'Andaman Deep-Sea Lobster', type: 'Trench Benthic', depthHabit: '300–600m' },
+        { name: 'Bioluminescent Jellyfish', type: 'Cnidarian', depthHabit: '300–600m' },
       ],
       equatorial_basin: [
-        { name: 'Vampire Squid (Vampyroteuthis)', type: 'Detritivore Cephalopod', depthHabit: '600–1000m' },
-        { name: 'Gulper Eel Juveniles', type: 'Mesopelagic', depthHabit: '500–950m' },
+        { name: 'Vampire Squid (Vampyroteuthis)', type: 'Detritivore Cephalopod', depthHabit: '400–600m' },
+        { name: 'Gulper Eel Juveniles', type: 'Mesopelagic', depthHabit: '400–600m' },
       ],
     },
   },
   {
     id: 'bathypelagic_abyss',
-    name: 'Bathypelagic Abyss (< 5°C)',
-    tempRange: '2.4°C – 5.0°C',
-    minDepth: 1000,
-    maxDepth: 2000,
-    avgOxygen: '48 µmol/kg',
-    phytoAbundance: '0.00 mg/m³ (Marine Snow)',
-    lightPenetration: '0% – Pitch Black',
+    name: 'Bathypelagic Abyss',
     description: 'Cold, high-pressure abyssal deep layer sustained by sinking organic marine snow and deep Antarctic currents.',
     color: '#00d4ff',
     hexColor: 0x00d4ff,
     speciesBySector: {
       arabian_sea: [
-        { name: "Sloane's Viperfish (Chauliodus sloani)", type: 'Abyssal Predator', depthHabit: '1000–1800m' },
-        { name: 'Deep-Sea Dragonfish', type: 'Barbel Hunter', depthHabit: '1200–1900m' },
-        { name: 'Giant Benthic Isopods', type: 'Scavenger', depthHabit: '1400–2000m' },
+        { name: "Sloane's Viperfish (Chauliodus sloani)", type: 'Abyssal Predator', depthHabit: '900–1800m' },
+        { name: 'Deep-Sea Dragonfish', type: 'Barbel Hunter', depthHabit: '1000–1900m' },
+        { name: 'Giant Benthic Isopods', type: 'Scavenger', depthHabit: '1100–2000m' },
       ],
       bay_of_bengal: [
-        { name: 'Deep-Sea Gulper Eel (Eurypharynx pelecanoides)', type: 'Abyssal Scavenger', depthHabit: '1200–2000m' },
-        { name: 'Grenadier / Rattail Fish', type: 'Benthic Forager', depthHabit: '1100–1950m' },
+        { name: 'Deep-Sea Gulper Eel (Eurypharynx pelecanoides)', type: 'Abyssal Scavenger', depthHabit: '750–2000m' },
+        { name: 'Grenadier / Rattail Fish', type: 'Benthic Forager', depthHabit: '800–1950m' },
       ],
       lakshadweep_sea: [
-        { name: 'Abyssal Sea Cucumbers', type: 'Holothurian Detritivore', depthHabit: '1200–2000m' },
-        { name: 'Tripod Fish (Bathypterois)', type: 'Stilt Benthic', depthHabit: '1300–2000m' },
+        { name: 'Abyssal Sea Cucumbers', type: 'Holothurian Detritivore', depthHabit: '700–2000m' },
+        { name: 'Tripod Fish (Bathypterois)', type: 'Stilt Benthic', depthHabit: '800–2000m' },
       ],
       andaman_sea: [
-        { name: 'Andaman Trench Snailfish', type: 'Hadal/Abyssal', depthHabit: '1400–2000m' },
-        { name: 'Chimaera (Ghost Shark)', type: 'Deep Chondrichthyes', depthHabit: '1100–1850m' },
+        { name: 'Andaman Trench Snailfish', type: 'Hadal/Abyssal', depthHabit: '650–2000m' },
+        { name: 'Chimaera (Ghost Shark)', type: 'Deep Chondrichthyes', depthHabit: '700–1850m' },
       ],
       equatorial_basin: [
-        { name: 'Fangtooth (Anoplogaster cornuta)', type: 'Apex Abyssal', depthHabit: '1000–2000m' },
-        { name: 'Giant Amphipods', type: 'Crustacean Detritivore', depthHabit: '1500–2000m' },
+        { name: 'Fangtooth (Anoplogaster cornuta)', type: 'Apex Abyssal', depthHabit: '650–2000m' },
+        { name: 'Giant Amphipods', type: 'Crustacean Detritivore', depthHabit: '700–2000m' },
       ],
     },
   },
@@ -293,14 +469,17 @@ const GLOSSARY: Record<string, GlossaryModal> = {
     benefit: 'Enables fishing boats to drop nets at the exact depth where fish school, while avoiding fuel-wasting empty casts in dead zones.'
   },
   hud: {
-    title: 'Probe Hydrographic Cast Readings',
-    subtitle: 'Live In-Situ CTD + BGC Telemetry',
-    desc: 'Displays cast depth, thermal envelope, salinity, dissolved oxygen, and surface chlorophyll-a from autonomous ARGO floats.',
-    benefit: 'Provides grounded data for PFZ forecasting and net calibration.'
+    title: 'Water Column Telemetry Guide',
+    subtitle: 'In-Situ Horizon Parameter Breakdown',
+    desc: 'This card displays physical and biogeochemical ocean parameters measured for the currently isolated depth layer:',
+    benefit: `• Thermal Envelope: The temperature boundaries (°C) confining this specific depth layer.
+• Surface Salinity (PSU): Practical Salinity Units representing salt concentration (evaporation vs freshwater input).
+• Dissolved Oxygen (µmol/kg): Breathable oxygen for marine life (>180 indicates rich waters, <20 indicates hypoxic dead zones).
+• Phytoplankton (Chl-a): Microscopic plant density (mg/m³) serving as the fundamental food source for pelagic fish.`
   },
   omz: {
     title: 'Oxygen Minimum Zone (OMZ) / Dead Zone',
-    subtitle: 'Mid-Water Oxygen Depletion (300–900m)',
+    subtitle: 'Mid-Water Oxygen Depletion (180–850m)',
     desc: 'A thick sub-surface layer where bacteria consume dissolved oxygen during organic decay. Oxygen drops below 20 µmol/kg, creating an uninhabitable zone for commercial fish.',
     benefit: 'Trawler nets dropped into this zone catch zero commercial fish. Visualizing it prevents wasted gear, time, and diesel.'
   }
@@ -308,19 +487,19 @@ const GLOSSARY: Record<string, GlossaryModal> = {
 
 export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floats = [] }) => {
   const [selectedSector, setSelectedSector] = useState<SectorProfile>(INDIAN_OCEAN_SECTORS[0]);
-  const [selectedPreset, setSelectedPreset] = useState<ThermalPreset>(THERMAL_PRESETS[0]);
+  const [selectedPresetId, setSelectedPresetId] = useState<ThermalPresetMeta['id']>('surface_warm');
   const [autoRotate, setAutoRotate] = useState<boolean>(false);
   const [activeModal, setActiveModal] = useState<GlossaryModal | null>(null);
 
   const mountRef = useRef<HTMLDivElement | null>(null);
   const animFrameId = useRef<number | null>(null);
 
-  // Live float telemetry binding
   const liveFloat = floats.length > 0 ? floats[0] : null;
-  const displayTemp = liveFloat?.surface_temp ? `${liveFloat.surface_temp.toFixed(1)}°C` : selectedSector.surfaceTemp;
   const displaySalinity = liveFloat?.surface_salinity ? `${liveFloat.surface_salinity.toFixed(1)} PSU` : selectedSector.surfaceSalinity;
 
-  const currentSpecies = selectedPreset.speciesBySector[selectedSector.id] || selectedPreset.speciesBySector.arabian_sea;
+  const currentPresetMeta = PRESETS_META.find(p => p.id === selectedPresetId) || PRESETS_META[0];
+  const currentHorizonConfig = selectedSector.horizons[selectedPresetId];
+  const currentSpecies = currentPresetMeta.speciesBySector[selectedSector.id] || currentPresetMeta.speciesBySector.arabian_sea;
 
   useEffect(() => {
     const container = mountRef.current;
@@ -334,13 +513,12 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
     camera.position.set(17, 11, 23);
     camera.lookAt(0, -5, 0);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, logarithmicDepthBuffer: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0); // Full transparency to show background gradient
+    renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // High intensity ambient & directional lights
     const ambientLight = new THREE.AmbientLight(0x38bdf8, 2.2);
     scene.add(ambientLight);
 
@@ -362,7 +540,6 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
     const colWidth = 12;
     const colDepth = 12;
 
-    // Glowing Outer Water Column Cage Box
     const boxGeom = new THREE.BoxGeometry(colWidth, colHeight, colDepth);
     const boxWireframe = new THREE.LineSegments(
       new THREE.EdgesGeometry(boxGeom),
@@ -371,75 +548,90 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
     boxWireframe.position.set(0, -colHeight / 2, 0);
     rootGroup.add(boxWireframe);
 
-    // Semitransparent Inner Volume Block
-    const innerVolGeom = new THREE.BoxGeometry(colWidth * 0.99, colHeight * 0.99, colDepth * 0.99);
+    const innerVolGeom = new THREE.BoxGeometry(colWidth * 0.98, colHeight * 0.98, colDepth * 0.98);
     const innerVolMat = new THREE.MeshBasicMaterial({
       color: 0x0284c7,
       transparent: true,
-      opacity: 0.12,
-      side: THREE.BackSide
+      opacity: 0.1,
+      side: THREE.BackSide,
+      depthWrite: false,
     });
     const innerVol = new THREE.Mesh(innerVolGeom, innerVolMat);
     innerVol.position.set(0, -colHeight / 2, 0);
     rootGroup.add(innerVol);
 
-    // Depth Reference Horizontal Grids
     for (let d = 1; d <= 3; d++) {
-      const gPlane = new THREE.GridHelper(colWidth, 6, 0x38bdf8, 0x0284c7);
+      const gPlane = new THREE.GridHelper(colWidth * 0.98, 6, 0x38bdf8, 0x0284c7);
       (gPlane.material as THREE.Material).transparent = true;
       (gPlane.material as THREE.Material).opacity = 0.35;
+      (gPlane.material as THREE.Material).depthWrite = false;
       gPlane.position.set(0, -(d / 4) * colHeight, 0);
       rootGroup.add(gPlane);
     }
 
-    // Dynamic Highlight Slab for Selected Horizon
-    const normTop = selectedPreset.minDepth / 2000;
-    const normBottom = selectedPreset.maxDepth / 2000;
+    // Dynamic depth positioning calibrated per sector
+    const normTop = currentHorizonConfig.minDepth / 2000;
+    const normBottom = currentHorizonConfig.maxDepth / 2000;
     const slabHeight = Math.max(0.7, (normBottom - normTop) * colHeight);
     const slabCenterY = -(normTop * colHeight + slabHeight / 2);
 
-    const slabGeom = new THREE.BoxGeometry(colWidth * 0.99, slabHeight, colDepth * 0.99);
+    const slabGeom = new THREE.BoxGeometry(colWidth * 0.97, slabHeight, colDepth * 0.97);
     const slabMat = new THREE.MeshStandardMaterial({
-      color: selectedPreset.hexColor,
+      color: currentPresetMeta.hexColor,
       transparent: true,
       opacity: 0.72,
       roughness: 0.1,
       metalness: 0.2,
-      emissive: selectedPreset.hexColor,
+      emissive: currentPresetMeta.hexColor,
       emissiveIntensity: 0.65,
-      side: THREE.DoubleSide
+      side: THREE.DoubleSide,
+      depthWrite: false,
     });
     const slabMesh = new THREE.Mesh(slabGeom, slabMat);
     slabMesh.position.set(0, slabCenterY, 0);
     rootGroup.add(slabMesh);
 
-    // Bright White Glowing Edge Outline
     const slabWire = new THREE.LineSegments(
       new THREE.EdgesGeometry(slabGeom),
-      new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 })
+      new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.95, depthWrite: false })
     );
     slabMesh.add(slabWire);
 
-    // Volumetric OMZ Hypoxic Particles (Glowing Violet)
-    const omzParticleCount = 800;
-    const omzPGeom = new THREE.BufferGeometry();
-    const omzPPositions = new Float32Array(omzParticleCount * 3);
+    // Dynamic Dissolved Oxygen particle spawning calibrated to each sea's real layers
+    const hConfigs = selectedSector.horizons;
+    const layerConfigs = [
+      { minD: hConfigs.surface_warm.minDepth, maxD: hConfigs.surface_warm.maxDepth, count: Math.round((hConfigs.surface_warm.oxygenVal / 220) * 450) },
+      { minD: hConfigs.upper_thermocline.minDepth, maxD: hConfigs.upper_thermocline.maxDepth, count: Math.round((hConfigs.upper_thermocline.oxygenVal / 220) * 450) },
+      { minD: hConfigs.mesopelagic_omz.minDepth, maxD: hConfigs.mesopelagic_omz.maxDepth, count: Math.max(15, Math.round((hConfigs.mesopelagic_omz.oxygenVal / 220) * 450)) },
+      { minD: hConfigs.bathypelagic_abyss.minDepth, maxD: hConfigs.bathypelagic_abyss.maxDepth, count: Math.round((hConfigs.bathypelagic_abyss.oxygenVal / 220) * 450) },
+    ];
 
-    for (let i = 0; i < omzParticleCount * 3; i += 3) {
-      omzPPositions[i] = (Math.random() - 0.5) * (colWidth * 0.94);
-      omzPPositions[i + 1] = -(colHeight * 0.2) - Math.random() * (colHeight * 0.55);
-      omzPPositions[i + 2] = (Math.random() - 0.5) * (colDepth * 0.94);
-    }
-    omzPGeom.setAttribute('position', new THREE.BufferAttribute(omzPPositions, 3));
-    const omzPMat = new THREE.PointsMaterial({ 
-      color: 0xf0abfc, 
-      size: 0.38, 
-      transparent: true, 
-      opacity: 0.95 
+    const oxyPositions: number[] = [];
+
+    layerConfigs.forEach((cfg) => {
+      const topY = -(cfg.minD / 2000) * colHeight;
+      const bottomY = -(cfg.maxD / 2000) * colHeight;
+      const layerH = Math.abs(bottomY - topY);
+
+      for (let i = 0; i < cfg.count; i++) {
+        const px = (Math.random() - 0.5) * (colWidth * 0.92);
+        const py = topY - Math.random() * layerH;
+        const pz = (Math.random() - 0.5) * (colDepth * 0.92);
+        oxyPositions.push(px, py, pz);
+      }
     });
-    rootGroup.add(new THREE.Points(omzPGeom, omzPMat));
 
-    // Luminous Neon-Cyan CTD Cast Curve
+    const oxyGeom = new THREE.BufferGeometry();
+    oxyGeom.setAttribute('position', new THREE.Float32BufferAttribute(oxyPositions, 3));
+    const oxyMat = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.35,
+      transparent: true,
+      opacity: 0.95,
+      depthWrite: false,
+    });
+    rootGroup.add(new THREE.Points(oxyGeom, oxyMat));
+
     const curve = new THREE.CatmullRomCurve3([
       new THREE.Vector3(-4, 0, -4),
       new THREE.Vector3(-3, -(colHeight * 0.38), -2),
@@ -456,28 +648,8 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
     });
     rootGroup.add(new THREE.Mesh(tubeGeom, tubeMat));
 
-    // Photic Surface Plankton Particles (Neon Mint)
-    const particleCount = 260;
-    const particleGeom = new THREE.BufferGeometry();
-    const particlePositions = new Float32Array(particleCount * 3);
-
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      particlePositions[i] = (Math.random() - 0.5) * colWidth;
-      particlePositions[i + 1] = -Math.random() * (colHeight * 0.15);
-      particlePositions[i + 2] = (Math.random() - 0.5) * colDepth;
-    }
-    particleGeom.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
-    const particleMat = new THREE.PointsMaterial({ 
-      color: 0x34d399, 
-      size: 0.28, 
-      transparent: true, 
-      opacity: 0.95 
-    });
-    rootGroup.add(new THREE.Points(particleGeom, particleMat));
-
     scene.add(rootGroup);
 
-    // Mouse Drag Orbit Controls
     let isDragging = false;
     let prevMouse = { x: 0, y: 0 };
 
@@ -525,7 +697,7 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
       if (container.contains(dom)) container.removeChild(dom);
       renderer.dispose();
     };
-  }, [selectedPreset, selectedSector, autoRotate]);
+  }, [selectedPresetId, selectedSector, autoRotate, currentHorizonConfig, currentPresetMeta]);
 
   return (
     <div className="w-full h-full flex flex-col space-y-2.5 p-3 bg-[#020713] text-slate-100 font-sans overflow-hidden">
@@ -600,46 +772,50 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
         ))}
       </div>
 
-      {/* Horizon Selector */}
+      {/* Dynamic Horizon Selector Bar */}
       <div className="flex items-center gap-2 bg-abyssal-950 p-1.5 rounded-2xl border border-abyssal-800 shrink-0 flex-wrap">
         <span className="text-[11px] font-mono text-slate-400 px-2 flex items-center gap-1">
           <Sliders className="w-3.5 h-3.5 text-amber-400" />
           Isolate Horizon:
         </span>
 
-        {THERMAL_PRESETS.map((preset) => (
-          <button
-            key={preset.id}
-            type="button"
-            onClick={() => setSelectedPreset(preset)}
-            className={`px-3 py-1 rounded-xl text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer active:scale-95 ${
-              selectedPreset.id === preset.id
-                ? 'shadow-md border'
-                : 'bg-abyssal-900 text-slate-400 border border-abyssal-800 hover:text-white hover:bg-abyssal-850'
-            }`}
-            style={{
-              backgroundColor: selectedPreset.id === preset.id ? `${preset.color}35` : undefined,
-              borderColor: selectedPreset.id === preset.id ? preset.color : undefined,
-              color: selectedPreset.id === preset.id ? '#ffffff' : undefined,
-            }}
-          >
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: preset.color }}></span>
-            <span>{preset.name}</span>
-          </button>
-        ))}
+        {PRESETS_META.map((preset) => {
+          const horizon = selectedSector.horizons[preset.id];
+          const isSelected = selectedPresetId === preset.id;
+          return (
+            <button
+              key={preset.id}
+              type="button"
+              onClick={() => setSelectedPresetId(preset.id)}
+              className={`px-3 py-1 rounded-xl text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer active:scale-95 ${
+                isSelected
+                  ? 'shadow-md border'
+                  : 'bg-abyssal-900 text-slate-400 border border-abyssal-800 hover:text-white hover:bg-abyssal-850'
+              }`}
+              style={{
+                backgroundColor: isSelected ? `${preset.color}35` : undefined,
+                borderColor: isSelected ? preset.color : undefined,
+                color: isSelected ? '#ffffff' : undefined,
+              }}
+            >
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: preset.color }}></span>
+              <span>{preset.name} ({horizon.minDepth}m – {horizon.maxDepth}m)</span>
+            </button>
+          );
+        })}
       </div>
 
       {/* Main 3D Stage + Filtered Sector Telemetry */}
       <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-3">
         
-        {/* Left 8 Columns: 3D Scene with Rich Glowing Background */}
+        {/* Left 8 Columns: 3D Scene */}
         <div className="lg:col-span-8 flex flex-col bg-[#071933] border border-cyan-500/50 rounded-2xl p-3 relative overflow-hidden shadow-2xl shadow-cyan-950/50">
           
           <div className="flex items-center justify-between text-xs font-mono text-slate-300 pb-2 border-b border-cyan-500/20 shrink-0">
             <div className="flex items-center gap-2 text-cyan-300 font-bold">
               <span>{selectedSector.name} ({selectedSector.coords})</span>
               <span className="text-[10px] text-amber-300 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-800/50">
-                {selectedPreset.minDepth}m – {selectedPreset.maxDepth}m
+                {currentHorizonConfig.minDepth}m – {currentHorizonConfig.maxDepth}m
               </span>
             </div>
             <div className="text-[11px] text-cyan-300 font-mono">
@@ -647,61 +823,43 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
             </div>
           </div>
 
-          {/* WebGL Canvas Container with Ambient Radial Navy/Teal Gradient */}
-          <div className="flex-1 relative min-h-0 my-2 rounded-xl overflow-hidden border border-cyan-400/40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#10335e] via-[#09203d] to-[#041021] cursor-grab active:cursor-grabbing shadow-2xl">
+          {/* WebGL Canvas Container */}
+          <div className="flex-1 relative min-h-0 mt-2 rounded-xl overflow-hidden border border-cyan-400/40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#10335e] via-[#09203d] to-[#041021] cursor-grab active:cursor-grabbing shadow-2xl">
             <div ref={mountRef} className="w-full h-full" />
 
             {/* In-Scene Depth HUD */}
             <div 
-              onClick={() => setActiveModal(GLOSSARY.hud)}
-              className="absolute top-3 left-3 bg-[#0a2347]/95 backdrop-blur-xl border border-cyan-400 rounded-xl p-2.5 font-mono text-xs text-slate-200 shadow-2xl space-y-1.5 min-w-[220px] cursor-pointer hover:border-cyan-300 transition"
+              className="absolute top-3 left-3 bg-[#0a2347]/95 backdrop-blur-xl border border-cyan-400 rounded-xl p-2.5 font-mono text-xs text-slate-200 shadow-2xl space-y-1.5 min-w-[220px] transition"
             >
               <div className="text-[10px] text-cyan-300 font-bold uppercase tracking-wider flex items-center justify-between border-b border-cyan-500/30 pb-1">
                 <span className="flex items-center gap-1.5">
                   <Compass className="w-3.5 h-3.5 text-ocean-cyan" />
                   {selectedSector.name}
                 </span>
-                <Info className="w-3 h-3 text-slate-400" />
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveModal(GLOSSARY.hud);
+                  }}
+                  className="p-0.5 rounded text-cyan-300 hover:text-white hover:bg-cyan-500/20 transition cursor-pointer"
+                  title="Click to understand these numbers"
+                >
+                  <Info className="w-3.5 h-3.5" />
+                </button>
               </div>
-              <div>Probe Cast Depth: <strong className="text-white text-sm">971 m</strong></div>
-              <div>Thermal Envelope: <strong className="text-rose-400">{selectedPreset.tempRange}</strong></div>
+              <div>Thermal Envelope: <strong className="text-rose-400">{currentHorizonConfig.tempRange}</strong></div>
               <div>Surface Salinity: <strong className="text-teal-300">{displaySalinity}</strong></div>
-              <div>Dissolved Oxygen: <strong className="text-purple-300">{selectedPreset.avgOxygen}</strong></div>
-              <div>Phytoplankton (Chl-a): <strong className="text-emerald-400">{selectedPreset.phytoAbundance}</strong></div>
+              <div>Dissolved Oxygen: <strong className="text-purple-300">{currentHorizonConfig.avgOxygen}</strong></div>
+              <div>Phytoplankton (Chl-a): <strong className="text-emerald-400">{currentHorizonConfig.phytoAbundance}</strong></div>
             </div>
 
             {/* High-Contrast Glowing Depth Milestones */}
             <div className="absolute right-3 top-3 bottom-3 flex flex-col justify-between py-2 text-[10px] font-mono text-right pointer-events-none z-10 font-bold">
               <span className="text-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.9)]">0m (Surface Photic)</span>
-              <span className="text-yellow-300 drop-shadow-[0_0_8px_rgba(234,179,8,0.9)]">300m (Thermocline)</span>
-              <span className="text-purple-300 drop-shadow-[0_0_8px_rgba(168,85,247,0.9)]">1,000m (OMZ Hypoxia)</span>
+              <span className="text-yellow-300 drop-shadow-[0_0_8px_rgba(234,179,8,0.9)]">{selectedSector.horizons.upper_thermocline.minDepth}m (Thermocline)</span>
+              <span className="text-purple-300 drop-shadow-[0_0_8px_rgba(168,85,247,0.9)]">{selectedSector.horizons.mesopelagic_omz.minDepth}m (OMZ Hypoxia)</span>
               <span className="text-cyan-300 drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">2,000m (Abyssal Floor)</span>
-            </div>
-          </div>
-
-          {/* Basin Hydrodynamic Strip */}
-          <div className="grid grid-cols-4 gap-2 pt-1 shrink-0 font-mono text-center text-xs">
-            <div className="p-2 rounded-xl bg-[#092244] border border-cyan-500/30">
-              <div className="text-[10px] text-slate-400">Surface Temp</div>
-              <div className="text-rose-400 font-bold">{displayTemp}</div>
-            </div>
-            <div className="p-2 rounded-xl bg-[#092244] border border-cyan-500/30">
-              <div className="text-[10px] text-slate-400">Mixed Layer (MLD)</div>
-              <div className="text-cyan-300 font-bold">{selectedSector.mldDepth} m</div>
-            </div>
-            <div className="p-2 rounded-xl bg-[#092244] border border-cyan-500/30">
-              <div className="text-[10px] text-slate-400">Salinity Profile</div>
-              <div className="text-teal-300 font-bold text-[11px] truncate">{displaySalinity}</div>
-            </div>
-            <div 
-              onClick={() => setActiveModal(GLOSSARY.omz)}
-              className="p-2 rounded-xl bg-[#092244] border border-purple-500/40 hover:border-purple-300 cursor-pointer transition"
-            >
-              <div className="text-[10px] text-slate-400 flex items-center justify-center gap-1">
-                <span>OMZ Profile</span>
-                <Info className="w-2.5 h-2.5 text-slate-400" />
-              </div>
-              <div className="text-purple-300 font-bold text-[11px] truncate">{selectedSector.omzIntensity}</div>
             </div>
           </div>
 
@@ -728,7 +886,7 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
 
           <div className="text-xs font-bold text-slate-200 font-heading flex items-center gap-1.5 pt-1 shrink-0">
             <Fish className="w-4 h-4 text-amber-400" />
-            <span>Fishes in {selectedSector.name} ({selectedPreset.tempRange})</span>
+            <span>Fishes in {selectedSector.name} ({currentHorizonConfig.tempRange})</span>
           </div>
 
           {/* Sector-Specific Species Cards */}
@@ -751,13 +909,6 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Chemical Horizon Card */}
-          <div className="p-3 rounded-xl bg-abyssal-900/60 border border-abyssal-800 text-[11px] font-mono space-y-1 text-slate-400 shrink-0">
-            <div>• Dissolved Oxygen: <strong className="text-purple-300">{selectedPreset.avgOxygen}</strong></div>
-            <div>• Phytoplankton (Chl-a): <strong className="text-emerald-400">{selectedPreset.phytoAbundance}</strong></div>
-            <div>• Solar Penetration: <strong className="text-yellow-300">{selectedPreset.lightPenetration}</strong></div>
           </div>
 
         </div>
@@ -785,8 +936,8 @@ export const HydrographicTransect: React.FC<HydrographicTransectProps> = ({ floa
             <div className="space-y-3 text-xs leading-relaxed text-slate-300">
               <p>{activeModal.desc}</p>
               <div className="p-3 rounded-xl bg-cyan-950/50 border border-cyan-500/30 space-y-1 font-mono">
-                <span className="text-[10px] font-bold text-cyan-300 uppercase">Operational Significance:</span>
-                <p className="text-slate-200 text-[11px]">{activeModal.benefit}</p>
+                <span className="text-[10px] font-bold text-cyan-300 uppercase">Parameter Breakdown:</span>
+                <p className="text-slate-200 text-[11px] whitespace-pre-line leading-relaxed">{activeModal.benefit}</p>
               </div>
             </div>
 

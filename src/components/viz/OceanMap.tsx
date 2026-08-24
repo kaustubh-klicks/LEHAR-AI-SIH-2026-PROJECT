@@ -368,6 +368,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
   const [legendOpen, setLegendOpen] = useState<boolean>(false);
 
   const [pfzZones, setPfzZones] = useState<PFZAdvisory[]>([]);
+  const [coastalLines, setCoastalLines] = useState<any[]>([]);
   const [ports, setPorts] = useState<any[]>([]);
   const [satelliteGrid, setSatelliteGrid] = useState<SatelliteGridPoint[]>([]);
   const [internalFloats, setInternalFloats] = useState<any[]>([]);
@@ -378,8 +379,9 @@ export const OceanMap: React.FC<OceanMapProps> = ({
   useEffect(() => {
     async function loadAllData() {
       try {
-        const [pfzRes, satRes, portRes, floatRes] = await Promise.all([
+        const [pfzRes, linesRes, satRes, portRes, floatRes] = await Promise.all([
           getPFZAdvisories('all').catch(() => ({ advisories: [] })),
+          fetch('http://localhost:8000/api/pfz/lines').then((r) => r.json()).catch(() => ({ lines: [] })),
           getSatelliteGrid(1).catch(() => ({ points: [] })),
           fetch('http://localhost:8000/api/ports').then((r) => r.json()).catch(() => ({ ports: [] })),
           fetch('http://localhost:8000/api/argo-profiles?limit=1000')
@@ -392,6 +394,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
         ]);
 
         if (pfzRes && pfzRes.advisories) setPfzZones(pfzRes.advisories);
+        if (linesRes && linesRes.lines) setCoastalLines(linesRes.lines);
         if (satRes && satRes.points) setSatelliteGrid(satRes.points);
         if (portRes && portRes.ports) setPorts(portRes.ports);
 
@@ -521,36 +524,6 @@ export const OceanMap: React.FC<OceanMapProps> = ({
     return Array.from(uniqueMap.values()) as FloatSummary[];
   }, [internalFloats, propFloats]);
 
-  // Compute dynamic open ocean PFZ zones derived directly from Float telemetry (excluding coastal lines)
-  const openOceanPfzZones = React.useMemo(() => {
-    if (pfzZones && pfzZones.length > 0) {
-      return pfzZones;
-    }
-    // Dynamic generation from ARGO floats meeting high-yield pelagic thresholds
-    return (floats || [])
-      .filter((f: any) => {
-        const temp = f.surface_temp || 28.0;
-        return temp >= 26.0 && temp <= 29.5;
-      })
-      .map((f: any, idx: number) => {
-        const temp = f.surface_temp || 28.0;
-        const isOpt = temp >= 26.8 && temp <= 28.6;
-        return {
-          id: `float-pfz-${f.float_id || idx}`,
-          latitude: f.latitude,
-          longitude: f.longitude,
-          sst_celsius: parseFloat(temp.toFixed(1)),
-          pfz_rating: isOpt ? 'High Confidence' : 'Moderate',
-          pfz_score: isOpt ? 88 : 74,
-          chlorophyll_mg_m3: parseFloat((0.45 + ((Math.abs(f.latitude * 3 + f.longitude * 7) % 55) / 100)).toFixed(2)),
-          target_species: isOpt 
-            ? ['Yellowfin Tuna', 'Surmai (King Mackerel)', 'Pomfret'] 
-            : ['Indian Mackerel', 'Tarli (Sardine)', 'White Prawns'],
-          source: 'ARGO Hydrographic In-Situ Cast'
-        } as unknown as PFZAdvisory;
-      });
-  }, [pfzZones, floats]);
-
   const handleSelectPort = async (port: any) => {
     setSelectedPort(port);
     setIsPortHudExpanded(true);
@@ -636,7 +609,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
 
   const activeSpecies = TARGET_SPECIES_OPTIONS.find((s) => s.id === selectedSpecies);
 
-  const displayedPfzZones = openOceanPfzZones.filter((zone) => {
+  const displayedPfzZones = pfzZones.filter((zone) => {
     if (selectedSpecies === 'all') return true;
     const targetList = (zone.target_species || []).map((s: string) => s.toLowerCase());
 
@@ -815,7 +788,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
               e.stopPropagation();
               setShowPFZ(!showPFZ);
             }}
-            title="Toggle Float-Driven Potential Fishing Zones"
+            title="Toggle Multi-Sensor Potential Fishing Zones"
             className={`flex items-center space-x-1 px-2 py-1.5 rounded-xl border text-[10px] sm:text-[11px] font-semibold backdrop-blur-md shadow-xl transition cursor-pointer active:scale-95 whitespace-nowrap ${
               showPFZ
                 ? 'bg-amber-950/85 border-amber-500/60 text-amber-300 shadow-amber-950/40'
@@ -1101,6 +1074,53 @@ export const OceanMap: React.FC<OceanMapProps> = ({
             );
           })}
 
+        {/* Coastal PFZ Front Lines */}
+        {showPFZ &&
+          coastalLines.map((line, idx) => (
+            <React.Fragment key={`coastal-line-${idx}`}>
+              <Polyline
+                positions={line.coordinates}
+                pathOptions={{
+                  color: '#eab308',
+                  weight: 6,
+                  opacity: 0.35,
+                  lineCap: 'round',
+                }}
+              />
+              <Polyline
+                positions={line.coordinates}
+                pathOptions={{
+                  color: '#fef08a',
+                  weight: 3,
+                  opacity: 0.95,
+                  dashArray: '8, 6',
+                  lineCap: 'round',
+                }}
+              >
+                <Popup>
+                  <div className="p-1 space-y-1.5 font-mono text-xs text-slate-100 min-w-[240px]">
+                    <div className="flex items-center justify-between border-b border-slate-700 pb-1">
+                      <span className="font-bold text-amber-400 text-sm flex items-center gap-1 font-sans">
+                        <Fish className="w-4 h-4 text-amber-400" /> {line.sector}
+                      </span>
+                      <span className="text-[10px] bg-amber-950 text-amber-300 px-1.5 py-0.5 rounded border border-amber-700">
+                        {line.sst_celsius}°C
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-200 leading-relaxed font-sans">{line.advisory}</p>
+                    <div className="text-[11px] text-amber-300 pt-1 border-t border-slate-800">
+                      Target Catch: <strong>{line.species.join(', ')}</strong>
+                    </div>
+                    <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                      <span>Depth: <strong className="text-cyan-300">{line.depth_range_m}</strong></span>
+                      <span>Chl-a: <strong className="text-emerald-300">{line.chl_a} mg/m³</strong></span>
+                    </div>
+                  </div>
+                </Popup>
+              </Polyline>
+            </React.Fragment>
+          ))}
+
         {/* Clustered Coastal Fish Landing Centers (FLC) */}
         {showPorts && (
           <MarkerClusterGroup
@@ -1170,7 +1190,7 @@ export const OceanMap: React.FC<OceanMapProps> = ({
           />
         )}
 
-        {/* Open Ocean Float-Derived PFZ Opportunity Zones */}
+        {/* PFZ Zones */}
         {showPFZ &&
           displayedPfzZones.map((pfz, idx) => {
             const isHighYield = pfz.pfz_score >= 75;
@@ -1949,6 +1969,11 @@ export const OceanMap: React.FC<OceanMapProps> = ({
             <div className="flex items-center gap-2.5">
               <span className="w-3 h-3 rounded-full bg-sky-500 border border-sky-300 shadow-sm shrink-0"></span>
               <span className="text-[11px]">Fish Landing Centers (586 Registered FLCs)</span>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <span className="w-3 h-1 rounded-full bg-amber-400 shadow-sm shrink-0"></span>
+              <span className="text-[11px]">Coastal PFZ Thermal Front Lines (Shelf Break)</span>
             </div>
 
             <div className="flex items-center gap-2.5">
