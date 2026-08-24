@@ -7,7 +7,6 @@ They are not cyclone, weather, fishing, or navigation advisories.
 from __future__ import annotations
 
 from statistics import median
-
 from .db import get_connection
 
 SURFACE_DEPTH_METERS = 20
@@ -88,7 +87,7 @@ def _baseline_values(parameter: str, lat: float, lon: float, date: str) -> list[
 def _describe_anomaly(parameter: str, value: float, baseline: float, robust_z: float, sample_count: int, mhw_cat: str | None = None) -> str:
     unit = "°C" if parameter == "temperature" else "PSU"
     direction = "above" if value > baseline else "below"
-    mhw_prefix = f"[{mhw_cat} Marine Heatwave] " if mhw_cat else ""
+    mhw_prefix = f"[{mhw_cat}] " if mhw_cat else ""
     diff = round(abs(value - baseline), 2)
     val_rounded = round(value, 2)
     base_rounded = round(baseline, 2)
@@ -122,7 +121,6 @@ def detect_anomalies_in_profile(profile_id: int, float_id: str, lat: float, lon:
         magnitude = abs(robust_z)
         severity = "critical" if magnitude >= 5 else "high" if magnitude >= 4 else "medium"
 
-        # Hobday et al. (2016) Marine Heatwave Categorization for positive temperature anomalies
         mhw_cat = None
         if parameter == "temperature" and value > reference:
             if magnitude >= 4.0:
@@ -192,8 +190,14 @@ def run_anomaly_scan(reset_existing: bool = False, max_profiles: int = 500) -> i
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
-                        anomaly["float_id"], anomaly["latitude"], anomaly["longitude"], anomaly["date"],
-                        anomaly["parameter"], anomaly["value"], anomaly["threshold"], anomaly["severity"],
+                        anomaly["float_id"],
+                        anomaly["latitude"],
+                        anomaly["longitude"],
+                        anomaly["date"],
+                        anomaly["parameter"],
+                        anomaly["value"],
+                        anomaly["threshold"],
+                        anomaly["severity"],
                         anomaly["description"],
                     ),
                 )

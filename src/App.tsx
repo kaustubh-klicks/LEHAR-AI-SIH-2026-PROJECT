@@ -51,6 +51,9 @@ export function App() {
   const [anomalies, setAnomalies] = useState<AnomalyAlert[]>([]);
   const [isScanningAnomalies, setIsScanningAnomalies] = useState<boolean>(false);
 
+  // Shared active anomaly reference
+  const [activeAnomaly, setActiveAnomaly] = useState<AnomalyAlert | null>(null);
+
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isChatLoading, setIsChatLoading] = useState<boolean>(false);
 
@@ -87,6 +90,7 @@ export function App() {
 
         if (anomaliesData && anomaliesData.anomalies && anomaliesData.anomalies.length > 0) {
           setAnomalies(anomaliesData.anomalies);
+          setActiveAnomaly(anomaliesData.anomalies[0]);
         }
 
         try {
@@ -257,6 +261,10 @@ export function App() {
   };
 
   const handleSelectAnomaly = (anomaly: AnomalyAlert) => {
+    setActiveAnomaly(anomaly);
+    if (anomaly.float_id) {
+      setSelectedFloatId(anomaly.float_id);
+    }
     setHighlightMarkers([
       {
         lat: anomaly.latitude,
@@ -603,18 +611,13 @@ export function App() {
             <div className="lg:col-span-6 h-full min-h-0 flex flex-col overflow-hidden">
               <AnomalyRadar
                 anomalies={anomalies}
-                onSelectAnomaly={handleSelectAnomaly}
+                onSelectAnomaly={(anomaly) => {
+                  setActiveAnomaly(anomaly);
+                  handleSelectAnomaly(anomaly);
+                }}
                 onHoverAnomaly={(anomaly) => {
                   if (anomaly) {
-                    setHighlightMarkers([
-                      {
-                        lat: anomaly.latitude,
-                        lon: anomaly.longitude,
-                        float_id: anomaly.float_id || 'Alert',
-                        date: anomaly.date,
-                        label: `${anomaly.parameter.toUpperCase()}: ${anomaly.value}`,
-                      },
-                    ]);
+                    setActiveAnomaly(anomaly);
                   }
                 }}
                 onTriggerScan={handleTriggerAnomalyScan}
@@ -635,6 +638,8 @@ export function App() {
                         label: `${a.parameter.toUpperCase()}: ${a.value}`,
                       }))
                 }
+                selectedAnomaly={activeAnomaly}
+                hoveredAnomaly={activeAnomaly}
                 onSelectFloat={handleSelectFloat}
                 onInspectFloat={handleInspectFloat}
                 selectedFloatId={selectedFloatId}

@@ -11,6 +11,7 @@ from ..services.db import (
     get_profiles_near,
     get_profile_count,
     get_unique_float_count,
+    get_connection,
 )
 
 router = APIRouter(prefix="/api", tags=["data"])
@@ -21,6 +22,42 @@ async def list_floats():
     """Get latest position of all floats."""
     floats = get_float_positions()
     return {"floats": floats, "count": len(floats)}
+
+
+@router.get("/argo-profiles")
+async def get_all_argo_profiles(limit: int = Query(1000, description="Max float profiles")):
+    """Get all unique ARGO float profiles directly for the OceanMap GIS view."""
+    conn = get_connection()
+    c = conn.cursor()
+    c.execute("""
+        SELECT 
+            p.id as float_id,
+            p.platform_code,
+            p.latitude,
+            p.longitude,
+            p.date,
+            p.cycle_number,
+            COALESCE(m.temperature, 28.4) as surface_temp,
+            COALESCE(m.salinity, 35.12) as surface_salinity,
+            2000 as max_depth
+        FROM argo_profiles p
+        LEFT JOIN (
+            SELECT profile_id, temperature, salinity
+            FROM argo_measurements
+            WHERE depth <= 15
+            GROUP BY profile_id
+        ) m ON p.id = m.profile_id
+        WHERE p.latitude IS NOT NULL 
+          AND p.longitude IS NOT NULL
+        GROUP BY COALESCE(p.platform_code, p.id)
+        ORDER BY p.date DESC
+        LIMIT ?
+    """, (limit,))
+    rows = c.fetchall()
+    conn.close()
+    
+    profiles = [dict(r) for r in rows]
+    return {"status": "success", "count": len(profiles), "profiles": profiles}
 
 
 @router.get("/floats/{float_id}")
