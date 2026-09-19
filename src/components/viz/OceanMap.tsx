@@ -927,9 +927,9 @@ export const OceanMap: React.FC<OceanMapProps> = ({
         <SectorController targetCenter={jumpTarget ? jumpTarget.center : null} targetZoom={jumpTarget ? jumpTarget.zoom : null} />
 
         <TileLayer
-          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-          attribution="&copy; <a href='https://stadiamaps.com/'>Stadia Maps</a> &copy; <a href='https://openmaptiles.org/'>OpenMapTiles</a> &copy; <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
-          maxZoom={20}
+          url="https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+          attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='https://carto.com/attributions'>CARTO</a>"
+          maxZoom={19}
         />
 
         {/* 1. NOAA Satellite Thermal SST Grid Overlay */}
