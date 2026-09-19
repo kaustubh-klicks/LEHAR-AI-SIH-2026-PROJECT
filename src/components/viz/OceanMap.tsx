@@ -27,7 +27,7 @@ import {
   Layers as LayersIcon
 } from 'lucide-react';
 import type { FloatSummary, MapMarker, PFZAdvisory, SatelliteGridPoint, AnomalyAlert } from '../../types';
-import { getPFZAdvisories, getSatelliteGrid } from '../../services/api';
+import api, { getPFZAdvisories, getSatelliteGrid } from '../../services/api';
 
 function HighlightController({ 
   highlightMarkers,
@@ -381,14 +381,14 @@ export const OceanMap: React.FC<OceanMapProps> = ({
       try {
         const [pfzRes, linesRes, satRes, portRes, floatRes] = await Promise.all([
           getPFZAdvisories('all').catch(() => ({ advisories: [] })),
-          fetch('http://localhost:8000/api/pfz/lines').then((r) => r.json()).catch(() => ({ lines: [] })),
+          api.get('/api/pfz/lines').then((r) => r.data).catch(() => ({ lines: [] })),
           getSatelliteGrid(1).catch(() => ({ points: [] })),
-          fetch('http://localhost:8000/api/ports').then((r) => r.json()).catch(() => ({ ports: [] })),
-          fetch('http://localhost:8000/api/argo-profiles?limit=1000')
-            .then((r) => r.json())
+          api.get('/api/ports').then((r) => r.data).catch(() => ({ ports: [] })),
+          api.get('/api/argo-profiles?limit=1000')
+            .then((r) => r.data)
             .catch(() =>
-              fetch('http://localhost:8000/api/floats')
-                .then((r) => r.json())
+              api.get('/api/floats')
+                .then((r) => r.data)
                 .catch(() => null)
             ),
         ]);
@@ -427,7 +427,6 @@ export const OceanMap: React.FC<OceanMapProps> = ({
     loadAllData();
   }, []);
 
-  // Compute and ensure full 97 scientific floats across all Indian Ocean sectors
   const floats = React.useMemo(() => {
     const baseList = internalFloats.length > 0 ? internalFloats : (propFloats || []);
     const uniqueMap = new Map<string, any>();
@@ -441,86 +440,6 @@ export const OceanMap: React.FC<OceanMapProps> = ({
       }
     });
 
-    const extraIndianOceanFloats: any[] = [
-      {
-        float_id: 'LEHAR-ARGO-101',
-        latitude: 12.85,
-        longitude: 71.90,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 28.6,
-        surface_salinity: 36.2,
-        measurements_count: 24,
-        cycle_number: 142,
-        data_source: 'ARGO In-Situ (Lakshadweep Shelf)'
-      },
-      {
-        float_id: 'LEHAR-ARGO-102',
-        latitude: 19.40,
-        longitude: 87.20,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 29.1,
-        surface_salinity: 32.8,
-        measurements_count: 28,
-        cycle_number: 98,
-        data_source: 'ARGO In-Situ (Northern Bay of Bengal)'
-      },
-      {
-        float_id: 'LEHAR-ARGO-103',
-        latitude: 9.15,
-        longitude: 92.80,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 28.9,
-        surface_salinity: 33.5,
-        measurements_count: 32,
-        cycle_number: 110,
-        data_source: 'ARGO In-Situ (Andaman Basin)'
-      },
-      {
-        float_id: 'LEHAR-ARGO-104',
-        latitude: -3.50,
-        longitude: 77.20,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 27.8,
-        surface_salinity: 35.1,
-        measurements_count: 45,
-        cycle_number: 165,
-        data_source: 'ARGO In-Situ (Equatorial Ridge)'
-      },
-      {
-        float_id: 'LEHAR-ARGO-105',
-        latitude: 15.20,
-        longitude: 65.40,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 28.2,
-        surface_salinity: 36.5,
-        measurements_count: 30,
-        cycle_number: 120,
-        data_source: 'ARGO In-Situ (Central Arabian Sea)'
-      },
-      {
-        float_id: 'LEHAR-ARGO-106',
-        latitude: 6.70,
-        longitude: 78.90,
-        date: new Date().toISOString(),
-        max_depth: 2000,
-        surface_temp: 28.7,
-        surface_salinity: 34.8,
-        measurements_count: 35,
-        cycle_number: 89,
-        data_source: 'ARGO In-Situ (Sri Lanka Basin)'
-      }
-    ];
-
-    for (const m of extraIndianOceanFloats) {
-      if (uniqueMap.size >= 97) break;
-      uniqueMap.set(m.float_id, m);
-    }
-
     return Array.from(uniqueMap.values()) as FloatSummary[];
   }, [internalFloats, propFloats]);
 
@@ -528,8 +447,8 @@ export const OceanMap: React.FC<OceanMapProps> = ({
     setSelectedPort(port);
     setIsPortHudExpanded(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/ports/${port.id}/nearest-pfz`);
-      const data = await res.json();
+      const res = await api.get(`/api/ports/${port.id}/nearest-pfz`);
+      const data = res.data;
       if (data.status === 'success') {
         setPortTargetPfz(data);
       }
@@ -1008,8 +927,9 @@ export const OceanMap: React.FC<OceanMapProps> = ({
         <SectorController targetCenter={jumpTarget ? jumpTarget.center : null} targetZoom={jumpTarget ? jumpTarget.zoom : null} />
 
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          maxZoom={19}
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          attribution="&copy; <a href='https://stadiamaps.com/'>Stadia Maps</a> &copy; <a href='https://openmaptiles.org/'>OpenMapTiles</a> &copy; <a href='https://openstreetmap.org'>OpenStreetMap</a> contributors"
+          maxZoom={20}
         />
 
         {/* 1. NOAA Satellite Thermal SST Grid Overlay */}

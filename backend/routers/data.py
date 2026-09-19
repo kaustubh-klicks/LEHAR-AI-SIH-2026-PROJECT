@@ -25,39 +25,59 @@ async def list_floats():
 
 
 @router.get("/argo-profiles")
-async def get_all_argo_profiles(limit: int = Query(1000, description="Max float profiles")):
-    """Get all unique ARGO float profiles directly for the OceanMap GIS view."""
-    conn = get_connection()
-    c = conn.cursor()
-    c.execute("""
-        SELECT 
-            p.id as float_id,
-            p.platform_code,
-            p.latitude,
-            p.longitude,
-            p.date,
-            p.cycle_number,
-            COALESCE(m.temperature, 28.4) as surface_temp,
-            COALESCE(m.salinity, 35.12) as surface_salinity,
-            2000 as max_depth
-        FROM argo_profiles p
-        LEFT JOIN (
-            SELECT profile_id, temperature, salinity
-            FROM argo_measurements
-            WHERE depth <= 15
-            GROUP BY profile_id
-        ) m ON p.id = m.profile_id
-        WHERE p.latitude IS NOT NULL 
-          AND p.longitude IS NOT NULL
-        GROUP BY COALESCE(p.platform_code, p.id)
-        ORDER BY p.date DESC
-        LIMIT ?
-    """, (limit,))
-    rows = c.fetchall()
-    conn.close()
-    
+async def get_all_argo_profiles(
+    limit: int = Query(1000, description="Max float profiles"),
+    incois_only: bool = Query(True, description="Filter for INCOIS-managed floats only")
+):
+    """
+    Get the latest relayed observation for each active Argo float,
+    filtering for INCOIS-managed floats by default.
+    """
+    with get_connection() as conn:
+        c = conn.cursor()
+        
+        filter_clause = "WHERE (p.source = 'INCOIS' OR p.float_id LIKE '290%' OR p.float_id LIKE '699%')" if incois_only else ""
+
+        c.execute(f"""
+            WITH LatestProfiles AS (
+                SELECT *,
+                       ROW_NUMBER() OVER(PARTITION BY float_id ORDER BY date DESC) as rn
+                FROM argo_profiles
+                {filter_clause}
+            )
+            SELECT 
+                p.id as float_id,
+                p.float_id as platform_code,
+                p.latitude,
+                p.longitude,
+                p.date,
+                p.cycle_number,
+                p.source as dac_center,
+                COALESCE(m.temperature, 28.4) as surface_temp,
+                COALESCE(m.salinity, 35.12) as surface_salinity,
+                p.max_depth as max_depth
+            FROM LatestProfiles p
+            LEFT JOIN (
+                SELECT profile_id, temperature, salinity
+                FROM argo_measurements
+                WHERE depth <= 15
+                GROUP BY profile_id
+            ) m ON p.id = m.profile_id
+            WHERE p.rn = 1 
+              AND p.latitude IS NOT NULL 
+              AND p.longitude IS NOT NULL
+            ORDER BY p.date DESC
+            LIMIT ?
+        """, (limit,))
+        rows = c.fetchall()
+
     profiles = [dict(r) for r in rows]
-    return {"status": "success", "count": len(profiles), "profiles": profiles}
+    return {
+        "status": "success",
+        "count": len(profiles),
+        "incois_only": incois_only,
+        "profiles": profiles
+    }
 
 
 @router.get("/floats/{float_id}")
@@ -103,7 +123,6 @@ def calculate_mld_and_thermocline(measurements: list[dict]) -> dict:
             "bottom_temperature": 2.5
         }
 
-    # Reference temp near surface (~10m)
     surface_ref_temp = sorted_m[0]["temperature"]
     ten_m_records = [m for m in sorted_m if m["depth"] <= 15]
     if ten_m_records:
@@ -118,7 +137,6 @@ def calculate_mld_and_thermocline(measurements: list[dict]) -> dict:
     if mld is None:
         mld = round(sorted_m[min(len(sorted_m) - 1, 3)]["depth"], 1)
 
-    # Thermocline gradient: steepest temperature drop per meter (dT/dz)
     steepest_grad = 0.0
     thermocline_depth = mld
     for i in range(len(sorted_m) - 1):
