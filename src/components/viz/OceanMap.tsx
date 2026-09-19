@@ -927,8 +927,13 @@ export const OceanMap: React.FC<OceanMapProps> = ({
         <SectorController targetCenter={jumpTarget ? jumpTarget.center : null} targetZoom={jumpTarget ? jumpTarget.zoom : null} />
 
         <TileLayer
-          url="https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-          attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='https://carto.com/attributions'>CARTO</a>"
+          url="https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+          attribution="&copy; Esri, HERE, Garmin, FAO, NOAA, USGS, EPA"
+          maxZoom={19}
+        />
+        <TileLayer
+          url="https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}"
+          attribution=""
           maxZoom={19}
         />
 
