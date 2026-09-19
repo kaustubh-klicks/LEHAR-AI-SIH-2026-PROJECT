@@ -78,6 +78,13 @@ def init_db():
             CREATE INDEX IF NOT EXISTS idx_measurements_profile ON argo_measurements(profile_id);
             CREATE INDEX IF NOT EXISTS idx_anomalies_date ON anomaly_alerts(date);
         """)
+        
+        # Migration: Add 'source' column to argo_profiles if it doesn't exist
+        try:
+            conn.execute("ALTER TABLE argo_profiles ADD COLUMN source TEXT DEFAULT 'argovis'")
+        except sqlite3.OperationalError:
+            pass # Column already exists
+            
         conn.commit()
     print(f"[DB] Database initialized at {get_db_path()}")
 
